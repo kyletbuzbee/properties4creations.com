@@ -187,22 +187,85 @@ P4C.ComponentLoader = {
    * @function applyNavigationHighlighting
    */
   applyNavigationHighlighting: function() {
-    // Get current page from URL
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    // Get current page from URL (handle both relative and absolute paths)
+    let currentPath = window.location.pathname;
 
-    // Find all navigation links
-    const navLinks = document.querySelectorAll('nav a');
+    // Handle root path and extract filename
+    if (currentPath === '/' || currentPath === '') {
+      currentPath = 'index.html';
+    } else {
+      // Remove leading slash and get the filename
+      currentPath = currentPath.split('/').pop() || 'index.html';
+    }
 
-    navLinks.forEach(link => {
+    // Handle query parameters (strip everything after ?)
+    currentPath = currentPath.split('?')[0];
+    // Handle hash fragments (strip everything after #)
+    currentPath = currentPath.split('#')[0];
+    // Ensure we have a default filename
+    if (!currentPath || currentPath === '') {
+      currentPath = 'index.html';
+    }
+
+    console.log('🔍 Applying navigation highlighting for:', currentPath);
+
+    // Find all navigation links - both desktop and mobile
+    const desktopNavLinks = document.querySelectorAll('header nav a');
+    const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+
+    // Combine all navigation links
+    const allNavLinks = [...desktopNavLinks, ...mobileNavLinks];
+
+    allNavLinks.forEach(link => {
       const linkHref = link.getAttribute('href');
-      if (linkHref === currentPath) {
-        // Apply active state styling
-        link.classList.add('text-white', 'bg-white/10');
-        link.classList.remove('text-slate-200', 'hover:text-white');
+      const isMobileLink = link.closest('#mobile-menu') !== null;
+
+      // Clean the href for comparison (remove leading slash if present)
+      let cleanHref = linkHref;
+      if (cleanHref && cleanHref.startsWith('/')) {
+        cleanHref = cleanHref.substring(1);
+      }
+      if (cleanHref && cleanHref === '') {
+        cleanHref = 'index.html';
+      }
+
+      // DEBUG: Log comparison for troubleshooting
+      console.log(`🔍 [${isMobileLink ? 'MOBILE' : 'DESKTOP'}] Comparing:`, currentPath, 'vs', cleanHref, 'for link:', linkHref);
+
+      if (cleanHref === currentPath) {
+        // Apply active state styling - different logic for mobile vs desktop
+        link.classList.add('active');
+
+        if (isMobileLink) {
+          // Mobile links: remove default hover states that might interfere
+          link.classList.remove('hover:text-white', 'hover:bg-white/10');
+        } else {
+          // Desktop links: adjust text color and remove hover states
+          link.classList.remove('text-slate-200', 'hover:text-brand-wood');
+        }
+
+        console.log(`✅ [${isMobileLink ? 'MOBILE' : 'DESKTOP'}] Applied active state to:`, linkHref);
       } else {
-        // Ensure inactive state
-        link.classList.remove('text-white', 'bg-white/10');
-        link.classList.add('text-slate-200');
+        // Ensure inactive state - different logic for mobile vs desktop
+        link.classList.remove('active');
+
+        if (isMobileLink) {
+          // Mobile links: restore default hover states if not present
+          if (!link.classList.contains('hover:text-white')) {
+            link.classList.add('text-slate-200');
+          }
+          if (!link.classList.contains('hover:bg-white/10')) {
+            link.classList.add('hover:text-white', 'hover:bg-white/10');
+          }
+        } else {
+          // Desktop links: ensure proper inactive styling
+          if (!link.classList.contains('text-slate-200')) {
+            link.classList.add('text-slate-200');
+          }
+          if (!link.classList.contains('hover:text-brand-wood')) {
+            link.classList.add('hover:text-brand-wood');
+          }
+        }
       }
     });
   }

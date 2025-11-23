@@ -253,3 +253,91 @@
     transform: translateY(0) !important; /* Slide down into place */
     display: block !important;
 }
+
+/* ===========================
+   Navigation Active States
+   =========================== */
+
+/* Desktop navigation active state */
+nav a.active {
+    border-bottom: 3px solid #4CAF50;
+    font-weight: 600;
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--color-primary-navy) !important;
+}
+
+nav a.active:hover {
+    background: rgba(76, 175, 80, 0.15);
+}
+
+/* Mobile menu navigation active state */
+#mobile-menu a.active {
+    background: rgba(76, 175, 80, 0.2) !important;
+    border-left: 4px solid #4CAF50 !important;
+    font-weight: 600;
+    color: #4CAF50 !important;
+    margin-left: -4px; /* Compensate for border */
+}
+
+#mobile-menu a.active:hover {
+    background: rgba(76, 175, 80, 0.3) !important;
+}
+
+/* ===========================
+   Page Title Background System
+   =========================== */
+.page-title-banner {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    border-bottom: 4px solid #4CAF50;
+    margin: 0;
+}
+
+.page-title-banner h1 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    margin: 0;
+    color: white;
+}
+
+.page-title-banner.hero {
+    background-image: url('/public/images/hero/front_porch_hero.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.page-title-banner.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+}
+
+.page-title-banner.hero h1 {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Dark variant for light text overlays */
+.page-title-banner.dark {
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    border-bottom-color: #f59e0b;
+}
+
+.page-title-banner.dark h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
