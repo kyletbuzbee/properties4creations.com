@@ -107,22 +107,26 @@ P4C.ComponentLoader = {
    * @function reinitializeHeaderInteractivity
    */
   reinitializeHeaderInteractivity: function() {
-    // Mobile menu toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    // Mobile menu toggle - FIXED: Use IDs instead of classes
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
     if (mobileMenuToggle && mobileMenu) {
       mobileMenuToggle.addEventListener('click', (e) => {
         e.stopPropagation();
+        // Toggle the active class
         mobileMenu.classList.toggle('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 
-          mobileMenu.classList.contains('active') ? 'true' : 'false');
+
+        // Update ARIA state
+        const isExpanded = mobileMenu.classList.contains('active');
+        mobileMenuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
       });
     }
 
     // Close mobile menu when clicking outside
     if (mobileMenu) {
       document.addEventListener('click', (e) => {
-        if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-toggle')) {
+        if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
           mobileMenu.classList.remove('active');
           if (mobileMenuToggle) {
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
