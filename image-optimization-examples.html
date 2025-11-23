@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Optimization Examples - P4C</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .example {
+            background: #f5f5f5;
+            border-left: 4px solid #C28E5A;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        h2 {
+            color: #0B1120;
+            border-bottom: 2px solid #C28E5A;
+            padding-bottom: 10px;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #C28E5A;
+            font-weight: bold;
+        }
+        picture {
+            display: block;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .before-after h4 {
+            grid-column: 1 / -1;
+            margin-top: 0;
+            color: #C28E5A;
+        }
+        @media (max-width: 768px) {
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Optimization Examples for P4C</h1>
+    <p>This page shows best practices for implementing optimized images with WebP support.</p>
+
+    <!-- ===== EXAMPLE 1: Hero Image ===== -->
+    <h2>Example 1: Hero Image (With Responsive Sizes)</h2>
+    <div class="example">
+        <p><strong>Location:</strong> Top of home page</p>
+        <p><strong>Current:</strong> Single large JPEG (2-3 MB)</p>
+        <p><strong>Optimized:</strong> Multiple WebP sizes (200-400 KB total)</p>
+
+        <h3>HTML Code:</h3>
+        <div class="code">
+&lt;picture&gt;
+  &lt;source 
+    srcset="public/images/hero-320w.webp 320w,
+            public/images/hero-640w.webp 640w,
+            public/images/hero-960w.webp 960w,
+            public/images/hero-1280w.webp 1280w,
+            public/images/hero-1920w.webp 1920w"
+    type="image/webp"&gt;
+  &lt;source 
+    srcset="public/images/hero-320w.jpg 320w,
+            public/images/hero-640w.jpg 640w,
+            public/images/hero-960w.jpg 960w,
+            public/images/hero-1280w.jpg 1280w,
+            public/images/hero-1920w.jpg 1920w"
+    type="image/jpeg"&gt;
+  &lt;img src="public/images/hero-1280w.jpg" 
+       alt="Beautiful modern home exterior with landscaping"
+       loading="lazy"
+       decoding="async"
+       style="width: 100%; height: auto; display: block;"&gt;
+&lt;/picture&gt;
+        </div>
+
+        <h3>What This Does:</h3>
+        <ul class="checklist">
+            <li>Mobile (320px): Loads smallest image (hero-320w.webp)</li>
+            <li>Tablet (640px): Loads medium image (hero-640w.webp)</li>
+            <li>Desktop (1280px): Loads large image (hero-1280w.webp)</li>
+            <li>4K (1920px): Loads largest image (hero-1920w.webp)</li>
+            <li>Old browsers: Falls back to JPEG versions</li>
+            <li>Very old browsers: Falls back to single JPG</li>
+            <li>Lazy loading: Loads only when scrolled into view</li>
+            <li>Async decoding: Browser decodes image without blocking</li>
+        </ul>
+    </div>
+
+    <!-- ===== EXAMPLE 2: Project Image ===== -->
+    <h2>Example 2: Project/Property Image (Single Size)</h2>
+    <div class="example">
+        <p><strong>Location:</strong> Projects page, property details</p>
+        <p><strong>Current:</strong> Single JPEG per project</p>
+        <p><strong>Optimized:</strong> Single WebP with JPEG fallback</p>
+
+        <h3>HTML Code:</h3>
+        <div class="code">
+&lt;picture&gt;
+  &lt;source srcset="public/images/projects_finished_wood_deck.webp" 
+          type="image/webp"&gt;
+  &lt;source srcset="public/images/projects_finished_wood_deck.jpg" 
+          type="image/jpeg"&gt;
+  &lt;img src="public/images/projects_finished_wood_deck.jpg"
+       alt="Finished custom wood deck with seating area"
+       loading="lazy"
+       decoding="async"
+       style="width: 100%; height: auto;"&gt;
+&lt;/picture&gt;
+        </div>
+
+        <h3>Simpler Version (If You Prefer):</h3>
+        <div class="code">
+&lt;img src="public/images/projects_finished_wood_deck.webp"
+     alt="Finished custom wood deck with seating area"
+     loading="lazy"
+     decoding="async"
+     style="width: 100%; height: auto;"&gt;
+        </div>
+
+        <p style="color: #666; font-size: 14px;">
+            <strong>Note:</strong> The simpler version works if most users have modern browsers. 
+            Use the picture version for maximum compatibility.
+        </p>
+    </div>
+
+    <!-- ===== EXAMPLE 3: Thumbnail Image ===== -->
+    <h2>Example 3: Thumbnail/Small Image</h2>
+    <div class="example">
+        <p><strong>Location:</strong> Project cards, property listings</p>
+        <p><strong>Current:</strong> JPEG thumbnail (50-150 KB)</p>
+        <p><strong>Optimized:</strong> WebP thumbnail (10-30 KB)</p>
+
+        <h3>HTML Code:</h3>
+        <div class="code">
+&lt;img src="public/images/projects_wood_deck.webp"
+     alt="Wood deck project thumbnail"
+     width="300"
+     height="200"
+     loading="lazy"
+     decoding="async"&gt;
+        </div>
+
+        <p style="color: #666; font-size: 14px;">
+            <strong>Why simpler:</strong> Thumbnails are already small, don't need responsive sizes.
+            WebP alone provides 60-70% size reduction.
+        </p>
+    </div>
+
+    <!-- ===== EXAMPLE 4: Multiple Images (Gallery) ===== -->
+    <h2>Example 4: Image Gallery (Multiple Images)</h2>
+    <div class="example">
+        <p><strong>Location:</strong> Before/After gallery, property details</p>
+        <p><strong>Pattern:</strong> Repeat picture element for each image</p>
+
+        <h3>HTML Code:</h3>
+        <div class="code">
+&lt;div class="gallery"&gt;
+  &lt;picture&gt;
+    &lt;source srcset="public/images/before-after/deck-before.webp" 
+            type="image/webp"&gt;
+    &lt;source srcset="public/images/before-after/deck-before.jpg" 
+            type="image/jpeg"&gt;
+    &lt;img src="public/images/before-after/deck-before.jpg"
+         alt="Wood deck before project"
+         loading="lazy"
+         decoding="async"&gt;
+  &lt;/picture&gt;
+
+  &lt;picture&gt;
+    &lt;source srcset="public/images/before-after/deck-after.webp" 
+            type="image/webp"&gt;
+    &lt;source srcset="public/images/before-after/deck-after.jpg" 
+            type="image/jpeg"&gt;
+    &lt;img src="public/images/before-after/deck-after.jpg"
+         alt="Wood deck after project completion"
+         loading="lazy"
+         decoding="async"&gt;
+  &lt;/picture&gt;
+&lt;/div&gt;
+        </div>
+    </div>
+
+    <!-- ===== EXAMPLE 5: Icon/SVG Image ===== -->
+    <h2>Example 5: Icon or SVG Image</h2>
+    <div class="example">
+        <p><strong>Location:</strong> Icons, logos, decorative elements</p>
+        <p><strong>Note:</strong> SVGs are already optimized, no need to convert to WebP</p>
+
+        <h3>HTML Code:</h3>
+        <div class="code">
+&lt;!-- SVG (No conversion needed) --&gt;
+&lt;img src="public/images/logo/p4c-logo.svg" 
+     alt="P4C Logo"
+     style="width: 100px; height: auto;"&gt;
+
+&lt;!-- Raster Icon (Convert to WebP) --&gt;
+&lt;img src="public/images/icons/hammer.webp" 
+     alt="Hammer icon"
+     style="width: 32px; height: 32px;"&gt;
+        </div>
+    </div>
+
+    <!-- ===== BEST PRACTICES ===== -->
+    <h2>Best Practices Checklist</h2>
+    <div class="example">
+        <ul class="checklist">
+            <li>Always include alt text (describes image for screen readers)</li>
+            <li>Use loading="lazy" for below-fold images</li>
+            <li>Use decoding="async" for non-critical images</li>
+            <li>For mobile-first: start with smallest image</li>
+            <li>Test in browser DevTools (Network tab shows which image loaded)</li>
+            <li>Use WebP with JPEG fallback for maximum compatibility</li>
+            <li>Don't convert SVGs to WebP (they're already optimized)</li>
+            <li>Test on actual phone (Chrome DevTools is limited)</li>
+            <li>Check file sizes reduced 60-75% from originals</li>
+            <li>Run Lighthouse audit after updates</li>
+        </ul>
+    </div>
+
+    <!-- ===== TESTING ===== -->
+    <h2>Testing Your Images</h2>
+    <div class="example">
+        <h3>Step 1: Check DevTools (Chrome)</h3>
+        <div class="code">
+1. Open page in Chrome
+2. Press F12 (Open DevTools)
+3. Go to Network tab
+4. Reload page
+5. Filter by "img" to see images
+6. Check if WebP files are loaded (not JPEG)
+7. Check file sizes (should be 60-70% smaller)
+8. Scroll to bottom - images should load on scroll
+        </div>
+
+        <h3>Step 2: Check Lazy Loading</h3>
+        <div class="code">
+1. Open DevTools Network tab
+2. Reload page
+3. WITHOUT scrolling, notice which images loaded
+4. Scroll down slowly
+5. Watch for more images loading as you scroll
+6. If images load before scroll = not lazy loading
+        </div>
+
+        <h3>Step 3: Run Lighthouse</h3>
+        <div class="code">
+1. Open page in Chrome
+2. Press F12
+3. Go to Lighthouse tab
+4. Click "Analyze page load"
+5. Score should be 90+ (or improved from before)
+6. Look for "Offscreen images" - if none, lazy loading works
+        </div>
+    </div>
+
+    <!-- ===== BEFORE/AFTER COMPARISON ===== -->
+    <h2>Before & After Comparison</h2>
+    <div class="before-after">
+        <h4>Impact on Performance</h4>
+        
+        <div>
+            <strong>BEFORE (Single JPEG)</strong>
+            <p>File size: 800 KB<br>
+            Load time: 2.5s<br>
+            LCP: 2.0s<br>
+            Format: JPEG<br>
+            Responsive: No<br>
+            <span style="color: red;">❌ Not optimized</span></p>
+        </div>
+
+        <div>
+            <strong>AFTER (Responsive WebP)</strong>
+            <p>File size: 200 KB (320w)<br>
+            Load time: 0.6s<br>
+            LCP: 0.5s<br>
+            Formats: WebP + JPEG<br>
+            Responsive: Yes<br>
+            <span style="color: green;">✅ Optimized</span></p>
+        </div>
+    </div>
+
+    <!-- ===== FILE STRUCTURE ===== -->
+    <h2>Your Image File Structure</h2>
+    <div class="example">
+        <p>After optimization, your directory will look like:</p>
+        <div class="code">
+public/images/
+├── projects_finished_wood_deck.webp (optimized)
+├── projects_finished_wood_deck.jpg (original backup)
+├── pexels-photo-3615721.webp (optimized)
+├── pexels-photo-3615721.jpeg (original backup)
+│
+├── hero/
+│   ├── hero-320w.webp
+│   ├── hero-640w.webp
+│   ├── hero-960w.webp
+│   ├── hero-1280w.webp
+│   └── hero-1920w.webp
+│
+└── properties/
+    ├── before-after/
+    │   ├── deck-before.webp
+    │   ├── deck-before.jpg (optional)
+    │   └── ...
+        </div>
+    </div>
+
+    <!-- ===== QUICK COPY-PASTE ===== -->
+    <h2>Quick Copy-Paste Templates</h2>
+    <div class="example">
+        <h3>Template 1: Responsive Hero</h3>
+        <div class="code">
+&lt;picture&gt;
+  &lt;source srcset="path/to/image-320w.webp 320w, 
+                   path/to/image-640w.webp 640w,
+                   path/to/image-1280w.webp 1280w"
+          type="image/webp"&gt;
+  &lt;source srcset="path/to/image-320w.jpg 320w,
+                   path/to/image-640w.jpg 640w,
+                   path/to/image-1280w.jpg 1280w"
+          type="image/jpeg"&gt;
+  &lt;img src="path/to/image-1280w.jpg" alt="Description" 
+       loading="lazy" decoding="async" style="width: 100%;"&gt;
+&lt;/picture&gt;
+        </div>
+
+        <h3>Template 2: Single Image</h3>
+        <div class="code">
+&lt;picture&gt;
+  &lt;source srcset="path/to/image.webp" type="image/webp"&gt;
+  &lt;source srcset="path/to/image.jpg" type="image/jpeg"&gt;
+  &lt;img src="path/to/image.jpg" alt="Description" 
+       loading="lazy" decoding="async"&gt;
+&lt;/picture&gt;
+        </div>
+
+        <h3>Template 3: Simple WebP Only</h3>
+        <div class="code">
+&lt;img src="path/to/image.webp" alt="Description" 
+     loading="lazy" decoding="async"&gt;
+        </div>
+    </div>
+
+    <hr style="margin: 40px 0; border: none; border-top: 2px solid #C28E5A;">
+
+    <h2>Next Steps</h2>
+    <ol>
+        <li>Optimize images using Squoosh or batch script</li>
+        <li>Copy WebP files to public/images/</li>
+        <li>Update index.html with picture elements</li>
+        <li>Update projects.html with picture elements</li>
+        <li>Test in Chrome DevTools (Network tab)</li>
+        <li>Run Lighthouse audit</li>
+        <li>Check file size reduction (target: 60-70%)</li>
+        <li>Update remaining pages (insights, resources, about, contact)</li>
+    </ol>
+
+    <p style="text-align: center; color: #666; margin-top: 40px;">
+        <strong>Phase 6 Implementation Guide</strong><br>
+        Follow the examples above to update your HTML files with optimized images.
+    </p>
+
+</body>
+</html>

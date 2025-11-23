@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jefferson Riverfront - Bayou Living at Big Cypress | Properties 4 Creation</title>
+    <meta name="description" content="Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson. Waterfront living with Section 8 eligibility and waterfront recreation access.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1e293b',
+                            beige: '#ffffff',
+                            sage: '#059669',
+                            tan: '#475569',
+                            red: '#dc2626',
+                            olive: '#4d7c0f'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --corporate-navy: #1e293b;
+            --corporate-emerald: #059669;
+        }
+
+        body {
+            font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-brand-beige">
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 w-full z-50 bg-brand-navy text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-xl font-bold text-white hover:text-brand-sage transition-colors">
+                        Properties 4 Creation
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white hover:text-brand-sage transition-colors">Home</a>
+                    <a href="../projects.html" class="text-white hover:text-brand-sage transition-colors font-semibold">Projects</a>
+                    <a href="../resources.html" class="text-white hover:text-brand-sage transition-colors">Resources</a>
+                    <a href="../insights.html" class="text-white hover:text-brand-sage transition-colors">Insights</a>
+                    <a href="../about.html" class="text-white hover:text-brand-sage transition-colors">About</a>
+                    <a href="../contact.html" class="text-white hover:text-brand-sage transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="search-toggle" class="hidden md:block px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-colors text-sm">
+                        Search (⌘K)
+                    </button>
+                    <button id="portal-toggle" class="px-4 py-2 bg-brand-sage hover:bg-brand-sage/80 text-white rounded-lg transition-colors">
+                        Portals
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+
+        <!-- Virtual Tour Hero -->
+        <section class="bg-slate-900 text-white py-8">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="bg-slate-800 rounded-lg p-8 text-center">
+                    <div class="w-full h-96 bg-slate-700 rounded-lg flex items-center justify-center mb-6 relative">
+                        <div class="absolute inset-0 bg-slate-900 bg-opacity-60 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🏞️</div>
+                                <h3 class="text-2xl font-bold mb-2">Waterfront Virtual Tour</h3>
+                                <p class="text-slate-300">Experience bayou living on Big Cypress</p>
+                                <button class="mt-4 px-6 py-3 bg-brand-sage text-white rounded-lg font-semibold hover:bg-brand-olive transition-colors">
+                                    Schedule Waterfront Tour
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Overview -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Property Details -->
+                    <div class="lg:col-span-2">
+                        <h1 class="text-4xl font-bold text-brand-navy mb-4">Jefferson Riverfront</h1>
+
+                        <div class="flex flex-wrap items-center gap-4 mb-6">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Section 8 Ready</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Waterfront Property</span>
+                            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm font-medium">Historic District</span>
+                            <span class="text-2xl font-bold text-brand-navy">$1,650/mo</span>
+                        </div>
+
+                        <p class="text-lg text-slate-700 mb-6">
+                            Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson.
+                            Perfect for fishing, boating, and bayou recreation with Section 8 voucher acceptance.
+                            Authentic East Texas waterfront living with modern comforts.
+                        </p>
+
+                        <!-- Quick Facts -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">2</div>
+                                <div class="text-sm text-slate-600">Bedrooms</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">1.5</div>
+                                <div class="text-sm text-slate-600">Bathrooms</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">1,200</div>
+                                <div class="text-sm text-slate-600">Sq Ft</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">0.75</div>
+                                <div class="text-sm text-slate-600">Acres</div>
+                            </div>
+                        </div>
+
+                        <!-- Amenities -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-3">Waterfront Lifestyle</h3>
+                                <ul class="space-y-2 text-slate-700">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Big Cypress Bayou access
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Private boat dock
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Fishing pier
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Waterfront deck
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Kayak/canoe storage
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-3">Home Comforts</h3>
+                                <ul class="space-y-2 text-slate-700">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Updated kitchen appliances
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Wood-burning fireplace
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Ceiling fans throughout
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Screened porch
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Ample storage space
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="bg-slate-50 rounded-lg p-6 h-fit">
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Tour This Waterfront Paradise</h3>
+
+                        <form class="space-y-4" id="property-inquiry">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                                <input type="text" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                <input type="email" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                                <input type="tel" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">When are you looking to move?</label>
+                                <select required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                                    <option value="">Select timing</option>
+                                    <option value="immediately">Immediately</option>
+                                    <option value="1-3months">1-3 months</option>
+                                    <option value="3-6months">3-6 months</option>
+                                    <option value="just-looking">Just looking</option>
+                                </select>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input type="checkbox" id="veteran-checkbox" class="mr-2">
+                                <label for="veteran-checkbox" class="text-sm text-slate-700">U.S. Military Veteran</label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-navy text-white py-3 rounded-lg font-semibold hover:bg-brand-tan transition-colors">
+                                Schedule Tour
+                            </button>
+                        </form>
+
+                        <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600">🏞️</span>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-green-800">Waterfront Property</h4>
+                                    <p class="text-xs text-green-700 mt-1">Big Cypress Bayou - premier East Texas fishing and recreation</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-slate-600">Call for immediate assistance</p>
+                            <a href="tel:+19038660000" class="text-brand-navy font-semibold hover:text-brand-tan">
+                                (903) 866-0000
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neighborhood Information -->
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Historic Jefferson District</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Schools -->
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Marion County Schools</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold">Jefferson Elementary/Middle</span>
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">K-8</span>
+                                </div>
+                                <div class="text-sm text-slate-600 mb-2">5-minute drive • Community focus</div>
+                                <div class="w-full bg-slate-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 78%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold">Big Cypress Elementary</span>
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">Elementary</span>
+                                </div>
+                                <div class="text-sm text-slate-600 mb-2">8-minute drive • Award-winning</div>
+                                <div class="w-full bg-slate-200 rounded-full h-2">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold">Jefferson High</span>
+                                    <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs">High School</span>
+                                </div>
+                                <div class="text-sm text-slate-600 mb-2">6-minute drive • Academic excellence</div>
+                                <div class="w-full bg-slate-200 rounded-full h-2">
+                                    <div class="bg-purple-500 h-2 rounded-full" style="width: 82%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold">Panola College</span>
+                                    <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded text-xs">Community College</span>
+                                </div>
+                                <div class="text-sm text-slate-600 mb-2">30-minute drive • Technical programs</div>
+                                <div class="text-xs text-slate-500">Focus on healthcare and energy careers</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Neighborhood Features -->
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Historic Jefferson Amenities</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">🚤</div>
+                                <div class="font-semibold">Big Cypress Bayou Access</div>
+                                <div class="text-sm text-slate-600">World-class fishing</div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">🏛️</div>
+                                <div class="font-semibold">Historic Sites</div>
+                                <div class="text-sm text-slate-600">18th century landmarks</div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">🛍️</div>
+                                <div class="font-semibold">Downtown Jefferson</div>
+                                <div class="text-sm text-slate-600">Antiques and shopping</div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">🏞️</div>
+                                <div class="font-semibold">State Park Access</div>
+                                <div class="text-sm text-slate-600">Trail systems nearby</div>
+                            </div>
+                        </div>
+
+                        <!-- Transportation -->
+                        <div class="mt-6 bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-brand-navy mb-2">East Texas River Country</h4>
+                            <ul class="text-sm text-slate-600 space-y-1">
+                                <li>• US-59: Major north-south corridor</li>
+                                <li>• Jefferson Airport: Private aircraft access</li>
+                                <li>• Sabine River: Louisiana state line</li>
+                                <li>• Historic preservation tax incentives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Renovation Story -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Preserving East Texas Waterfront Heritage</h2>
+                    <p class="text-lg text-slate-600">A cabin that embodies the spirit of East Texas river life</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">🏞️</span>
+                        </div>
+                        <h3 class="font-bold text-brand-navy mb-2">River Roots</h3>
+                        <p class="text-sm text-slate-600">Built in the early 1900s as a river fishing camp, this cabin has served generations of East Texas families.</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">♻️</span>
+                        </div>
+                        <h3 class="font-bold text-brand-navy mb-2">Sustainable Restoration</h3>
+                        <p class="text-sm text-slate-600">Updated with modern amenities while preserving the authentic character and environmental harmony.</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">🎣</span>
+                        </div>
+                        <h3 class="font-bold text-brand-navy mb-2">Active Recreation</h3>
+                        <p class="text-sm text-slate-600">Perfect balance of cozy cabin living and access to premier East Texas fishing, boating, and outdoor activities.</p>
+                    </div>
+                </div>
+
+                <div class="bg-cyan-50 rounded-lg p-8">
+                    <blockquote class="text-lg text-slate-700 italic mb-4">
+                        "This cabin isn't just a home—it's a gateway to the real East Texas. From our porch, you can hear the gentle current of Big Cypress Bayou
+                        and watch the sunset paint the cypress trees. It's authentic Texas river country living."
+                    </blockquote>
+                    <cite class="text-sm text-slate-500">- Longtime River Guide, Jefferson Resident</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Properties -->
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Authentic East Texas Living</h2>
+                    <p class="text-lg text-slate-600">Homes that capture the spirit of our Texas heritage</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="h-48 bg-slate-300 flex items-center justify-center">
+                            <span class="text-4xl">🏠</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Tyler Ranch Home</h3>
+                            <p class="text-slate-600 text-sm mb-3">Classic family ranch with modern renovations</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-lg">$1,800/mo</span>
+                                <a href="tyler-ranch-home.html" class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="h-48 bg-slate-300 flex items-center justify-center">
+                            <span class="text-4xl">🏛️</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Longview Victorian</h3>
+                            <p class="text-slate-600 text-sm mb-3">Historic home with modern updates in downtown</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-lg">$1,950/mo</span>
+                                <a href="longview-victorian.html" class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="../projects.html" class="px-6 py-3 bg-brand-navy text-white rounded-lg font-semibold hover:bg-brand-tan transition-colors">
+                        View All East Texas Properties
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Properties 4 Creation</h3>
+                    <p class="text-slate-300 text-sm">
+                        Connecting East Texas families with quality homes through fair market practices and veteran support.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="../projects.html" class="hover:text-brand-sage transition-colors">East Texas Properties</a></li>
+                        <li><a href="../resources.html" class="hover:text-brand-sage transition-colors">Section 8 Support</a></li>
+                        <li><a href="get-started.html" class="hover:text-brand-sage transition-colors">Fair Cash Offers</a></li>
+                        <li><a href="renovations.html" class="hover:text-brand-sage transition-colors">Historic Renovations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="../resources.html" class="hover:text-brand-sage transition-colors">Section 8 Guide</a></li>
+                        <li><a href="../insights.html" class="hover:text-brand-sage transition-colors">East Texas Market Insights</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-sage transition-colors">FAQ</a></li>
+                        <li><a href="../contact.html" class="hover:text-brand-sage transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p>📞 (903) 866-0000</p>
+                        <p>💼 jefferson@properties4creation.com</p>
+                        <p>📍 100 N Polk St, Jefferson, TX 75657</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; 2025 Properties 4 Creation. Serving East Texas families fairly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- P4C Interactive Libraries -->
+    <script src="../static-html.js"></script>
+    <script src="../static-navigation.js"></script>
+    <script src="../static-state.js"></script>
+    <script src="../static-search.js"></script>
+    <script src="../static-maps.js"></script>
+    <script src="../static-forms.js"></script>
+    <script src="../static-modals.js"></script>
+
+    <!-- Property Page Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle property inquiry form
+            const inquiryForm = document.getElementById('property-inquiry');
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! We\'ll contact you within 24 hours to schedule a tour of this beautiful waterfront property.');
+                });
+            }
+
+            // Initialize P4C if available
+            if (window.P4C && window.P4C.init) {
+                P4C.init();
+            }
+        });
+    </script>
+
+    <!-- Initialize P4C -->
+    <script>
+        // Initialize all interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.P4C && window.P4C.init) {
+                P4C.init();
+            }
+        });
+    </script>
+</body>
+</html>
