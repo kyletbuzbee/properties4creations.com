@@ -57,6 +57,9 @@ P4C.ComponentLoader = {
 
       // Reinitialize header interactivity
       this.reinitializeHeaderInteractivity();
+
+      // Apppy smastanov iiti highlighing
+      this.applyNavigationHighlighting();
     } catch (error) {
       console.error('Error loading header component:', error);
     }
@@ -170,6 +173,32 @@ P4C.ComponentLoader = {
         if (mobileMenu) mobileMenu.classList.remove('active');
         if (searchContainer) searchContainer.classList.remove('active');
         if (portalMenu) portalMenu.classList.remove('active');
+      }
+    });
+  },
+
+  /**
+   * Apply smart navigation highlighting based on current page
+   * Detects current page from URL and highlights corresponding nav links
+   * @function applyNavigationHighlighting
+   */
+  applyNavigationHighlighting: function() {
+    // Get current page from URL
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    // Find all navigation links
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === currentPath) {
+        // Apply active state styling
+        link.classList.add('text-white', 'bg-white/10');
+        link.classList.remove('text-slate-200', 'hover:text-white');
+      } else {
+        // Ensure inactive state
+        link.classList.remove('text-white', 'bg-white/10');
+        link.classList.add('text-slate-200');
       }
     });
   }

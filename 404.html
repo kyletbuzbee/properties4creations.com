@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Properties 4 Creation</title>
+    <meta name="description" content="Sorry, we couldn't find that page. But we can help you find a home.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Design System CSS (MUST be first) -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/components.css" media="print" onload="this.media='all'">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://properties4creations.com/404#webpage",
+      "name": "Page Not Found - Properties 4 Creation",
+      "description": "Sorry, the page you're looking for doesn't exist. Let us help you find veteran housing.",
+      "url": "https://properties4creations.com/404.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://properties4creations.com#website",
+        "name": "Properties 4 Creation",
+        "url": "https://properties4creations.com"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Veteran Housing Support",
+        "description": "Helping veterans find sanctuary and support"
+      }
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B1120',
+                            wood: '#C28E5A',
+                            walnut: '#8B5E3C',
+                            beige: '#F5F5F0',
+                            surface: '#FFFFFF',
+                            slate: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .compass-spin {
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-brand-beige flex items-center justify-center min-h-screen text-center px-4">
+    <div class="max-w-md">
+        <!-- Compass Icon -->
+        <div class="w-24 h-24 mx-auto mb-8 relative">
+            <img src="public/images/icons/036-patriotism.png" alt="" class="w-full h-full opacity-20 compass-spin" />
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center">
+                    <span class="text-2xl">🧭</span>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-4">
+            We can't find that page.
+        </h1>
+
+        <p class="text-lg text-slate-600 mb-8">
+            But we can help you find a home. Every path leads to sanctuary when you're on the right journey.
+        </p>
+
+        <div class="space-y-4">
+            <a href="index.html" class="block w-full px-8 py-4 bg-gradient-to-r from-brand-wood to-brand-navy text-white rounded-xl font-bold text-lg shadow-wood hover:shadow-xl transition-all transform hover:scale-105">
+                Return Home
+            </a>
+
+            <a href="projects.html" class="block w-full px-8 py-4 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-xl font-semibold transition-all">
+                Browse Available Homes
+            </a>
+
+            <a href="get-started.html" class="block w-full px-8 py-4 border-2 border-brand-wood text-brand-wood hover:bg-brand-wood hover:text-white rounded-xl font-semibold transition-all">
+                Sell Your Home
+            </a>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-slate-200">
+            <p class="text-sm text-slate-500">
+                Need immediate help? Call us at
+                <a href="tel:+19036470000" class="text-brand-wood hover:text-brand-navy font-semibold">
+                    (903) 647-0000
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- P4C Interactive Libraries for consistent behavior -->
+    <script defer src="components/component-loader.js"></script>
+    <script defer src="accessibility-enhanced.js"></script>
+</body>
+</html>
