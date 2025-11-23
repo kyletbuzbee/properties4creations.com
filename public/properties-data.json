@@ -3,86 +3,75 @@
     "id": "1",
     "title": "Downtown Austin Renovation",
     "url": "projects/downtown-austin-renovation.html",
-    "description": "Section 8 ready property with veteran priority pricing in downtown Austin",
-    "story_description": "This beautifully renovated condo in the heart of downtown Austin offers the perfect blend of urban convenience and veteran-friendly comfort. With restored hardwood floors and a modern kitchen, it's more than just a place to live—it's a fresh start in a vibrant community where veterans can rebuild their lives surrounded by supportive neighbors and easy access to veteran services.",
-    "location": "Downtown Austin, TX",
+    "description": "Section 8 ready property with veteran priority pricing.",
+    "story_description": "This renovated condo offers the perfect blend of urban convenience and veteran-friendly comfort. With restored hardwood floors and a modern kitchen, it's a fresh start in a vibrant community.",
+    "location": "Tyler, TX",
     "price": "$1,200/mo",
     "bedrooms": "2",
     "bathrooms": "2",
     "sqft": "1,200",
     "type": "project",
-    "tags": ["Section 8 Ready", "Veteran Priority", "Modern Kitchen", "Hardwood Floors", "Pet Friendly"],
+    "tags": ["Section 8 Ready", "Veteran Priority", "Modern Kitchen"],
     "images": [
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+      "public/images/properties/before-after/projects_finished_wood_deck.jpg"
     ],
     "renovation_standards": [
-      "HVAC System: Fully inspected and certified for efficiency",
-      "Roof: Complete replacement with 30-year warranty",
-      "Electrical: Updated to modern standards with GFCI outlets",
-      "Plumbing: New fixtures and re-piped where necessary"
+      "HVAC System: Fully inspected",
+      "Roof: Complete replacement"
     ],
     "trust_badges": [
-      "Veteran Priority Pricing",
-      "Section 8 Voucher Accepted",
-      "ADA Accessible Bathrooms",
-      "Community Safety Certified"
+      "Veteran Priority",
+      "Section 8 Voucher"
     ]
   },
   {
     "id": "2",
-    "title": "South Congress Lofts",
-    "url": "projects/south-congress-lofts.html",
-    "description": "Historic building conversion with modern amenities in downtown Austin",
-    "story_description": "Transformed from a historic warehouse into luxurious loft living, this South Congress property understands that veterans need spaces that respect their history while providing modern comforts. The mix of original brick work and contemporary finishes creates a unique environment where service members can feel both honored for their past and hopeful for their future.",
-    "location": "South Congress, Austin, TX",
-    "price": "$1,800/mo",
+    "title": "Historic Jefferson Cottage",
+    "url": "projects/jefferson-riverfront.html",
+    "description": "Historic building conversion with modern amenities.",
+    "story_description": "Transformed from a historic home into comfortable living, this property understands that veterans need spaces that respect history while providing modern comforts.",
+    "location": "Jefferson, TX",
+    "price": "$1,100/mo",
     "bedrooms": "3",
     "bathrooms": "2",
     "sqft": "1,800",
     "type": "project",
-    "tags": ["Market Rate", "Historic Building", "Pet Friendly", "Bike Storage"],
+    "tags": ["Market Rate", "Historic Building", "Pet Friendly"],
     "images": [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+      "public/images/properties/before-after/projects_finished_wood_wall.jpg"
     ],
     "renovation_standards": [
-      "HVAC System: Central air conditioning with individual climate control",
-      "Roof: Maintained historic exterior with modern insulation",
-      "Electrical: Full renovation to code with dedicated circuits",
-      "Plumbing: Stainless steel fixtures throughout"
+      "HVAC System: Central Air",
+      "Electrical: Full renovation"
     ],
     "trust_badges": [
-      "Pet-Friendly Community",
-      "Historic Preservation Standards",
-      "Secure Parking Available"
+      "Pet-Friendly",
+      "Historic Preservation"
     ]
   },
   {
     "id": "3",
-    "title": "Riverside Gardens",
-    "url": "projects/riverside-gardens.html",
-    "description": "Waterfront garden apartment near Lady Bird Lake",
-    "story_description": "Nestled by the peaceful waters of Lady Bird Lake, Riverside Gardens provides veterans with a serene sanctuary to heal and rebuild. The lush green spaces and water views create a therapeutic environment that supports mental wellness, while the proximity to downtown provides easy access to veteran medical facilities and community resources.",
-    "location": "Near Lady Bird Lake, Austin, TX",
+    "title": "Longview Garden Home",
+    "url": "projects/longview-victorian.html",
+    "description": "Peaceful garden apartment near medical district.",
+    "story_description": "Nestled in a quiet neighborhood, this home provides veterans with a serene sanctuary to heal and rebuild. Lush green spaces create a therapeutic environment.",
+    "location": "Longview, TX",
     "price": "$950/mo",
     "bedrooms": "1",
     "bathrooms": "1",
     "sqft": "850",
     "type": "project",
-    "tags": ["Section 8 Ready", "Waterfront", "Garden Views", "Patio Access", "Laundry Facility"],
+    "tags": ["Section 8 Ready", "Garden Views", "Laundry Facility"],
     "images": [
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+      "public/images/properties/before-after/patio_wood.jpg"
     ],
     "renovation_standards": [
-      "HVAC System: Energy-efficient window units with ozone filtration",
-      "Roof: Multi-level building with regularly maintained systems",
-      "Electrical: Updated panel and wiring throughout complex",
-      "Plumbing: Copper piping with modern water-saving fixtures"
+      "HVAC System: Energy-efficient",
+      "Plumbing: Modern fixtures"
     ],
     "trust_badges": [
-      "Section 8 Voucher Accepted",
-      "Waterfront Location",
-      "Community Garden Access",
-      "On-Site Laundry Facilities"
+      "Section 8 Voucher",
+      "Community Garden"
     ]
   }
 ]
