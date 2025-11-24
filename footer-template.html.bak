@@ -87,7 +87,7 @@
                 <div class="flex items-center space-x-2 mt-4 md:mt-0">
                     <span class="text-slate-400">Made with</span>
                     <span class="text-red-500">❤️</span>
-                    <span class="text-slate-400">for families & veterans</span>
+                    <span class="text-slate-400">for veterans</span>
                 </div>
             </div>
         </div>
@@ -201,4 +201,3 @@
         });
     }
 </script>
-

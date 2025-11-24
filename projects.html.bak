@@ -109,7 +109,7 @@
                                             <span class="font-semibold text-brand-navy">${prop.bathrooms}</span> Bath •
                                             <span class="font-semibold text-brand-navy">${prop.sqft}</span> sqft
                                         </div>
-                                        <a href="contact.html" class="btn-base btn-secondary btn-sm">Browse Affordable Homes for Families & Veterans</a>
+                                        <a href="contact.html" class="btn-base btn-secondary btn-sm">Schedule Visit</a>
                                     </div>
                                 </div>
                             </article>
@@ -132,4 +132,3 @@
     <script src="accessibility-enhanced.js"></script>
 </body>
 </html>
-

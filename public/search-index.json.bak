@@ -4,7 +4,7 @@
     "title": "Downtown Tyler Renovation",
     "type": "project",
     "url": "projects/downtown-tyler-renovation.html",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+    "description": "Section 8 ready property with veteran priority pricing in downtown Tyler. This beautifully renovated home offers the perfect blend of community convenience and veteran-friendly comfort with restored hardwood floors and modern kitchen.",
     "tags": ["Section 8 Ready", "Veteran Priority", "Modern Kitchen", "Hardwood Floors", "Pet Friendly"],
     "location": "Downtown Tyler, TX",
     "price": "$1,200/mo",
@@ -30,7 +30,7 @@
     "title": "Jefferson Riverside Gardens",
     "type": "project",
     "url": "projects/jefferson-riverside-gardens.html",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+    "description": "Waterfront garden apartment near Big Cypress Bayou. Nestled by peaceful waters providing a serene sanctuary for veterans with therapeutic environment and access to veteran medical facilities.",
     "tags": ["Section 8 Ready", "Waterfront", "Garden Views", "Patio Access", "Laundry Facility"],
     "location": "Near Big Cypress Bayou, Jefferson, TX",
     "price": "$950/mo",
@@ -43,7 +43,7 @@
     "title": "East Texas Veteran Housing",
     "type": "resource",
     "url": "resources.html#veteran-housing",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+    "description": "Specialized housing assistance programs for U.S. military veterans in East Texas",
     "location": "East Texas",
     "tags": ["Veterans", "Housing Assistance", "Section 8"]
   },
@@ -89,7 +89,7 @@
     "title": "Available East Texas Properties",
     "type": "page",
     "url": "projects.html",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+    "description": "Browse our available family homes and veteran housing in East Texas with emotional stories and community focus",
     "location": "East Texas, TX",
     "tags": ["Properties", "Homes", "Veteran Sanctuary", "Section 8", "Story-Focused"]
   },
@@ -98,7 +98,7 @@
     "title": "Veteran Housing Resources",
     "type": "page",
     "url": "resources.html",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+    "description": "Comprehensive resources for veteran housing assistance and benefits",
     "location": "Texas",
     "tags": ["Veterans", "Resources", "Benefits"]
   },
@@ -116,7 +116,7 @@
     "title": "Fair Cash Offers for Veterans",
     "type": "resource",
     "url": "get-started.html",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+    "description": "Get fair market value offers for your property in East Texas with veteran-owned business support",
     "location": "East Texas, TX",
     "tags": ["Cash Offers", "Fair Pricing", "Sell Property", "Veteran Owned"]
   },
@@ -125,9 +125,8 @@
     "title": "Renovation Standards Transparency",
     "type": "page",
     "url": "transparency.html",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+    "description": "View our complete renovation standards checklist and trust signals for veteran housing",
     "location": "East Texas",
     "tags": ["Transparency", "Standards", "HVAC", "Roof", "Electrical", "Plumbing"]
   }
 ]
-

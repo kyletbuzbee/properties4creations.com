@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyler Ranch Home - East Texas Family Property | Properties 4 Creation</title>
-    <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+    <meta name="description" content="Beautiful 3BR/2BA ranch home in Tyler, Texas. Perfect family home with Section 8 eligibility. 1.5 acres with schools nearby. Fair market pricing.">
 
     <!-- Structured Data for Property Listing -->
     <script type="application/ld+json">
@@ -605,4 +605,3 @@
     </script>
 </body>
             if (window.P4C && window.P4C.init) {
-

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | Properties 4 Creation</title>
-    <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+    <meta name="description" content="Sorry, we couldn't find that page. But we can help you find a home.">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Design System CSS (MUST be first) -->
@@ -18,7 +18,7 @@
       "@type": "WebPage",
       "@id": "https://properties4creations.com/404#webpage",
       "name": "Page Not Found - Properties 4 Creation",
-      "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+      "description": "Sorry, the page you're looking for doesn't exist. Let us help you find veteran housing.",
       "url": "https://properties4creations.com/404.html",
       "isPartOf": {
         "@type": "WebSite",
@@ -29,7 +29,7 @@
       "about": {
         "@type": "Thing",
         "name": "Veteran Housing Support",
-        "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused."
+        "description": "Helping veterans find sanctuary and support"
       }
     }
     </script>
@@ -132,4 +132,3 @@
     <script defer src="accessibility-enhanced.js"></script>
 </body>
 </html>
-

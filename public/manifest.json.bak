@@ -1,7 +1,7 @@
 {
-  "name": "Properties 4 Creations - Affordable Housing for Families & Veterans",
+  "name": "Properties 4 Creations - Veteran Housing Solutions",
   "short_name": "Properties 4 Creations",
-  "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+  "description": "Expert renovations and housing solutions for veterans. Get cash offers for properties and connect veterans with Section 8 eligible housing.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -102,4 +102,3 @@
     }
   ]
 }
-

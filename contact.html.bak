@@ -25,7 +25,7 @@
             <div class="banner-content">
                 <div class="max-w-6xl mx-auto px-4 text-center">
                     <h1 class="text-4xl md:text-5xl font-heading font-bold text-white drop-shadow-lg">
-                        Get in Touch <span class="block text-brand-wood">Affordable Homes for Families & Veterans</span>
+                        Get in Touch <span class="block text-brand-wood">We're Here to Help</span>
                     </h1>
                     <p class="text-lg text-slate-200 leading-relaxed mt-6 max-w-3xl mx-auto">
                         We're here to help East Texas veterans, families, and property sellers. Reach out for fair offers, housing support, or renovation questions. Veteran-owned, veteran-focused.
@@ -59,4 +59,3 @@
     <script src="components/component-loader.js"></script>
 </body>
 </html>
-

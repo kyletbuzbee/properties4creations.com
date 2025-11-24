@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Properties 4 Creations</title>
-    <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+    <meta name="description" content="Privacy policy for Properties 4 Creations - how we collect, use, and protect your information.">
 
     <!-- Design System CSS (MUST be first) -->
     <link rel="stylesheet" href="css/design-tokens.css">
@@ -101,4 +101,3 @@
     <script src="accessibility-enhanced.js"></script>
 </body>
 </html>
-
