@@ -642,6 +642,22 @@ select {
 }
 
 /* ============================================================================
+ * LOGO STYLING
+ * ============================================================================ */
+
+.logo-style {
+  @apply w-12 h-12 rounded-lg overflow-hidden ring-2 ring-brand-wood ring-offset-2 ring-offset-brand-navy shadow-lg transform transition-all duration-300;
+}
+
+.logo-style img {
+  @apply w-full h-full object-cover bg-white;
+}
+
+.logo-style:hover {
+  @apply scale-110;
+}
+
+/* ============================================================================
  * RESPONSIVE ADJUSTMENTS
  * ============================================================================ */
 

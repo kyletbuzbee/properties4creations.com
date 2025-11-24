@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://properties4creations.com/sitemap.xml

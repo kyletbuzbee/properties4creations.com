@@ -127,39 +127,17 @@
 
         .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 475px) {
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body class="bg-brand-beige">
-    <!-- Header -->
-    <header id="main-header" class="fixed top-0 w-full z-50 bg-brand-navy text-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="../index.html" class="text-xl font-bold text-white hover:text-brand-sage transition-colors">
-                        Properties 4 Creation
-                    </a>
-                </div>
-
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html" class="text-white hover:text-brand-sage transition-colors">Home</a>
-                    <a href="../projects.html" class="text-white hover:text-brand-sage transition-colors font-semibold">Projects</a>
-                    <a href="../resources.html" class="text-white hover:text-brand-sage transition-colors">Resources</a>
-                    <a href="../insights.html" class="text-white hover:text-brand-sage transition-colors">Insights</a>
-                    <a href="../about.html" class="text-white hover:text-brand-sage transition-colors">About</a>
-                    <a href="../contact.html" class="text-white hover:text-brand-sage transition-colors">Contact</a>
-                </nav>
-
-                <div class="flex items-center space-x-4">
-                    <button id="search-toggle" class="hidden md:block px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-colors text-sm">
-                        Search (⌘K)
-                    </button>
-                    <button id="portal-toggle" class="px-4 py-2 bg-brand-sage hover:bg-brand-sage/80 text-white rounded-lg transition-colors">
-                        Portals
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Header Container -->
+    <div id="header-container"></div>
 
     <!-- Main Content -->
     <main class="pt-16">
@@ -607,51 +585,14 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-brand-navy text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="font-bold text-lg mb-4">Properties 4 Creation</h3>
-                    <p class="text-slate-300 text-sm">
-                        Connecting East Texas families with quality homes through fair market practices and veteran support.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Services</h4>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li><a href="../projects.html" class="hover:text-brand-sage transition-colors">East Texas Properties</a></li>
-                        <li><a href="../resources.html" class="hover:text-brand-sage transition-colors">Section 8 Support</a></li>
-                        <li><a href="get-started.html" class="hover:text-brand-sage transition-colors">Fair Cash Offers</a></li>
-                        <li><a href="renovations.html" class="hover:text-brand-sage transition-colors">Renovations</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li><a href="../resources.html" class="hover:text-brand-sage transition-colors">Section 8 Guide</a></li>
-                        <li><a href="../insights.html" class="hover:text-brand-sage transition-colors">East Texas Market Insights</a></li>
-                        <li><a href="faq.html" class="hover:text-brand-sage transition-colors">FAQ</a></li>
-                        <li><a href="../contact.html" class="hover:text-brand-sage transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Contact</h4>
-                    <div class="space-y-2 text-sm text-slate-300">
-                        <p>📞 (903) 647-0000</p>
-                        <p>💼 tyler@properties4creation.com</p>
-                        <p>📍 123 S Broadway Ave, Tyler, TX 75701</p>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
-                <p>&copy; 2025 Properties 4 Creation. Serving East Texas families fairly.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
-    <!-- P4C Interactive Libraries - Bundled for Performance -->
-    <script src="../app.js"></script>
+    <!-- Component Loader - Dynamically loads header and footer -->
+    <script src="components/component-loader.js"></script>
+
+    <!-- Accessibility Enhancements - Keyboard navigation and focus management -->
+    <script src="accessibility-enhanced.js"></script>
 
     <!-- Property Page Script -->
     <script>

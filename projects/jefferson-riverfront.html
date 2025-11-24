@@ -4,7 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jefferson Riverfront - Bayou Living at Big Cypress | Properties 4 Creation</title>
+    <link rel="canonical" href="https://properties4creations.com/projects/jefferson-riverfront.html">
     <meta name="description" content="Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson. Waterfront living with Section 8 eligibility and waterfront recreation access.">
+
+    <!-- Structured Data for Property Listing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SingleFamilyResidence",
+      "name": "Jefferson Riverfront - Charming 2BR Cabin",
+      "description": "Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson. Waterfront living with Section 8 eligibility and waterfront recreation access.",
+      "url": "https://properties4creations.com/projects/jefferson-riverfront.html",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jefferson",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "32.7571",
+        "longitude": "-94.3452"
+      },
+      "numberOfRooms": 4.5,
+      "numberOfBedrooms": 2,
+      "numberOfBathroomsTotal": 1.5,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 1200,
+        "unitCode": "FTK"
+      },
+      "lotSize": {
+        "@type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "AC"
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Section 8 Approved",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Big Cypress Bayou Access",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Historic District Location",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Waterfront Recreation",
+          "value": true
+        }
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://properties4creations.com/contact.html",
+          "inLanguage": "en-US",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "LodgingReservation",
+          "lodgingUnitType": "Historic Waterfront Cabin"
+        }
+      },
+      "publisher": {
+        "@type": "RealEstateAgent",
+        "name": "Properties 4 Creation",
+        "telephone": "(903) 866-0000",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jefferson",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        }
+      }
+    }
+    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,6 +128,12 @@
 
         .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 475px) {
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body class="bg-brand-beige">
@@ -420,9 +511,8 @@
         </section>
     </main>
 
-    <!-- Footer -->
-<!-- Footer Container -->
-<div id="footer-container"></div>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
     <!-- P4C Interactive Libraries -->
     <script src="components/component-loader.js"></script>

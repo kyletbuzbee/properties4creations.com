@@ -1,77 +1,94 @@
 [
   {
-    "id": "1",
-    "title": "Downtown Austin Renovation",
-    "url": "projects/downtown-austin-renovation.html",
-    "description": "Section 8 ready property with veteran priority pricing.",
-    "story_description": "This beautifully renovated condo offers the perfect blend of urban convenience and veteran-friendly comfort. With restored hardwood floors and a modern kitchen, it's a fresh start.",
+    "id": "tyler-ranch-home",
+    "title": "Tyler Ranch Home",
     "location": "Tyler, TX",
-    "price": "$1,200/mo",
-    "bedrooms": "2",
-    "bathrooms": "2",
-    "sqft": "1,200",
-    "type": "project",
-    "tags": ["Section 8 Ready", "Veteran Priority", "Modern Kitchen"],
-    "images": [
-      "public/images/properties/before-after/projects_finished_wood_deck.jpg"
-    ],
-    "renovation_standards": [
-      "HVAC System: Fully inspected",
-      "Roof: Complete replacement"
-    ],
-    "trust_badges": [
-      "Veteran Priority",
-      "Section 8 Voucher"
-    ]
+    "price": {
+      "amount": 1100,
+      "currency": "USD",
+      "period": "month",
+      "formatted": "$1,100/mo"
+    },
+    "availability": "available",
+    "datePosted": "2025-11-15",
+    "featured": true,
+    "lastUpdated": "2025-11-23",
+    "story_description": "Newly renovated 3BR home with quartz counters and new HVAC. Section 8 accepted.",
+    "tags": ["Section 8 Ready", "Veteran Priority"],
+    "trust_badges": ["Certified Renovation", "ADA Compliant", "Veteran-Owned"],
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "sqft": 1400,
+    "images": ["public/images/properties/tyler_ranch.webp"],
+    "url": "tyler-ranch.html"
   },
   {
-    "id": "2",
-    "title": "South Congress Lofts",
-    "url": "projects/south-congress-lofts.html",
-    "description": "Historic building conversion with modern amenities.",
-    "story_description": "Transformed from a historic warehouse into luxurious loft living, this property understands that veterans need spaces that respect their history while providing modern comforts.",
-    "location": "South Congress, Austin, TX",
-    "price": "$1,800/mo",
-    "bedrooms": "3",
-    "bathrooms": "2",
-    "sqft": "1,800",
-    "type": "project",
-    "tags": ["Market Rate", "Historic Building", "Pet Friendly"],
-    "images": [
-      "public/images/properties/before-after/projects_finished_wood_wall.jpg"
-    ],
-    "renovation_standards": [
-      "HVAC System: Central Air",
-      "Roof: Maintained historic exterior"
-    ],
-    "trust_badges": [
-      "Pet-Friendly",
-      "Historic Preservation"
-    ]
+    "id": "longview-victorian",
+    "title": "Longview Victorian",
+    "location": "Longview, TX",
+    "price": {
+      "amount": 1300,
+      "currency": "USD",
+      "period": "month",
+      "formatted": "$1,300/mo"
+    },
+    "availability": "available",
+    "datePosted": "2025-11-10",
+    "featured": true,
+    "lastUpdated": "2025-11-23",
+    "story_description": "Historic Victorian home with modern updates and spacious rooms. Fully renovated kitchen and bathrooms.",
+    "tags": ["Market Rate", "Historic Home", "Pet Friendly"],
+    "trust_badges": ["Historic Preservation", "Pet-Friendly", "Modern Amenities"],
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "sqft": 2200,
+    "images": ["public/images/properties/longview_victorian.webp"],
+    "url": "longview-victorian.html"
   },
   {
-    "id": "3",
-    "title": "Riverside Gardens",
-    "url": "projects/riverside-gardens.html",
-    "description": "Waterfront garden apartment near Lady Bird Lake.",
-    "story_description": "Nestled by the peaceful waters of Lady Bird Lake, Riverside Gardens provides veterans with a serene sanctuary to heal and rebuild. Lush green spaces create a therapeutic environment.",
-    "location": "Near Lady Bird Lake, Austin, TX",
-    "price": "$950/mo",
-    "bedrooms": "1",
-    "bathrooms": "1",
-    "sqft": "850",
-    "type": "project",
-    "tags": ["Section 8 Ready", "Waterfront", "Garden Views"],
-    "images": [
-      "public/images/properties/before-after/patio_wood.jpg"
-    ],
-    "renovation_standards": [
-      "HVAC System: Energy-efficient",
-      "Plumbing: Copper piping"
-    ],
-    "trust_badges": [
-      "Section 8 Voucher",
-      "Waterfront Location"
-    ]
+    "id": "jefferson-riverfront",
+    "title": "Jefferson Riverfront",
+    "location": "Jefferson, TX",
+    "price": {
+      "amount": 900,
+      "currency": "USD",
+      "period": "month",
+      "formatted": "$900/mo"
+    },
+    "availability": "available",
+    "datePosted": "2025-11-20",
+    "featured": false,
+    "lastUpdated": "2025-11-23",
+    "story_description": "Peaceful apartment near the river with stunning views. ADA accessible and Section 8 approved.",
+    "tags": ["Section 8 Ready", "Waterfront", "ADA Accessible"],
+    "trust_badges": ["Section 8 Voucher", "ADA Compliant", "Waterfront Views"],
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "sqft": 950,
+    "images": ["public/images/properties/jefferson_riverfront.webp"],
+    "url": "jefferson-riverfront.html"
+  },
+  {
+    "id": "marshall-townhome",
+    "title": "Marshall Townhome",
+    "location": "Marshall, TX",
+    "price": {
+      "amount": 1050,
+      "currency": "USD",
+      "period": "month",
+      "formatted": "$1,050/mo"
+    },
+    "availability": "pending",
+    "datePosted": "2025-11-12",
+    "featured": false,
+    "lastUpdated": "2025-11-23",
+    "story_description": "Modern townhome in quiet neighborhood. Energy efficient with pool access and community amenities.",
+    "tags": ["Section 8 Ready", "Community Amenities", "Energy Efficient"],
+    "trust_badges": ["Energy Star Certified", "Community Pool", "Modern Construction"],
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sqft": 1200,
+    "images": ["public/images/properties/marshall_townhome.webp"],
+    "url": "marshall-townhome.html"
   }
 ]

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Properties 4 Creations</title>
+    <meta name="description" content="Terms of service for Properties 4 Creations - terms and conditions for using our housing services.">
+
+    <!-- Design System CSS (MUST be first) -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B1120',
+                            wood: '#C28E5A',
+                            walnut: '#8B5E3C',
+                            beige: '#F5F5F0',
+                            surface: '#FFFFFF',
+                            slate: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'wood': '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
+                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-beige">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Page Title Banner -->
+        <section class="page-title-banner">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1>Terms of Service</h1>
+                <div class="mt-6 max-w-3xl mx-auto">
+                    <p class="text-lg md:text-xl text-slate-200 leading-relaxed">
+                        Terms and conditions for using Properties 4 Creations housing services.
+                    </p>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mt-6">
+                        <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+                        <span class="text-white font-semibold text-sm">Last Updated: November 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Content -->
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="prose prose-lg max-w-none">
+                    <h2>Acceptance of Terms</h2>
+                    <p>By accessing and using Properties 4 Creations services, you accept and agree to be bound by these terms and conditions.</p>
+
+                    <h2>Services Description</h2>
+                    <p>Properties 4 Creations provides housing renovation, property management, and fair market housing assistance services to veterans and eligible families.</p>
+
+                    <h2>User Responsibilities</h2>
+                    <p>Users must provide accurate information when requesting housing assistance. All information provided will be handled confidentially and used solely for housing assistance purposes.</p>
+
+                    <h2>Fair Housing Compliance</h2>
+                    <p>We are committed to fair housing practices and comply with all federal, state, and local fair housing laws. We do not discriminate based on race, color, religion, sex, familial status, national origin, or disability.</p>
+
+                    <h2>Limitation of Liability</h2>
+                    <p>Properties 4 Creations provides services on an "as is" basis and makes no warranties regarding housing availability or suitability.</p>
+
+                    <h2>Governing Law</h2>
+                    <p>These terms are governed by the laws of the State of Texas. Any disputes will be resolved in the appropriate Texas jurisdiction.</p>
+
+                    <h2>Contact Information</h2>
+                    <p>For questions about these terms, please contact us at contact@properties4creations.com.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Interactive JavaScript Libraries -->
+    <script src="components/component-loader.js"></script>
+    <script src="accessibility-enhanced.js"></script>
+</body>
+</html>

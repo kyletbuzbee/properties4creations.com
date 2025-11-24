@@ -16,25 +16,82 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SingleFamilyResidence",
-      "name": "Tyler Ranch Home",
-      "description": "Newly renovated 3BR home, Section 8 accepted. Features quartz counters and new HVAC.",
-      "numberOfRooms": 3,
-      "occupancy": {
-        "@type": "QuantitativeValue",
-        "minValue": 1,
-        "maxValue": 5
+      "@type": "WebSite",
+      "name": "Properties 4 Creation",
+      "url": "https://properties4creations.com",
+      "description": "Enterprise-grade veteran housing solutions with Section 8 ready properties in East Texas. Fair market cash offers, professional renovations, and veteran priority access.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Properties 4 Creation",
+        "url": "https://properties4creations.com",
+        "logo": "https://properties4creations.com/public/images/logo/brand_logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-903-647-0000",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "sameAs": []
       },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Section 8 Approved", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Veteran Priority", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "New HVAC", "value": true }
-      ],
+      "inLanguage": "en-US",
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Properties 4 Creation"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Properties 4 Creation",
+      "url": "https://properties4creations.com",
+      "logo": "https://properties4creations.com/public/images/logo/brand_logo.png",
+      "description": "Veteran-owned housing renovation and cash offer specialists serving Section 8 families and veterans throughout East Texas.",
+      "foundingDate": "2023",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-903-647-0000",
+        "contactType": "customer service",
+        "availableLanguage": "English",
+        "contactOption": "TollFree"
+      },
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Tyler",
-        "addressRegion": "TX"
-      }
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tyler"
+        },
+        {
+          "@type": "City",
+          "name": "Longview"
+        },
+        {
+          "@type": "City",
+          "name": "Jefferson"
+        },
+        {
+          "@type": "City",
+          "name": "Marshall"
+        }
+      ],
+      "serviceType": [
+        "Housing Renovations",
+        "Fair Cash Offers",
+        "Section 8 Housing",
+        "Veteran Housing Assistance"
+      ],
+      "knowsAbout": [
+        "Section 8 Voucher Program",
+        "Veteran Housing Benefits",
+        "Fair Housing Act",
+        "HUD-VASH Program"
+      ]
     }
     </script>
 
@@ -78,6 +135,7 @@
 
     <!-- Leaflet CSS for Maps -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
     <!-- Component Styles - Buttons, Cards, Forms -->
     <link rel="stylesheet" href="css/components.css" media="print" onload="this.media='all'; this.onload=null;">
@@ -245,7 +303,7 @@
     <!-- Family Image - Right Side -->
     <div class="hero-image">
         <img src="public/images/hero/front_porch_hero.webp"
-             alt="Beautiful renovated porch and outdoor family space" loading="lazy">
+             alt="Beautiful renovated porch and outdoor family space">
     </div>
 </section>
 
@@ -360,5 +418,6 @@
     
     <!-- Accessibility Enhancements - Keyboard navigation and focus management -->
     <script src="accessibility-enhanced.js"></script>
+
 </body>
 </html>

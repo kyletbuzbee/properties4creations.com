@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Properties 4 Creations</title>
+    <meta name="description" content="Thank you for contacting Properties 4 Creations. We've received your message and will get back to you soon.">
+
+    <!-- Design System CSS (MUST be first) -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B1120',
+                            wood: '#C28E5A',
+                            walnut: '#8B5E3C',
+                            beige: '#F5F5F0',
+                            surface: '#FFFFFF',
+                            slate: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'wood': '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
+                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-beige">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Success Message -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+
+                <h1 class="text-4xl font-bold text-brand-navy mb-6">Thank You!</h1>
+
+                <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                    We've received your message and will get back to you within 1-2 business days.
+                    Our team is committed to helping veterans and families find the right housing solution.
+                </p>
+
+                <div class="bg-brand-beige p-6 rounded-lg mb-8 max-w-lg mx-auto">
+                    <h3 class="text-lg font-semibold text-brand-navy mb-4">What happens next?</h3>
+                    <div class="text-left space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-brand-wood rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-white text-sm">1</span>
+                            </span>
+                            <span class="text-sm text-slate-700">Our housing specialists review your inquiry within 24 hours</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-brand-wood rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-white text-sm">2</span>
+                            </span>
+                            <span class="text-sm text-slate-700">We match you with available properties in your area</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-brand-wood rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-white text-sm">3</span>
+                            </span>
+                            <span class="text-sm text-slate-700">Schedule a virtual or in-person tour</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="projects.html" class="wood-gradient-button px-8 py-4 rounded-xl font-semibold shadow-wood hover:shadow-xl transition-all">
+                        Browse Available Properties
+                    </a>
+                    <a href="contact.html" class="px-8 py-4 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-xl font-semibold transition-all">
+                        Ask Another Question
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Interactive JavaScript Libraries -->
+    <script src="components/component-loader.js"></script>
+    <script src="accessibility-enhanced.js"></script>
+</body>
+</html>

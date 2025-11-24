@@ -3,6 +3,54 @@
 /* Load this asynchronously after critical CSS */
 
 /* ===========================
+   ACCESSIBILITY STYLES
+   =========================== */
+
+/* P4C Focus Ring Styles */
+.focus-ring:focus,
+.focus-ring:focus-visible {
+  outline: 3px solid #C28E5A;
+  outline-offset: 2px;
+}
+
+/* Universal focus-visible for all interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #C28E5A;
+  outline-offset: 2px;
+}
+
+/* Ensure focus is visible on touch devices */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 3px solid #C28E5A;
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+.high-contrast {
+  filter: contrast(1.5);
+}
+
+/* Reduced motion preferences */
+.reduce-motion,
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* ===========================
    GLASSMORPHISM EFFECTS
    =========================== */
 

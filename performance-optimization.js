@@ -27,56 +27,73 @@ P4C.Performance = {
   },
 
   /**
-   * Setup lazy loading for images and iframes
+   * Setup lazy loading for images, iframes, and maps
    */
   setupLazyLoading: function() {
     // Use native lazy loading where supported
     const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
-    
+
     if ('IntersectionObserver' in window) {
       const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            const img = entry.target;
-            
-            // Handle picture elements with source tags
-            if (img.parentElement.tagName === 'PICTURE') {
-              const sources = img.parentElement.querySelectorAll('source');
-              sources.forEach(source => {
-                if (source.dataset.srcset) {
-                  source.srcset = source.dataset.srcset;
-                  source.removeAttribute('data-srcset');
-                }
-              });
+            const element = entry.target;
+            const tagName = element.tagName.toLowerCase();
+
+            if (tagName === 'img') {
+              // Handle image lazy loading
+              const img = element;
+
+              // Handle picture elements with source tags
+              if (img.parentElement.tagName === 'PICTURE') {
+                const sources = img.parentElement.querySelectorAll('source');
+                sources.forEach(source => {
+                  if (source.dataset.srcset) {
+                    source.srcset = source.dataset.srcset;
+                    source.removeAttribute('data-srcset');
+                  }
+                });
+              }
+
+              // Load main image
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+              }
+
+              // Handle srcset for responsive images
+              if (img.dataset.srcset) {
+                img.srcset = img.dataset.srcset;
+                img.removeAttribute('data-srcset');
+              }
+
+              img.classList.add('loaded');
+            } else if (element.id === 'property-map') {
+              // Handle map lazy loading
+              this.initializePropertyMap();
             }
-            
-            // Load main image
-            if (img.dataset.src) {
-              img.src = img.dataset.src;
-              img.removeAttribute('data-src');
-            }
-            
-            // Handle srcset for responsive images
-            if (img.dataset.srcset) {
-              img.srcset = img.dataset.srcset;
-              img.removeAttribute('data-srcset');
-            }
-            
-            img.classList.add('loaded');
-            observer.unobserve(img);
+
+            observer.unobserve(element);
           }
         });
       }, {
         rootMargin: '50px' // Start loading 50px before coming into view
       });
-      
+
       lazyElements.forEach(el => {
         if (el.dataset.src || el.dataset.srcset) {
           imageObserver.observe(el);
         }
       });
-      
-      console.log(`📸 Lazy loading initialized for ${lazyElements.length} elements`);
+
+      // Observe property map for lazy loading
+      const propertyMap = document.getElementById('property-map');
+      if (propertyMap) {
+        imageObserver.observe(propertyMap);
+      }
+
+      const totalElements = lazyElements.length + (propertyMap ? 1 : 0);
+      console.log(`📸 Lazy loading initialized for ${totalElements} elements`);
     } else {
       // Fallback for browsers without IntersectionObserver
       lazyElements.forEach(img => {
@@ -87,6 +104,9 @@ P4C.Performance = {
           img.srcset = img.dataset.srcset;
         }
       });
+
+      // Initialize map immediately if no intersection observer
+      this.initializePropertyMap();
     }
   },
 
@@ -179,6 +199,56 @@ P4C.Performance = {
       loadComplete: timing.loadEventEnd - timing.navigationStart,
       type: navigation.type === 0 ? 'navigate' : navigation.type === 1 ? 'reload' : 'back_forward'
     };
+  },
+
+  /**
+   * Initialize property map with lazy loading
+   */
+  initializePropertyMap: function() {
+    const propertyMapElement = document.getElementById('property-map');
+    if (!propertyMapElement || propertyMapElement.dataset.mapInitialized) {
+      return; // Map already initialized or element not found
+    }
+
+    // Check if Leaflet is available
+    if (typeof L === 'undefined') {
+      console.warn('⚠️ Leaflet not loaded, map initialization deferred');
+      return;
+    }
+
+    try {
+      const map = L.map('property-map', {
+        center: [32.3513, -95.3011], // Tyler, TX
+        zoom: 6,
+        scrollWheelZoom: false,
+        zoomControl: true
+      });
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      const markers = [
+        { lat: 32.3513, lng: -95.3011, label: 'Tyler – Completed Project', color: 'green' },
+        { lat: 32.5007, lng: -94.7405, label: 'Longview – Active Development', color: 'blue' },
+        { lat: 32.7571, lng: -94.3452, label: 'Jefferson – Section 8 Ready', color: 'purple' }
+      ];
+
+      markers.forEach(({ lat, lng, label, color }) => {
+        const icon = L.divIcon({
+          className: 'custom-marker',
+          html: `<div style="background:${color};width:12px;height:12px;border-radius:50%;"></div>`,
+          iconSize: [12, 12]
+        });
+        L.marker([lat, lng], { icon }).addTo(map).bindPopup(label);
+      });
+
+      // Mark as initialized
+      propertyMapElement.dataset.mapInitialized = 'true';
+      console.log('🗺️ Property map initialized with lazy loading');
+    } catch (error) {
+      console.error('❌ Error initializing property map:', error);
+    }
   },
 
   /**

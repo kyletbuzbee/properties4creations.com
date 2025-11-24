@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Properties 4 Creations - Veteran Housing Properties</title>
     <meta name="description" content="Discover fair cash offers and quality renovations for veteran housing. Section 8 ready properties with veteran priority pricing.">
+    <link rel="canonical" href="https://properties4creations.com/projects.html">
 
     <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/components.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -65,10 +67,12 @@
                             const badgeColor = isVoucher ? 'bg-green-600' : 'bg-brand-navy';
                             const badgeText = isVoucher ? 'Section 8 Ready' : 'Market Rate';
 
+                            const imageSrc = prop.images?.[0] || 'public/images/default-property.jpg';
+
                             const cardHTML = `
                             <article class="bg-white rounded-2xl shadow-wood overflow-hidden flex flex-col md:flex-row hover:shadow-lg transition-all duration-300 group border border-slate-100">
                                 <div class="md:w-5/12 relative overflow-hidden h-64 md:h-auto">
-                                    <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                    <img src="${imageSrc}" alt="${prop.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
                                     <div class="absolute top-4 left-4">
                                         <span class="${badgeColor} text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
                                             ${badgeText}

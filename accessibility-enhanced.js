@@ -202,12 +202,14 @@ P4C.Accessibility = {
           }
         }
 
-        // Close modals
-        const modals = document.querySelectorAll('[role="dialog"][aria-modal="true"]');
+        // Close modals with proper ARIA
+        const modals = document.querySelectorAll('[role="dialog"][aria-modal="true"], #accessibility-widget');
         modals.forEach(modal => {
-          if (modal.classList.contains('active') || modal.classList.contains('open')) {
+          if (modal.classList.contains('active') || modal.classList.contains('open') || !modal.classList.contains('hidden')) {
             modal.classList.remove('active', 'open');
+            modal.classList.add('hidden');
             modal.setAttribute('aria-hidden', 'true');
+            modal.setAttribute('aria-modal', 'false');
           }
         });
       }
@@ -216,14 +218,14 @@ P4C.Accessibility = {
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
         const focusedElement = document.activeElement;
         const listbox = focusedElement.closest('[role="listbox"], [role="grid"], [role="menu"]');
-        
+
         if (listbox) {
           const items = Array.from(listbox.querySelectorAll('[role="option"], [role="gridcell"], [role="menuitem"]'));
           const currentIndex = items.indexOf(focusedElement);
-          
+
           if (currentIndex !== -1) {
             let nextIndex = currentIndex;
-            
+
             if (['ArrowUp', 'ArrowLeft'].includes(e.key)) {
               nextIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
               e.preventDefault();
@@ -231,7 +233,7 @@ P4C.Accessibility = {
               nextIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
               e.preventDefault();
             }
-            
+
             items[nextIndex].focus();
           }
         }
