@@ -1,14 +1,14 @@
 <!-- Reusable Header Component - Loaded dynamically via JavaScript -->
 <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 bg-brand-navy text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-20">
             <!-- Logo and Brand -->
             <div class="flex items-center">
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="logo-style">
+                    <div class="logo-style w-16 h-16 p-1 bg-white rounded-xl shadow-wood">
                         <img src="public/images/logo/brand_logo.png"
                              alt="Properties 4 Creations Logo – Affordable Homes for Families & Veterans"
-                             class="w-12 h-12 rounded-lg object-cover">
+                             class="w-full h-full object-contain">
 
                     <span class="text-xl font-bold group-hover:text-brand-wood transition-colors duration-200 hidden sm:inline">
                         Properties 4 Creations
@@ -39,7 +39,10 @@
                 </button>
 
                 <!-- CTA Button -->
-                <a href="get-started.html" class="wood-gradient-button text-white px-6 py-3 rounded-lg font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:shadow-brand-wood/25">
+                <a href="get-started.html"
+                   class="btn-primary px-5 py-2.5 text-sm font-semibold rounded-lg shadow-wood hover:shadow-xl transition-all"
+                   style="font-size: 0.75rem; padding: 0.625rem 1rem;"
+                   id="header-cta-button">
                     Browse Affordable Homes for Families & Veterans
                 </a>
             </nav>
@@ -74,10 +77,35 @@
                     Portals
                 </button>
 
-                <a href="get-started.html" class="block w-full text-center bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg mt-4">
+                <a href="get-started.html"
+                   class="block w-full text-center btn-primary px-4 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg mt-4">
                     Browse Affordable Homes for Families & Veterans
                 </a>
             </div>
         </div>
     </div>
+
+    <style>
+        /* Mobile responsiveness for header */
+        @media (max-width: 767px) {
+            #header-cta-button {
+                font-size: 0.75rem !important;
+                padding: 0.625rem 1rem !important;
+            }
+
+            /* Very small screens: consider stacking if needed */
+            @media (max-width: 480px) {
+                #main-header .flex.items-center.justify-between {
+                    flex-direction: column;
+                    gap: 0.75rem;
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                }
+
+                #main-header .flex.items-center > a {
+                    justify-content: center;
+                }
+            }
+        }
+    </style>
 </header>
