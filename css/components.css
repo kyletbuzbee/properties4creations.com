@@ -668,6 +668,27 @@ select {
 }
 
 /* ============================================================================
+ * SVG LOGO STYLING
+ * ============================================================================ */
+
+/* Logo container for inline SVG logos */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container svg {
+  max-width: 100%;
+  height: auto;
+  transition: transform var(--transition-normal) ease-out;
+}
+
+.logo-container:hover svg {
+  transform: scale(1.05);
+}
+
+/* ============================================================================
  * PAGE BANNER COMPONENT
  * ============================================================================ */
 
