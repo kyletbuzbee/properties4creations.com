@@ -27,7 +27,7 @@
         "logo": "https://properties4creations.com/public/images/logo/brand_logo.png",
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+1-903-647-0000",
+          "telephone": "+1-903-283-1770",
           "contactType": "customer service",
           "availableLanguage": "English"
         },
@@ -52,10 +52,10 @@
       "foundingDate": "2023",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-903-647-0000",
-        "contactType": "customer service",
-        "availableLanguage": "English",
-        "contactOption": "TollFree"
+        "telephone": "+1-903-283-1770",
+          "contactType": "customer service",
+          "availableLanguage": "English",
+          "contactOption": "TollFree"
       },
       "address": {
         "@type": "PostalAddress",
@@ -95,8 +95,11 @@
     }
     </script>
 
-    <!-- Fonts and Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Preloading for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="css/design-tokens.css">
 
     <!-- Tailwind CSS -->
@@ -107,17 +110,17 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#0B1120',   /* Deep Anchor Navy - Primary Background */
-                            wood: '#C28E5A',   /* Golden Oak - Primary Accent/Buttons */
-                            walnut: '#8B5E3C', /* Darker Wood - Borders/Text */
-                            beige: '#F5F5F0',  /* Warm White - Section Backgrounds */
-                            surface: '#FFFFFF', /* Card Backgrounds */
-                            slate: '#64748b'   /* Body Text */
+                            navy: 'var(--color-primary-navy)',   /* Deep Anchor Navy - Primary Background */
+                            wood: 'var(--color-accent-gold)',   /* Golden Oak - Primary Accent/Buttons */
+                            walnut: 'var(--color-secondary-walnut)', /* Darker Wood - Borders/Text */
+                            beige: 'var(--color-neutral-beige)',  /* Warm White - Section Backgrounds */
+                            surface: 'var(--color-neutral-white)', /* Card Backgrounds */
+                            slate: 'var(--color-neutral-slate-500)'   /* Body Text */
                         },
                         surface: {
-                            primary: '#FFFFFF',
-                            secondary: '#F5F5F0',
-                            tertiary: '#F8F9FA'
+                            primary: 'var(--color-neutral-white)',
+                            secondary: 'var(--color-neutral-beige)',
+                            tertiary: 'var(--color-neutral-slate-100)'
                         }
                     },
                     fontFamily: {
@@ -125,8 +128,8 @@
                         body: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        'wood': '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
-                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+                        'wood': 'var(--shadow-wood)',
+                        'navy': 'var(--shadow-medium)',
                     }
                 }
             }
@@ -260,9 +263,9 @@
   "subtitle": "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride.",
   "background": "public/images/hero/front_porch_hero.webp",
   "eyebrow": "HUD-VASH & Section 8 Approved",
-  "showVoucherBadge": true,
-  "ctaText": "Browse Affordable Homes for Families & Veterans",
-  "ctaHref": "get-started.html"
+      "showVoucherBadge": true,
+      "ctaText": "Browse Homes for Families & Veterans",
+      "ctaHref": "get-started.html"
 }
 </script>
 
@@ -277,15 +280,15 @@
             </div>
             <div class="p-4 group">
                 <div class="text-4xl font-bold text-brand-navy mb-1 group-hover:text-brand-wood transition-colors">25</div>
-                <div class="text-brand-walnut font-semibold uppercase text-xs tracking-wider">Properties Renovated</div>
+                    <div class="text-brand-walnut font-semibold uppercase text-xs tracking-wider">Properties Renovated in East Texas</div>
             </div>
             <div class="p-4 group">
                 <div class="text-4xl font-bold text-brand-navy mb-1 group-hover:text-brand-wood transition-colors">4</div>
-                <div class="text-brand-walnut font-semibold uppercase text-xs tracking-wider">Cities Served</div>
+                    <div class="text-brand-walnut font-semibold uppercase text-xs tracking-wider">East Texas Cities Served</div>
             </div>
             <div class="p-4 group">
                 <div class="text-4xl font-bold text-brand-navy mb-1 group-hover:text-brand-wood transition-colors">100%</div>
-                <div class="text-brand-walnut font-semibold uppercase text-xs tracking-wider">Voucher Acceptance</div>
+                <div class="text-brand-walnut font-semibold uppercase text-xs tracking-wider">East Texas Voucher Acceptance</div>
             </div>
         </div>
     </div>

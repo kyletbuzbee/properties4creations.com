@@ -1,75 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
+<url>
         <loc>https://properties4creations.com/index.html</loc>
         <lastmod>2025-11-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <description>Affordable housing solutions in East Texas for families and veterans - Section 8 ready homes with premium renovations</description>
     </url>
     <url>
         <loc>https://properties4creations.com/projects.html</loc>
         <lastmod>2025-11-23</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
+        <description>Explore affordable housing properties in East Texas for families and veterans - Section 8 ready homes with premium renovations</description>
     </url>
     <url>
         <loc>https://properties4creations.com/about.html</loc>
         <lastmod>2025-11-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <description>Veteran-founded organization providing housing solutions for families and veterans in East Texas with transparent pricing</description>
     </url>
     <url>
         <loc>https://properties4creations.com/impact.html</loc>
         <lastmod>2025-11-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <description>Community impact stories showing families and veterans rebuilding futures in East Texas through fair housing practices</description>
     </url>
     <url>
         <loc>https://properties4creations.com/resources.html</loc>
         <lastmod>2025-11-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
+        <description>Housing support resources for families and veterans in East Texas - vouchers, eligibility tools, and renovation standards</description>
     </url>
     <url>
         <loc>https://properties4creations.com/get-started.html</loc>
         <lastmod>2025-11-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <description>Start selling your East Texas property for purpose - fair cash offers for families and veterans housing</description>
     </url>
     <url>
         <loc>https://properties4creations.com/transparency.html</loc>
         <lastmod>2025-11-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+        <description> transparent pricing and renovation standards for families and veterans in East Texas - no hidden fees or surprises</description>
     </url>
     <url>
         <loc>https://properties4creations.com/contact.html</loc>
         <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <description>Contact Properties 4 Creations for housing support in East Texas - serving families and veterans with fair housing solutions</description>
     </url>
     <url>
         <loc>https://properties4creations.com/privacy.html</loc>
         <lastmod>2025-11-24</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+        <description>Privacy policy for families and veterans using housing services in East Texas - how we protect your information</description>
     </url>
     <url>
         <loc>https://properties4creations.com/terms.html</loc>
         <lastmod>2025-11-24</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+        <description>Terms of service for fair housing practices in East Texas - families and veterans housing assistance guidelines</description>
     </url>
     <url>
         <loc>https://properties4creations.com/thank-you.html</loc>
         <lastmod>2025-11-24</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
+        <description>Thank you for choosing Properties 4 Creations - families and veterans housing support in East Texas</description>
     </url>
     <url>
         <loc>https://properties4creations.com/404.html</loc>
         <lastmod>2025-11-24</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
+        <description>Page not found - return to affordable housing solutions for families and veterans in East Texas</description>
     </url>
 </urlset>

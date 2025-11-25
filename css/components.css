@@ -203,6 +203,36 @@ button:disabled,
   box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
 }
 
+/* -------- Global CTA Button Styles -------- */
+.btn-primary,
+.page-banner__cta-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  line-height: 1.4;
+
+  /* Overflow handling */
+  white-space: normal;       /* allows wrapping */
+  word-break: break-word;    /* breaks long words if needed */
+  max-width: 100%;           /* prevents overflow outside container */
+
+  /* Responsive sizing */
+  width: auto;
+  min-width: 200px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .btn-primary,
+  .page-banner__cta-btn {
+    width: 100%;             /* full-width buttons on mobile */
+    font-size: 1rem;         /* slightly smaller text */
+    padding: 0.75rem 1rem;   /* tighter padding */
+  }
+}
+
 .btn-error {
   background: linear-gradient(135deg, var(--color-error) 0%, #DC2626 100%);
   color: var(--color-neutral-white);

@@ -1,0 +1,149 @@
+// Properties 4 Creations Form Submission
+// Google Apps Script Integration - Production Ready
+
+async function submitLead(formEl) {
+  const url = 'https://script.google.com/macros/s/AKfycbzI3MRv3KbFEwfoC37dQ5QfyB6rhsRsEVIHCpxzW2iPj49KIyUzxpyl1td_RmW1qqJMuQ/exec';
+  const data = {
+    name: formEl.querySelector('[name="name"]').value.trim(),
+    email: formEl.querySelector('[name="email"]').value.trim(),
+    phone: formEl.querySelector('[name="phone"]').value.trim(),
+    veteran: !!formEl.querySelector('[name="veteran"]')?.checked,
+    message: (formEl.querySelector('[name="message"]') || formEl.querySelector('[textarea]'))?.value?.trim() || '',
+    source: window.location.pathname
+  };
+
+  // Enhanced client validation
+  if (!data.name || !data.email) {
+    alert('Please provide name and email.');
+    return false;
+  }
+
+  if (!isValidEmail(data.email)) {
+    alert('Please enter a valid email address.');
+    return false;
+  }
+
+  try {
+    const resp = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const json = await resp.json();
+    if (json.success) {
+      // Show enhanced success UI
+      showFormSuccess(formEl, data);
+      formEl.reset();
+
+      // Analytics tracking
+      if (window.gtag) {
+        gtag('event', 'form_submission', {
+          'event_category': 'engagement',
+          'event_label': 'property_inquiry',
+          'value': 1
+        });
+      }
+
+      return true;
+    } else {
+      showFormError(formEl, json.error || 'Submission failed');
+      return false;
+    }
+  } catch (err) {
+    console.error('Submit error', err);
+    showFormError(formEl, 'Network error. Please call us at (903) 283-1770.');
+    return false;
+  }
+}
+
+function isValidEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+function showFormSuccess(formEl, data) {
+  const successDiv = document.createElement('div');
+  successDiv.className = 'bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-4';
+  successDiv.setAttribute('role', 'alert');
+  successDiv.innerHTML = `
+    <div class="flex">
+      <div class="flex-shrink-0">
+        <svg class="h-5 w-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+      <div class="ml-3">
+        <h3 class="text-sm font-medium text-green-800">Success!</h3>
+        <div class="mt-2 text-sm text-green-700">
+          <p>Thanks for your interest! We'll contact you within 24 hours about available housing.</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  formEl.parentNode.insertBefore(successDiv, formEl);
+  setTimeout(() => successDiv.remove(), 10000);
+}
+
+function showFormError(formEl, message) {
+  const errorDiv = document.createElement('div');
+  errorDiv.className = 'bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg mb-4';
+  errorDiv.setAttribute('role', 'alert');
+  errorDiv.innerHTML = `
+    <div class="flex">
+      <div class="flex-shrink-0">
+        <svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+      <div class="ml-3">
+        <h3 class="text-sm font-medium text-red-800">Error</h3>
+        <div class="mt-2 text-sm text-red-700">
+          <p>${message}</p>
+          <p class="mt-2">
+            <a href="tel:+19032831770" class="text-red-600 underline">Call us directly: (903) 283-1770</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  formEl.parentNode.insertBefore(errorDiv, formEl);
+  setTimeout(() => errorDiv.remove(), 15000);
+}
+
+// Auto-initialize on form pages
+document.addEventListener('DOMContentLoaded', () => {
+  const forms = document.querySelectorAll('form[id*="property-inquiry"], form[action*="property-inquiry"]');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitLead(this).catch(console.error);
+    });
+  });
+
+  // Show success message if redirected from thank-you page
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    const successDiv = document.createElement('div');
+    successDiv.className = 'bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-4 max-w-md mx-auto';
+    successDiv.innerHTML = `
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <div class="ml-3">
+          <h3 class="text-sm font-medium text-green-800">Form Submitted Successfully!</h3>
+          <div class="mt-2 text-sm text-green-700">
+            <p>We'll contact you within 24 hours about available housing.</p>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertBefore(successDiv, document.body.firstChild);
+  }
+});
