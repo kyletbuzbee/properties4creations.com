@@ -603,9 +603,7 @@
             }
 
             // Initialize P4C if available
-            if (window.P4C && window.P4C.init) {
-                P4C.init();
-            }
+            if (window.P4C && typeof window.P4C.init === 'function') window.P4C.init();
         });
     </script>
 
