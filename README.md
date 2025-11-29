@@ -80,13 +80,13 @@ We know the local housing market and are committed to serving our community firs
 ## 🌟 **Success Stories**
 
 ### **The Reynolds Family**
-*"After serving our country, we needed a home that could accommodate our wheelchair-accessible needs. P4C delivered beyond expectations - fair pricing, ADA-compliant renovations, and genuine care for our transition. Our dream home became reality in just 32 days."*
+*"After serving our country, we needed a home that could accommodate our wheelchair-accessible needs. Properties 4 Creations delivered beyond expectations - fair pricing, ADA-compliant renovations, and genuine care for our transition. Our dream home became reality in just 32 days."*
 
 ### **Staff Sgt. Thompson**
-*"Civilian life brought new challenges. P4C understood. Their veteran-founded approach gave me a beautiful Victorian home renovated specifically for veterans like me. They're not just selling houses - they're honoring service."*
+*"Civilian life brought new challenges. Properties 4 Creations understood. Their veteran-founded approach gave me a beautiful Victorian home renovated specifically for veterans like me. They're not just selling houses - they're honoring service."*
 
 ### **Garcia Seniors**
-*"P4C made independent living possible again. The ADA renovations and Section 8 partnership created a safe, comfortable home without breaking our budget. We're forever grateful for their commitment to dignity."*
+*"Properties 4 Creations made independent living possible again. The ADA renovations and Section 8 partnership created a safe, comfortable home without breaking our budget. We're forever grateful for their commitment to dignity."*
 
 ---
 

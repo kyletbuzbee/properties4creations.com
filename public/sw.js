@@ -6,13 +6,19 @@ const DYNAMIC_CACHE = 'properties-4-creation-dynamic-v1'
 // Resources to cache on install
 const STATIC_ASSETS = [
   '/',
-  '/about',
-  '/projects',
-  '/contact',
-  '/get-started',
+  '/about.html',
+  '/projects.html',
+  '/contact.html',
+  '/get-started.html',
   '/manifest.json',
   '/favicon.ico',
-  '/og-image.jpg',
+  '/css/main.min.css',
+  '/js/bundle.min.js',
+  '/css/design-tokens.css',
+  '/css/components.css',
+  '/public/images/**/*',
+  '/public/images/banners/**/*',
+  '/public/images/hero/**/*',
 ]
 
 // Install event - cache static assets

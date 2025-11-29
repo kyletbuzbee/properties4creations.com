@@ -2,7 +2,7 @@
 // Google Apps Script Integration - Production Ready
 
 async function submitLead(formEl) {
-  const url = 'https://script.google.com/macros/s/AKfycbzI3MRv3KbFEwfoC37dQ5QfyB6rhsRsEVIHCpxzW2iPj49KIyUzxpyl1td_RmW1qqJMuQ/exec';
+  const url = 'https://script.google.com/macros/s/AKfycbwxz5eoaGgYOoaKTKEfMm2jHo7buxNnHyu5lkZCkhDYLfbRqNRUW90Sk9yrXGRLjMM3Gw/exec';
   const data = {
     name: formEl.querySelector('[name="name"]').value.trim(),
     email: formEl.querySelector('[name="email"]').value.trim(),

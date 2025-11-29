@@ -1,61 +1,61 @@
 {
   "name": "Properties 4 Creations - Affordable Housing for Families & Veterans",
-  "short_name": "Properties 4 Creations",
-  "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
+  "short_name": "P4C",
+  "description": "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0f766e",
+  "background_color": "#F5F5F0",
+  "theme_color": "#0B1120",
   "orientation": "portrait-primary",
   "categories": ["business", "lifestyle", "utilities"],
   "lang": "en-US",
   "dir": "ltr",
-  "scope": "/",
   "icons": [
     {
-      "src": "/icon-72x72.png",
+      "src": "public/images/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-96x96.png",
+      "src": "public/images/icons/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-128x128.png",
+      "src": "public/images/icons/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-144x144.png",
+      "src": "public/images/icons/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-152x152.png",
+      "src": "public/images/icons/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-192x192.png",
+      "src": "public/images/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-384x384.png",
+      "src": "public/images/icons/icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "public/images/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -63,13 +63,13 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshot-wide.png",
+      "src": "public/images/screenshot-wide.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/screenshot-narrow.png",
+      "src": "public/images/screenshot-narrow.png",
       "sizes": "750x1334",
       "type": "image/png",
       "form_factor": "narrow"
@@ -80,26 +80,15 @@
       "name": "Our Projects",
       "short_name": "Projects",
       "description": "Browse our completed renovations",
-      "url": "/projects",
-      "icons": [
-        {
-          "src": "/icon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/projects.html",
+      "icons": [{"src": "public/images/icons/icon-96x96.png", "sizes": "96x96"}]
     },
     {
       "name": "Get Started",
       "short_name": "Get Started",
       "description": "Contact us for housing solutions",
-      "url": "/get-started",
-      "icons": [
-        {
-          "src": "/icon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/get-started.html",
+      "icons": [{"src": "public/images/icons/icon-96x96.png", "sizes": "96x96"}]
     }
   ]
 }
-

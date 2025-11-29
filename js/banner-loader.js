@@ -10,7 +10,20 @@
     if (!banner || !cfg) return;
 
     if (cfg.variant === 'hero' && cfg.background) {
-      banner.style.backgroundImage = `url("${cfg.background}")`;
+      if (cfg.background.endsWith('.mp4')) {
+        // Video background
+        const video = document.createElement('video');
+        video.src = cfg.background;
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.className = 'absolute inset-0 w-full h-full object-cover';
+        banner.appendChild(video);
+      } else {
+        // Image background
+        banner.style.backgroundImage = `url("${cfg.background}")`;
+      }
       banner.classList.add('page-banner--hero');
     }
 

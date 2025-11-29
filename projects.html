@@ -9,35 +9,8 @@
 
     <link rel="stylesheet" href="css/design-tokens.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            navy: 'var(--color-primary-navy)',
-                            wood: 'var(--color-accent-gold)',
-                            walnut: 'var(--color-secondary-walnut)',
-                            beige: 'var(--color-neutral-beige)',
-                            surface: 'var(--color-neutral-white)',
-                            slate: 'var(--color-neutral-slate-500)'
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Merriweather','serif'],
-                        body: ['Inter','sans-serif']
-                    },
-                    boxShadow: {
-                        wood: 'var(--shadow-wood)',
-                        navy: 'var(--shadow-medium)'
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->
@@ -90,7 +63,10 @@
                             const cardHTML = `
                             <article class="bg-white rounded-2xl shadow-wood overflow-hidden flex flex-col md:flex-row hover:shadow-lg transition-all duration-300 group border border-slate-100">
                                 <div class="md:w-5/12 relative overflow-hidden h-64 md:h-auto">
-                                    <img src="${imageSrc}" alt="${prop.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                    <picture class="block w-full h-full">
+                                        <source srcset="${imageSrc}" type="image/webp">
+                                        <img src="${imageSrc}" alt="${prop.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                    </picture>
                                     <div class="absolute top-4 left-4">
                                         <span class="${badgeColor} text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
                                             ${badgeText}
@@ -142,13 +118,6 @@
 
     <div id="footer-container"></div>
 
-    <script src="components/component-loader.js"></script>
-    <script src="accessibility-enhanced.js"></script>
-
-<script src="js/banner-loader.js" defer></script>
+    <script src="js/bundle.min.js" defer></script>
 </body>
 </html>
-
-
-
-
