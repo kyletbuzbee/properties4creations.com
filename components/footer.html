@@ -161,6 +161,7 @@
         overlay.classList.add('hidden');
       });
 
+
       if (applyBtn) applyBtn.addEventListener('click', () => {
         const textSize = document.getElementById('text-size-select').value;
         const contrast = document.getElementById('contrast-select').value;
@@ -171,7 +172,31 @@
         widget.classList.add('hidden');
         overlay.classList.add('hidden');
       });
+
+      // Load PWA install banner
+      fetch('./components/install-banner.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          return response.text();
+        })
+        .then(html => {
+          const placeholder = document.getElementById('pwa-banner-placeholder');
+          if (placeholder) {
+            placeholder.outerHTML = html;
+          }
+        })
+        .then(() => {
+          // Dynamically load PWA install script
+          const script = document.createElement('script');
+          script.src = './js/pwa-install.js';
+          script.async = true;
+          document.head.appendChild(script);
+        })
+        .catch(err => console.error('PWA install setup failed:', err));
     }
   }
 })();
+
 </script>
