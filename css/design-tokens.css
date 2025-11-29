@@ -711,3 +711,14 @@
  * 
  * ============================================================================
  */
+
+/* MISSING CLASSES FOR FOOTER/BADGES */
+.text-accent-gold-400 { color: #DEB887; }
+.text-accent-gold-500 { color: #C28E5A; }
+.bg-success { background-color: var(--color-success); }
+.shadow-success\/50 { box-shadow: 0 0 10px rgba(16,185,129,0.5); }
+
+/* Accessibility Widget Classes */
+.text-large { font-size: 112%; }
+.text-extra-large { font-size: 125%; }
+.motion-reduced * { animation: none !important; transition: none !important; }
