@@ -19,6 +19,13 @@
         video.loop = true;
         video.playsInline = true;
         video.className = 'absolute inset-0 w-full h-full object-cover';
+        video.onerror = () => {
+          banner.style.backgroundImage = `url("public/images/hero/front_porch_hero.webp")`;
+          banner.style.backgroundSize = 'cover';
+          banner.style.backgroundPosition = 'center';
+          banner.style.backgroundRepeat = 'no-repeat';
+          video.remove();
+        };
         banner.appendChild(video);
       } else {
         // Image background
