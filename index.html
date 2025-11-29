@@ -102,6 +102,33 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="css/design-tokens.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: 'var(--color-primary-navy)',
+                            wood: 'var(--color-accent-gold)',
+                            walnut: 'var(--color-secondary-walnut)',
+                            beige: 'var(--color-neutral-beige)',
+                            surface: 'var(--color-neutral-white)',
+                            slate: 'var(--color-neutral-slate-500)'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
+                    },
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
+                    }
+                }
+            }
+        }
+    </script>
 
     <!-- Leaflet CSS for Maps -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -114,7 +141,7 @@
     <style>
         /* Critical CSS - Inlined for Above-The-Fold Performance */
         body { margin: 0; font-family: 'Inter', sans-serif; }
-        .bg-brand-beige { background-color: var(--color-surface-primary); }
+        .bg-brand-beige { background-color: var(--color-neutral-beige); }
         .bg-brand-navy { background-color: var(--color-primary-navy); }
         .text-brand-navy { color: var(--color-primary-navy); }
         .text-slate-100 { color: #f1f5f9; }
@@ -336,8 +363,10 @@
 
     <!-- Footer Container -->
     <div id="footer-container"></div>
+    <div id="pwa-banner-placeholder"></div>
 
-
+    <script defer src="components/component-loader.js"></script>
+    <script defer src="js/banner-loader.js"></script>
 
 </body>
 </html>

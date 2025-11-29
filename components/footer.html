@@ -167,14 +167,16 @@
         const contrast = document.getElementById('contrast-select').value;
         const motion = document.getElementById('motion-select').value;
 
-        // Apply settings (simplified)
-        document.body.className += ` text-${textSize} contrast-${contrast} motion-${motion}`;
+        // Apply safe inline styles
+        document.documentElement.style.fontSize = textSize === 'large' ? '112%' : textSize === 'extra-large' ? '125%' : '100%';
+        document.documentElement.classList.toggle('high-contrast', contrast === 'high');
+        document.documentElement.style.scrollBehavior = motion === 'reduced' ? 'auto' : 'smooth';
         widget.classList.add('hidden');
         overlay.classList.add('hidden');
       });
 
       // Load PWA install banner
-      fetch('./components/install-banner.html')
+      fetch('/components/install-banner.html')
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);
@@ -190,7 +192,7 @@
         .then(() => {
           // Dynamically load PWA install script
           const script = document.createElement('script');
-          script.src = './js/pwa-install.js';
+          script.src = '/js/pwa-install.js';
           script.async = true;
           document.head.appendChild(script);
         })
