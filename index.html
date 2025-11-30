@@ -102,33 +102,9 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="css/design-tokens.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            navy: 'var(--color-primary-navy)',
-                            wood: 'var(--color-accent-gold)',
-                            walnut: 'var(--color-secondary-walnut)',
-                            beige: 'var(--color-neutral-beige)',
-                            surface: 'var(--color-neutral-white)',
-                            slate: 'var(--color-neutral-slate-500)'
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Merriweather','serif'],
-                        body: ['Inter','sans-serif']
-                    },
-                    boxShadow: {
-                        wood: 'var(--shadow-wood)',
-                        navy: 'var(--shadow-medium)'
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="https://cdn.tailwindcss.com" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous" defer></script>
+    <script src="js/tw-config.js" defer></script>
+
 
     <!-- Leaflet CSS for Maps -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -255,7 +231,8 @@
   "variant": "hero",
   "title": "Affordable Homes for Families & Veterans in East Texas",
   "subtitle": "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride.",
-  "background": "public/videos/hero-banner-new.mp4",
+  "background": "public/images/hero/front_porch_hero.webp",
+
   "eyebrow": "HUD-VASH & Section 8 Approved",
       "showVoucherBadge": true,
       "ctaText": "Browse Homes for Families & Veterans",

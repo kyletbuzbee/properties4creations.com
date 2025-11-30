@@ -10,51 +10,13 @@
     if (!banner || !cfg) return;
 
     if (cfg.variant === 'hero' && cfg.background) {
-      if (cfg.background.endsWith('.mp4')) {
-        // Video background - insert before overlay
-        const overlay = banner.querySelector('.page-banner__overlay');
-        const video = document.createElement('video');
-        video.src = cfg.background;
-        video.autoplay = true;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-        video.preload = 'auto';
-        video.poster = 'public/images/hero/front_porch_hero.webp';
-        video.className = 'absolute inset-0 w-full h-full object-cover pointer-events-none';
-        if (overlay) {
-          banner.insertBefore(video, overlay);
-        } else {
-          banner.prepend(video);
-        }
-
-        const fallbackToImage = () => {
-          console.error('Hero video fallback to image');
-          banner.style.backgroundImage = `url("public/images/hero/front_porch_hero.webp")`;
-          banner.style.backgroundSize = 'cover';
-          banner.style.backgroundPosition = 'center';
-          banner.style.backgroundRepeat = 'no-repeat';
-          if (video.parentNode) video.remove();
-        };
-
-        video.addEventListener('error', fallbackToImage);
-        video.addEventListener('loadedmetadata', () => {
-          console.log('Hero video metadata loaded, attempting play');
-          video.play().catch(e => console.warn('Video play rejected:', e));
-        });
-
-        // Conditional timeout fallback
-        setTimeout(() => {
-          if (video.readyState < 2) {
-            fallbackToImage();
-          }
-        }, 5000);
-      } else {
-        // Image background
-        banner.style.backgroundImage = `url("${cfg.background}")`;
-      }
+      // Image background only
+      banner.style.backgroundImage = `url("${cfg.background}")`;
+      banner.style.backgroundSize = 'cover';
+      banner.style.backgroundPosition = 'center';
       banner.classList.add('page-banner--hero');
     }
+
 
     const eyebrow = banner.querySelector('.page-banner__eyebrow');
     const title = banner.querySelector('.page-banner__title');

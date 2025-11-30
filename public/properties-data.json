@@ -20,7 +20,8 @@
     "bathrooms": 2,
     "sqft": 1400,
     "images": ["public/images/properties/before-after/after_living_room.webp"],
-    "url": "tyler-ranch.html"
+    "url": "projects/tyler-ranch-home.html"
+
   },
   {
     "id": "longview-victorian",
@@ -43,7 +44,8 @@
     "bathrooms": 3,
     "sqft": 2200,
     "images": ["public/images/properties/before-after/projects_after_kitchen.webp"],
-    "url": "longview-victorian.html"
+    "url": "projects/longview-victorian.html"
+
   },
   {
     "id": "jefferson-riverfront",
@@ -66,7 +68,8 @@
     "bathrooms": 1,
     "sqft": 950,
     "images": ["public/images/properties/before-after/after_living_room.webp"],
-    "url": "jefferson-riverfront.html"
+    "url": "projects/jefferson-riverfront.html"
+
   },
   {
     "id": "marshall-townhome",
@@ -89,6 +92,7 @@
     "bathrooms": 2,
     "sqft": 1200,
     "images": ["public/images/properties/before-after/patio_wood.jpg"],
-    "url": "marshall-townhome.html"
+    "url": "projects/marshall-townhome.html"
+
   }
 ]

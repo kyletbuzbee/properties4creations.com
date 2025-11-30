@@ -1,0 +1,14 @@
+{
+  "name": "properties4creations",
+  "version": "1.0.0",
+  "description": "Properties 4 Creations website",
+  "main": "index.html",
+  "scripts": {
+    "build-images": "node scripts/build-images.js",
+    "test": "echo \"No tests specified\""
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+
+}
