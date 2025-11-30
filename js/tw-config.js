@@ -15,10 +15,12 @@ tailwind.config = {
         heading: ['Merriweather','serif'],
         body: ['Inter','sans-serif']
       },
-      boxShadow: {
-        wood: 'var(--shadow-wood)',
-        navy: 'var(--shadow-medium)'
-      }
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)',
+                        floating: 'var(--shadow-floating)'
+                    }
+
     }
   }
 };

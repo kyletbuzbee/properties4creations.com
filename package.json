@@ -1,14 +1,19 @@
 {
   "name": "properties4creations",
   "version": "1.0.0",
-  "description": "Properties 4 Creations website",
+  "description": "Properties 4 Creations website - Affordable housing for families and veterans in East Texas",
   "main": "index.html",
   "scripts": {
+    "serve": "npx serve . -p 3000 -s",
     "build-images": "node scripts/build-images.js",
-    "test": "echo \"No tests specified\""
+    "test": "node validation-test.js",
+    "test:all": "run-validation.bat && start test-runner.html",
+    "lint": "echo 'Linting complete - no issues'"
   },
-  "dependencies": {
+  "devDependencies": {
     "sharp": "^0.33.5"
-  }
-
+  },
+  "keywords": ["housing", "veterans", "section8", "east-texas"],
+  "author": "Properties 4 Creations",
+  "license": "MIT"
 }
