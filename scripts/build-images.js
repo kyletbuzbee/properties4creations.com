@@ -17,8 +17,17 @@ async function processImage(filePath) {
   for (const width of SIZES) {
     for (const fmt of formats) {
       const out = path.join(dir, `${base}-${width}.${fmt.ext}`);
-      await sharp(filePath).resize({ width, withoutEnlargement: true }).toFormat(fmt.ext, fmt.options).toFile(out);
-      console.log('Generated:', out);
+      try {
+        // Only generate if file doesn't exist
+        if (!fs.existsSync(out)) {
+          await sharp(filePath).resize({ width, withoutEnlargement: true }).toFormat(fmt.ext, fmt.options).toFile(out);
+          console.log('Generated:', out);
+        } else {
+          console.log('Skipped (exists):', out);
+        }
+      } catch (err) {
+        console.error('Failed to generate:', out, err.message);
+      }
     }
   }
 }

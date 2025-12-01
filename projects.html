@@ -7,10 +7,22 @@
     <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
     <link rel="canonical" href="https://properties4creations.com/projects.html">
 
+    <!-- Hero preload -->
+    <link rel="preload" href="public/images/hero/front_porch_hero.webp" as="image" imagesrcset="public/images/hero/front_porch_hero-1280.webp 1280w, public/images/hero/front_porch_hero-1920.webp 1920w" imagesizes="(max-width: 1024px) 100vw, 1280px">
+
+    <!-- Fonts: preconnect + preload consistently -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
     <link rel="stylesheet" href="css/design-tokens.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/main.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN loading -->
+    <script src="https://cdn.tailwindcss.com" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous" defer></script>
+    <script src="js/tw-config.js" defer></script>
 </head>
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->
@@ -145,6 +157,8 @@ document.addEventListener('DOMContentLoaded', loadProperties);
 
     <div id="footer-container"></div>
 
+    <script defer src="components/component-loader.js"></script>
+    <script src="js/banner-loader.js" defer></script>
     <script src="js/bundle.min.js" defer></script>
 </body>
 </html>

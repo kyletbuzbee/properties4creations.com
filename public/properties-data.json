@@ -4,21 +4,21 @@
     "title": "Tyler Ranch Home",
     "location": "Tyler, TX",
     "price": {
-      "amount": 1100,
+      "amount": 1800,
       "currency": "USD",
       "period": "month",
-      "formatted": "$1,100/mo"
+      "formatted": "$1,800/mo"
     },
     "availability": "available",
     "datePosted": "2025-11-15",
     "featured": true,
     "lastUpdated": "2025-11-23",
-    "story_description": "Newly renovated 3BR home with quartz counters and new HVAC. Section 8 accepted.",
+    "story_description": "Charming 3BR/2BA ranch-style home on 1.5 acres in Tyler...",
     "tags": ["Section 8 Ready", "Veteran Priority"],
     "trust_badges": ["Certified Renovation", "ADA Compliant", "Veteran-Owned"],
     "bedrooms": 3,
     "bathrooms": 2,
-    "sqft": 1400,
+    "sqft": 1850,
     "images": ["public/images/properties/before-after/after_living_room.webp"],
     "url": "projects/tyler-ranch-home.html"
 

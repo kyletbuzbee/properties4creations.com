@@ -1,4 +1,4 @@
-[
+ [
   {
     "id": "1",
     "title": "Downtown Tyler Renovation",
@@ -14,29 +14,29 @@
   },
   {
     "id": "2",
-    "title": "Longview Historic Lofts",
+    "title": "Longview Victorian",
     "type": "project",
-    "url": "projects/longview-historic-lofts.html",
-    "description": "Historic building conversion with modern amenities in downtown Longview. Transformed from a historic warehouse into luxurious loft living that respects history while providing modern comforts.",
-    "tags": ["Market Rate", "Historic Building", "Pet Friendly", "Bike Storage"],
-    "location": "Downtown Longview, TX",
-    "price": "$1,800/mo",
-    "bedrooms": "3",
-    "bathrooms": "2",
-    "sqft": "1,800"
+    "url": "projects/longview-victorian.html",
+    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused. Historic Victorian home with modern updates and spacious rooms. Fully renovated kitchen and bathrooms.",
+    "tags": ["Market Rate", "Historic Home", "Pet Friendly"],
+    "location": "Longview, TX",
+    "price": "$1,300/mo",
+    "bedrooms": "4",
+    "bathrooms": "3",
+    "sqft": "2,200"
   },
   {
     "id": "3",
-    "title": "Jefferson Riverside Gardens",
+    "title": "Jefferson Riverfront",
     "type": "project",
-    "url": "projects/jefferson-riverside-gardens.html",
-    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
-    "tags": ["Section 8 Ready", "Waterfront", "Garden Views", "Patio Access", "Laundry Facility"],
-    "location": "Near Big Cypress Bayou, Jefferson, TX",
-    "price": "$950/mo",
-    "bedrooms": "1",
+    "url": "projects/jefferson-riverfront.html",
+    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused. Peaceful apartment near the river with stunning views. ADA accessible and Section 8 approved.",
+    "tags": ["Section 8 Ready", "Waterfront", "ADA Accessible"],
+    "location": "Jefferson, TX",
+    "price": "$900/mo",
+    "bedrooms": "2",
     "bathrooms": "1",
-    "sqft": "850"
+    "sqft": "950"
   },
   {
     "id": "4",
@@ -129,5 +129,31 @@
     "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
     "location": "East Texas",
     "tags": ["Transparency", "Standards", "HVAC", "Roof", "Electrical", "Plumbing"]
+  },
+  {
+    "id": "14",
+    "title": "Tyler Ranch Home",
+    "type": "project",
+    "url": "projects/tyler-ranch-home.html",
+    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused. Charming 3BR/2BA ranch-style home on 1.5 acres in Tyler...",
+    "tags": ["Section 8 Ready", "Veteran Priority"],
+    "location": "Tyler, TX",
+    "price": "$1,800/mo",
+    "bedrooms": "3",
+    "bathrooms": "2",
+    "sqft": "1,850"
+  },
+  {
+    "id": "15",
+    "title": "Marshall Townhome",
+    "type": "project",
+    "url": "projects/marshall-townhome.html",
+    "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused. Modern townhome in quiet neighborhood. Energy efficient with pool access and community amenities.",
+    "tags": ["Section 8 Ready", "Community Amenities", "Energy Efficient"],
+    "location": "Marshall, TX",
+    "price": "$1,050/mo",
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "sqft": "1,200"
   }
 ]

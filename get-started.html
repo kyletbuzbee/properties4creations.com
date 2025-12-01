@@ -7,6 +7,20 @@
     <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
     <link rel="canonical" href="https://properties4creations.com/get-started.html">
 
+    <!-- Hero preload AVIF/WebP responsive variants -->
+    <link rel="preload" href="public/images/banners/hero-get-started-banner-1280.avif" as="image"
+      imagesrcset="public/images/banners/hero-get-started-banner-640.avif 640w,
+                   public/images/banners/hero-get-started-banner-960.avif 960w,
+                   public/images/banners/hero-get-started-banner-1280.avif 1280w,
+                   public/images/banners/hero-get-started-banner-1920.avif 1920w"
+      imagesizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1280px" type="image/avif">
+    <link rel="preload" href="public/images/banners/hero-get-started-banner-1280.webp" as="image"
+      imagesrcset="public/images/banners/hero-get-started-banner-640.webp 640w,
+                   public/images/banners/hero-get-started-banner-960.webp 960w,
+                   public/images/banners/hero-get-started-banner-1280.webp 1280w,
+                   public/images/banners/hero-get-started-banner-1920.webp 1920w"
+      imagesizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1280px" type="image/webp">
+
     <!-- Design System CSS (MUST be first) -->
     <link rel="stylesheet" href="css/design-tokens.css">
     <link rel="stylesheet" href="css/components.css">
@@ -163,8 +177,7 @@
   "variant": "hero",
   "title": "Turn Your Property into Purpose",
   "subtitle": "Sell your home for fair market value and create sanctuary for veterans and families. No fees, complete renovation, sustainable community impact.",
-  "background": "public/images/hero/front_porch_hero.webp",
-
+  "background": "public/images/banners/hero-get-started-banner.webp",
   "eyebrow": "Fair Cash • No Fees • Veteran Impact",
   "showVoucherBadge": true,
   "ctaText": "Get Cash Offer",
@@ -413,8 +426,8 @@
                         <button type="submit" class="cta-glow px-12 py-4 bg-gradient-to-r from-brand-wood to-yellow-600 text-white rounded-xl font-bold text-lg shadow-wood hover:shadow-xl transition-all transform hover:scale-105">
                             Get My Cash Offer →
                         </button>
-                        <button type="button" class="px-12 py-4 border-2 border-brand-navy text-brand-navy bg-white hover:bg-brand-beige rounded-xl font-bold transition-all">
-                            Call Us: 555-PROPERTY
+                        <button type="button" class="px-12 py-4 border-2 border-brand-navy text-brand-navy bg-white hover:bg-brand-beige rounded-xl font-bold transition-all" aria-label="Call Properties 4 Creations at (903) 283-1770">
+                            Call Us: (903) 283-1770
                         </button>
                     </div>
 
