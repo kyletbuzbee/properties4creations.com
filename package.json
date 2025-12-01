@@ -7,6 +7,7 @@
     "serve": "npx serve . -p 3000 -s",
     "build-images": "node scripts/build-images.js",
     "build-css": "npx tailwindcss -i ./css/input.css -o ./css/tailwind.css",
+    "build:tailwind": "npx tailwindcss -i ./css/input.css -o ./css/tailwind.css --minify",
     "watch-css": "npx tailwindcss -i ./css/input.css -o ./css/tailwind.css --watch",
     "test": "node validation-test.js",
     "test:all": "run-validation.bat && start test-runner.html",
