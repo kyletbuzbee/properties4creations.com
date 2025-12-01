@@ -1,0 +1,129 @@
+/* Manually created Tailwind CSS for P4C project */
+/* This includes base Tailwind + custom brand styles */
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+@layer components {
+  /* Brand Colors */
+  .text-brand-navy { color: var(--color-primary-navy, #1a365d); }
+  .bg-brand-navy { background-color: var(--color-primary-navy, #1a365d); }
+  .text-brand-wood { color: var(--color-accent-gold, #8b4513); }
+  .bg-brand-wood { background-color: var(--color-accent-gold, #8b4513); }
+  .text-brand-walnut { color: var(--color-secondary-walnut, #3d2817); }
+  .text-brand-beige { color: var(--color-neutral-beige, #fef3e7); }
+  .bg-brand-beige { background-color: var(--color-neutral-beige, #fef3e7); }
+
+  /* Custom box shadows */
+  .shadow-wood { box-shadow: var(--shadow-wood, 0 4px 6px -1px rgba(139, 69, 19, 0.1), 0 2px 4px -1px rgba(139, 69, 19, 0.06)); }
+  .shadow-navy { box-shadow: var(--shadow-medium, 0 10px 15px -3px rgba(26, 54, 93, 0.1), 0 4px 6px -2px rgba(26, 54, 93, 0.05)); }
+  .shadow-floating { box-shadow: var(--shadow-floating, 0 25px 50px -12px rgba(0, 0, 0, 0.25)); }
+}
+
+/* Include critical styles inline from index.html for now */
+/* These will be replaced with proper Tailwind classes after build */
+
+body { margin: 0; font-family: 'Inter', sans-serif; }
+.bg-brand-beige { background-color: var(--color-neutral-beige); }
+.bg-brand-navy { background-color: var(--color-primary-navy); }
+.text-brand-navy { color: var(--color-primary-navy); }
+.text-slate-100 { color: #f1f5f9; }
+.text-white { color: #ffffff; }
+.font-heading { font-family: 'Merriweather', serif; }
+.font-body { font-family: 'Inter', sans-serif; }
+.sticky { position: sticky; }
+.z-50 { z-index: 50; }
+.shadow-lg { box-shadow: var(--shadow-primary); }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.top-0 { top: 0; }
+.left-0 { left: 0; }
+.h-screen { height: 100vh; }
+.min-h-\[600px\] { min-height: 600px; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.space-x-4 > * + * { margin-left: 1rem; }
+.space-x-3 > * + * { margin-left: 0.75rem; }
+.h-16 { height: 4rem; }
+.max-w-7xl { max-width: 80rem; }
+.max-w-6xl { max-width: 72rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+.text-6xl { font-size: 3.75rem; line-height: 1; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.leading-tight { line-height: 1.25; }
+.drop-shadow-lg { filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); }
+.transition-all { transition-property: all; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.duration-300 { transition-duration: 300ms; }
+.hover\:scale-105:hover { transform: scale(1.05); }
+.transform { transform: translate(var(--tw-transform)); }
+.scale-105 { transform: scale(1.05); }
+.overflow-hidden { overflow: hidden; }
+.object-cover { object-fit: cover; }
+.mix-blend-multiply { mix-blend-mode: multiply; }
+.bg-black\/40 { background-color: rgb(0 0 0 / 0.4); }
+.-translate-x-1\/2 { transform: translateX(-50%); }
+.z-10 { z-index: 10; }
+.animate-bounce { animation: bounce 1s infinite; }
+.text-center { text-align: center; }
+.w-6 { width: 1.5rem; }
+.h-6 { height: 1.5rem; }
+.text-current { color: currentColor; }
+.fill-none { fill: none; }
+.stroke-current { stroke: currentColor; }
+.stroke-2 { stroke-width: 2px; }
+.bg-black\/50 { background-color: rgb(0 0 0 / 0.5); }
+.backdrop-blur-sm { backdrop-filter: blur(4px); }
+.border { border-width: 1px; border-color: var(--border); }
+.border-white\/20 { border-color: rgb(255 255 255 / 0.2); }
+.border-white\/30 { border-color: rgb(255 255 255 / 0.3); }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.cursor-ew-resize { cursor: ew-resize; }
+.bg-white { background-color: #ffffff; }
+.rounded-full { border-radius: 9999px; }
+.rounded { border-radius: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.shadow-xl { box-shadow: var(--shadow-floating); }
+.border-2 { border-width: 2px; }
+.border-brand-navy { border-color: var(--primary); }
+.pointer-events-none { pointer-events: none; }
+.opacity-0 { opacity: 0; }
+.hidden { display: none; }
+.group:hover .group-hover\:text-wood-300 { color: var(--wood-300); }
+.hover\:shadow-2xl:hover { box-shadow: var(--shadow-floating); }
+.hover\:-translate-y-1:hover { transform: translateY(-4px); }</parameter>
+<task_progress>- [x] Install Tailwind CSS v3 as dev dependency
+- [x] Initialize Tailwind configuration
+- [x] Migrate custom config from tw-config.js to tailwind.config.js
+- [x] Create css/input.css with Tailwind directives
+- [x] Build initial Tailwind CSS file (manual creation)
+- [ ] Add build/watch script to package.json
+- [ ] Replace CDN in index.html
+- [ ] Replace CDN in remaining 15 HTML files
+- [ ] Remove tw-config.js script references
+- [ ] Clean up tw-config.js file
+- [ ] Test homepage loads without CORS errors
+- [ ] Verify custom brand styles work correctly</parameter>
+</write_to_file>
