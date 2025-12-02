@@ -1,8 +1,16 @@
-"overrides": [
-    {
-        "files": "*.html",
-        "options": {
-            "parser": "html"
+{
+    "overrides": [
+        {
+            "files": "*.html",
+            "options": {
+                "parser": "html"
+            }
+        },
+        {
+            "files": "*.yaml",
+            "options": {
+                "yamlBracketSpacing": false
+            }
         }
-    }
-]
+    ]
+}

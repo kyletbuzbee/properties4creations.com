@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | Properties 4 Creations</title>
+    <title>{{ pageTitle }} | Properties 4 Creations</title>
     <meta name="description" content="{{ description or 'Affordable housing solutions for families and veterans in East Texas.' }}">
     <link rel="canonical" href="https://properties4creations.com{{ page.url }}">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://properties4creations.com{{ page.url }}">
-    <meta property="og:title" content="{{ title }}">
+    <meta property="og:title" content="{{ pageTitle }}">
     <meta property="og:description" content="{{ description }}">
     <meta property="og:image" content="https://properties4creations.com/public/images/{{ banner.image }}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:title" content="{{ pageTitle }}">
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:image" content="https://properties4creations.com/public/images/{{ banner.image }}">
 
@@ -45,7 +45,7 @@
                         <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
                         <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
                         <img src="/public/images/{{ banner.image }}"
-                             alt="{{ banner.title }}"
+                             alt="{{ banner.bannerTitle }}"
                              class="w-full h-full object-cover"
                              fetchpriority="high">
                     </picture>
@@ -56,7 +56,7 @@
                     <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
                     <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
                     <img src="/public/images/{{ banner.image }}"
-                         alt="{{ banner.title }}"
+                         alt="{{ banner.bannerTitle }}"
                          class="w-full h-full object-cover"
                          fetchpriority="high">
                 </picture>
@@ -74,12 +74,12 @@
                 {% endif %}
 
                 <h1 class="page-banner__title text-4xl md:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
-                    {{ banner.title }}
+                    {{ banner.bannerTitle }}
                 </h1>
 
-                {% if banner.subtitle %}
+                {% if banner.bannerSubtitle %}
                 <p class="page-banner__subtitle text-lg md:text-xl text-slate-50 mb-8 max-w-2xl drop-shadow-md font-medium">
-                    {{ banner.subtitle }}
+                    {{ banner.bannerSubtitle }}
                 </p>
                 {% endif %}
 

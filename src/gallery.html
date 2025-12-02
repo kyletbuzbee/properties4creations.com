@@ -1,16 +1,16 @@
 ---
 layout: base.njk
-title: "Renovation Gallery | Properties 4 Creations"
+pageTitle: "Renovation Gallery | Properties 4 Creations"
 description: "See the transformation. Browse our gallery of veteran housing renovations in East Texas."
 banner:
-  variant: hero
-  title: "Transformation Gallery"
-  subtitle: "Seeing is believing. Slide to explore how we turn distressed properties into dignified family homes."
-  image: "banners/hero-projects-banner.webp"
-  eyebrow: "Before & After"
-  showVoucherBadge: false
-  ctaText: "Start Your Project"
-  ctaHref: "/contact/"
+variant: hero
+bannerTitle: "Transformation Gallery"
+bannerSubtitle: "Seeing is believing. Slide to explore how we turn distressed properties into dignified family homes."
+image: "banners/hero-projects-banner.webp"
+eyebrow: "Before & After"
+showVoucherBadge: false
+ctaText: "Start Your Project"
+ctaHref: "/contact/"
 ---
 
 <section class="py-20 bg-white">
@@ -18,7 +18,8 @@ banner:
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-brand-navy mb-4">Our Renovation Standard</h2>
             <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-                We don't just cover up problems; we fix them. From foundation to roof, see the Properties 4 Creations difference.
+                We don't just cover up problems; we fix them. From foundation to roof, see the Properties 4 Creations
+                difference.
             </p>
         </div>
 
@@ -26,13 +27,24 @@ banner:
             <div class="slider-group">
                 <h3 class="text-xl font-bold text-brand-navy mb-3">Modern Kitchen Upgrades</h3>
                 <div class="relative w-full h-[350px] overflow-hidden rounded-xl shadow-wood group">
-                    <div class="absolute inset-0 w-full h-full bg-slate-200 flex items-center justify-center text-slate-400">AFTER IMAGE</div>
-                    <div class="compare-overlay absolute inset-0 w-[50%] h-full bg-slate-800 border-r-2 border-white z-10 flex items-center justify-center text-white">BEFORE IMAGE</div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-slate-200 flex items-center justify-center text-slate-400">
+                        AFTER IMAGE</div>
+                    <div
+                        class="compare-overlay absolute inset-0 w-[50%] h-full bg-slate-800 border-r-2 border-white z-10 flex items-center justify-center text-white">
+                        BEFORE IMAGE</div>
 
-                    <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" aria-label="Compare before and after images">
-                    <div class="slider-handle absolute inset-0 pointer-events-none z-20 w-[50%] border-r-2 border-white">
-                        <div class="absolute right-[-16px] top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
-                            <svg class="w-4 h-4 text-brand-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" transform="rotate(90 12 12)" /></svg>
+                    <input type="range" min="0" max="100" value="50"
+                        class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+                        aria-label="Compare before and after images">
+                    <div
+                        class="slider-handle absolute inset-0 pointer-events-none z-20 w-[50%] border-r-2 border-white">
+                        <div
+                            class="absolute right-[-16px] top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
+                            <svg class="w-4 h-4 text-brand-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 9l4-4 4 4m0 6l-4 4-4-4" transform="rotate(90 12 12)" />
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -42,19 +54,19 @@ banner:
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const sliders = document.querySelectorAll('.slider-group');
-    sliders.forEach(group => {
-        const input = group.querySelector('.slider-control');
-        const overlay = group.querySelector('.compare-overlay');
-        const handle = group.querySelector('.slider-handle');
-        if(input && overlay && handle) {
-            input.addEventListener('input', (e) => {
-                const val = e.target.value + '%';
-                overlay.style.width = val;
-                handle.style.width = val;
-            });
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        const sliders = document.querySelectorAll('.slider-group');
+        sliders.forEach(group => {
+            const input = group.querySelector('.slider-control');
+            const overlay = group.querySelector('.compare-overlay');
+            const handle = group.querySelector('.slider-handle');
+            if (input && overlay && handle) {
+                input.addEventListener('input', (e) => {
+                    const val = e.target.value + '%';
+                    overlay.style.width = val;
+                    handle.style.width = val;
+                });
+            }
+        });
     });
-});
 </script>

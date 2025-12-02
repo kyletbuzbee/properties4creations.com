@@ -25,6 +25,22 @@
   ],
   "author": "Properties 4 Creations",
   "license": "MIT",
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "html"
+        }
+      },
+      {
+        "files": "*.yaml",
+        "options": {
+          "yamlBracketSpacing": false
+        }
+      }
+    ]
+  },
   "dependencies": {
     "tailwind": "^2.3.1"
   }
