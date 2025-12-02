@@ -24,24 +24,5 @@
     "east-texas"
   ],
   "author": "Properties 4 Creations",
-  "license": "MIT",
-  "dependencies": {
-    "tailwind": "^2.3.1"
-  },
-  {
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "html"
-        }
-      },
-      {
-        "files": "*.yaml",
-        "options": {
-          "yamlBracketSpacing": false
-        }
-      }
-    ]
-  }
+  "license": "MIT"
 }

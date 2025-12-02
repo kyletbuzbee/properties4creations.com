@@ -1,0 +1,90 @@
+{
+    "tyler-ranch-home": {
+        "coords": [
+            32.3513,
+            -95.3011
+        ],
+        "title": "Tyler Ranch Home",
+        "desc": "3 Bed • 2 Bath",
+        "img": "properties/tyler-ranch/hero.webp",
+        "link": "/projects/tyler-ranch-home/",
+        "price": 1800,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 1850,
+        "city": "Tyler",
+        "status": "Available",
+        "voucherType": "Section 8 Ready",
+        "features": [
+            "Upgraded Kitchen",
+            "Private Yard",
+            "Garage Parking"
+        ]
+    },
+    "longview-victorian": {
+        "coords": [
+            32.5007,
+            -94.7405
+        ],
+        "title": "Longview Victorian",
+        "desc": "4 Bed • 3 Bath",
+        "img": "properties/longview-victorian/hero.webp",
+        "link": "/projects/longview-victorian/",
+        "price": 1300,
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "sqft": 2400,
+        "city": "Longview",
+        "status": "Available",
+        "voucherType": "Historic Property",
+        "features": [
+            "Historic Architecture",
+            "Large Lot",
+            "Charming Details"
+        ]
+    },
+    "jefferson-riverfront": {
+        "coords": [
+            32.7571,
+            -94.3452
+        ],
+        "title": "Jefferson Riverfront",
+        "desc": "2 Bed • Waterfront",
+        "img": "properties/jefferson-riverfront/hero.webp",
+        "link": "/projects/jefferson-riverfront/",
+        "price": 900,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "sqft": 950,
+        "city": "Jefferson",
+        "status": "Available",
+        "voucherType": "Waterfront",
+        "features": [
+            "Bayou Access",
+            "Private Dock",
+            "Waterfront Recreation"
+        ]
+    },
+    "marshall-townhome": {
+        "coords": [
+            32.5445,
+            -94.3674
+        ],
+        "title": "Marshall Townhome",
+        "desc": "3 Bed • Community",
+        "img": "properties/marshall-townhome/hero.webp",
+        "link": "/projects/marshall-townhome/",
+        "price": 1200,
+        "bedrooms": 3,
+        "bathrooms": 2.5,
+        "sqft": 1600,
+        "city": "Marshall",
+        "status": "Coming Soon",
+        "voucherType": "Community Living",
+        "features": [
+            "Modern Design",
+            "Community Amenities",
+            "Low Maintenance"
+        ]
+    }
+}

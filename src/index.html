@@ -13,8 +13,13 @@ image: "banners/hero-home-banner.webp"
 eyebrow: "HUD-VASH & Section 8 Approved"
 showVoucherBadge: true
 ctaText: "Browse Homes for Families & Veterans"
-taHref: "/projects/"
+ctaHref: "/projects/"
 ---
+
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+{% endblock %}
 
 <!-- Page Content -->
 <section class="py-16 bg-white border-b border-brand-wood/10 relative overflow-hidden">
@@ -297,32 +302,16 @@ taHref: "/projects/"
                 });
             };
 
-            const properties = [
-                {
-                    coords: [32.3513, -95.3011],
-                    title: "Tyler Ranch Home",
-                    desc: "3 Bed • 2 Bath",
-                    img: "properties/tyler-ranch/hero.webp",
-                    link: "/projects/tyler-ranch-home/"
-                },
-                {
-                    coords: [32.5007, -94.7405],
-                    title: "Longview Victorian",
-                    desc: "4 Bed • 3 Bath",
-                    img: "properties/longview-victorian/hero.webp",
-                    link: "/projects/longview-victorian/"
-                },
-                {
-                    coords: [32.7571, -94.3452],
-                    title: "Jefferson Riverfront",
-                    desc: "2 Bed • Waterfront",
-                    img: "properties/jefferson-riverfront/hero.webp",
-                    link: "/projects/jefferson-riverfront/"
-                }
-            ];
+            // Use global properties data from Eleventy
+            const properties = {{ properties | dump | safe
+        }
+    };
 
-            properties.forEach(p => {
-                const popupContent = `
+    // Convert properties object to array and filter out unavailable properties
+    const availableProperties = Object.values(properties).filter(p => p.status === 'Available');
+
+    availableProperties.forEach(p => {
+        const popupContent = `
                 <div class="text-center min-w-[200px] p-2">
                     <div class="h-24 w-full mb-2 rounded overflow-hidden bg-slate-100">
                         <img src="/public/images/${p.img}" class="w-full h-full object-cover" onerror="this.src='/public/images/banners/hero-property-fallback.webp'">
@@ -333,10 +322,10 @@ taHref: "/projects/"
                 </div>
             `;
 
-                L.marker(p.coords, { icon: createIcon('#0B1120') })
-                    .addTo(map)
-                    .bindPopup(popupContent);
-            });
+        L.marker(p.coords, { icon: createIcon('#0B1120') })
+            .addTo(map)
+            .bindPopup(popupContent);
+    });
         }
     });
 </script>
