@@ -1,16 +1,41 @@
-{
-    "overrides": [
-        {
-            "files": "*.html",
-            "options": {
-                "parser": "html"
-            }
-        },
-        {
-            "files": "*.yaml",
-            "options": {
-                "yamlBracketSpacing": false
-            }
-        }
-    ]
-}
+
+# Ignore all Eleventy templates and content files
+src/**/*.html
+src/**/*.njk
+src/**/*.liquid
+src/**/*.md
+
+# Ignore Eleventy config and data files
+.eleventy.js
+src/_data/**
+src/_includes/**
+
+# Ignore scripts and workflow files
+scripts/**
+.github/**
+.github/workflows/**
+.github/workflows/deploy.yml
+
+# Ignore CSS if you want to keep custom formatting
+src/css/**/*.css
+
+# Ignore JS files if you want to keep custom formatting
+src/js/**/*.js
+
+# Ignore node_modules and build/output folders
+node_modules/
+public/
+build/
+_dist/
+_output/
+
+# Ignore project root files that should not be formatted
+CNAME
+audit-report.json
+package-lock.json
+package.json
+README.md
+tailwind.config.js
+.prettierrc
+.prettierignore
+.gitignore

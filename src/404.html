@@ -3,18 +3,23 @@ layout: base.njk
 title: "Page Not Found | Properties 4 Creations"
 description: "The page you are looking for could not be found."
 banner:
-  variant: hero
-  title: "Page Not Found"
-  subtitle: "Every path leads to sanctuary when you're on the right journey. Let's get you back on track."
-  image: "banners/hero-404-banner.jpg"
-  showVoucherBadge: false
-  ctaText: "Return Home"
-  ctaHref: "/"
+variant: hero
+title: "Page Not Found"
+subtitle: "Every path leads to sanctuary when you're on the right journey. Let's get you back on track."
+image: "banners/hero-404-banner.jpg"
+showVoucherBadge: false
+ctaText: "Return Home"
+ctaHref: "/"
 ---
 
 <section class="py-20 bg-white text-center">
     <div class="max-w-2xl mx-auto px-4">
-        <h2 class="text-6xl mb-6">🏠</h2>
+        <div class="w-16 h-16 mx-auto mb-6">
+            <svg class="w-16 h-16 text-brand-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+        </div>
         <h3 class="text-2xl font-bold text-brand-navy mb-4">We couldn't find that page.</h3>
         <p class="text-slate-600 mb-8">
             The listing may have been rented, or the page may have moved.
@@ -22,7 +27,9 @@ banner:
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/projects.html" class="btn-primary px-8 py-3 rounded-lg text-white font-bold">Browse Properties</a>
-            <a href="/contact.html" class="btn-secondary px-8 py-3 rounded-lg border-2 border-brand-navy text-brand-navy font-bold">Contact Us</a>
+            <a href="/contact.html"
+                class="btn-secondary px-8 py-3 rounded-lg border-2 border-brand-navy text-brand-navy font-bold">Contact
+                Us</a>
         </div>
     </div>
 </section>
