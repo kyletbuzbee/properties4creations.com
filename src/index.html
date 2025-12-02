@@ -282,6 +282,7 @@ ctaHref: "/projects/"
 </section>
 
 {% block scripts %}
+<script id="properties-data" type="application/json">{{ properties | dump | safe }}</script>
 <script src="/js/leaflet.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -296,36 +297,33 @@ ctaHref: "/projects/"
             const createIcon = (color) => {
                 return L.divIcon({
                     className: 'custom-div-icon',
-                    html: `<div style="background-color: ${color}; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>`,
+                    html: '<div style="background-color: ' + color + '; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
                     iconSize: [12, 12],
                     iconAnchor: [6, 6]
                 });
             };
 
-            // Use global properties data from Eleventy
-            const properties = {{ properties | dump | safe
-        }
-    };
+            // Get properties data from hidden script tag
+            const propertiesDataElement = document.getElementById('properties-data');
+            const properties = JSON.parse(propertiesDataElement.textContent);
 
-    // Convert properties object to array and filter out unavailable properties
-    const availableProperties = Object.values(properties).filter(p => p.status === 'Available');
+            // Convert properties object to array and filter out unavailable properties
+            const availableProperties = Object.values(properties).filter(p => p.status === 'Available');
 
-    availableProperties.forEach(p => {
-        const popupContent = `
-                <div class="text-center min-w-[200px] p-2">
-                    <div class="h-24 w-full mb-2 rounded overflow-hidden bg-slate-100">
-                        <img src="/public/images/${p.img}" class="w-full h-full object-cover" onerror="this.src='/public/images/banners/hero-property-fallback.webp'">
-                    </div>
-                    <b class="text-brand-navy block mb-1 text-sm">${p.title}</b>
-                    <span class="text-xs text-slate-500 block mb-2">${p.desc}</span>
-                    <a href="${p.link}" class="bg-brand-navy text-white text-xs px-3 py-1.5 rounded hover:bg-brand-wood transition-colors block w-full text-center">View Home</a>
-                </div>
-            `;
+            availableProperties.forEach(p => {
+                const popupContent = '<div class="text-center min-w-[200px] p-2">' +
+                    '<div class="h-24 w-full mb-2 rounded overflow-hidden bg-slate-100">' +
+                    '<img src="/public/images/' + p.img + '" class="w-full h-full object-cover" onerror="this.src=\'/public/images/banners/hero-property-fallback.webp\'">' +
+                    '</div>' +
+                    '<b class="text-brand-navy block mb-1 text-sm">' + p.title + '</b>' +
+                    '<span class="text-xs text-slate-500 block mb-2">' + p.desc + '</span>' +
+                    '<a href="' + p.link + '" class="bg-brand-navy text-white text-xs px-3 py-1.5 rounded hover:bg-brand-wood transition-colors block w-full text-center">View Home</a>' +
+                    '</div>';
 
-        L.marker(p.coords, { icon: createIcon('#0B1120') })
-            .addTo(map)
-            .bindPopup(popupContent);
-    });
+                L.marker(p.coords, { icon: createIcon('#0B1120') })
+                    .addTo(map)
+                    .bindPopup(popupContent);
+            });
         }
     });
 </script>
