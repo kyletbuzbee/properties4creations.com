@@ -6,8 +6,19 @@
     <title>{{ title }} | Properties 4 Creations</title>
     <meta name="description" content="{{ description or 'Affordable housing solutions for families and veterans in East Texas.' }}">
     <link rel="canonical" href="https://properties4creations.com{{ page.url }}">
-    
-    <link rel="preload" href="/public/images/logo/BRAND_LOGO.svg" as="image">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://properties4creations.com{{ page.url }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="https://properties4creations.com/public/images/{{ banner.image }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="https://properties4creations.com/public/images/{{ banner.image }}">
+
+    <link rel="preload" href="/images/logo/brand-logo-header.svg" as="image">
     {% if banner.image %}
     <link rel="preload" href="/public/images/{{ banner.image }}" as="image">
     {% endif %}
@@ -26,8 +37,32 @@
     {% if banner %}
     <section id="page-banner" class="page-banner page-banner--hero relative min-h-[420px] flex items-center" role="banner" aria-label="Page banner">
         <div class="page-banner__bg-container absolute inset-0 z-0 overflow-hidden">
-            <img src="/public/images/{{ banner.image }}" alt="{{ banner.title }}" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/70 to-brand-navy/40"></div>
+            {% if banner.video %}
+                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                    <source src="/public/videos/{{ banner.video }}" type="video/mp4">
+                    {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
+                    <picture class="w-full h-full object-cover">
+                        <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
+                        <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
+                        <img src="/public/images/{{ banner.image }}"
+                             alt="{{ banner.title }}"
+                             class="w-full h-full object-cover"
+                             fetchpriority="high">
+                    </picture>
+                </video>
+            {% else %}
+                {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
+                <picture class="w-full h-full object-cover">
+                    <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
+                    <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
+                    <img src="/public/images/{{ banner.image }}"
+                         alt="{{ banner.title }}"
+                         class="w-full h-full object-cover"
+                         fetchpriority="high">
+                </picture>
+            {% endif %}
+
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/70 to-brand-navy/40 mix-blend-multiply"></div>
         </div>
 
         <div class="page-banner__container relative z-10 max-w-7xl mx-auto px-4 w-full">
@@ -73,7 +108,6 @@
 
     {% include "footer.html" %}
 
-    <script src="/js/banner-loader.js" defer></script>
     <script src="/js/accessibility-enhanced.js" defer></script>
     {% block scripts %}{% endblock %}
 

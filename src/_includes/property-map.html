@@ -1,0 +1,44 @@
+<section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Location</h3>
+        <div id="property-detail-map" class="w-full h-80 rounded-xl shadow-md z-0"></div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mapElement = document.getElementById('property-detail-map');
+        if (mapElement && typeof L !== 'undefined') {
+            // Extract coordinates from JSON-LD Structured Data
+            const jsonLd = document.querySelector('script[type="application/ld+json"]');
+            let lat = 32.7571, lng = -94.3452; // Default Jefferson coordinates
+
+            if (jsonLd) {
+                try {
+                    const data = JSON.parse(jsonLd.textContent);
+                    if (data.geo && data.geo.latitude && data.geo.longitude) {
+                        lat = parseFloat(data.geo.latitude);
+                        lng = parseFloat(data.geo.longitude);
+                    }
+
+                    // Use property name for popup
+                    const propertyName = data.name ? data.name.replace(' - ', '\n').split(' - ')[0] : 'Property Location';
+                    L.marker([lat, lng]).addTo(map)
+                        .bindPopup(`<b>${propertyName}</b>`);
+                } catch (e) {
+                    console.warn('Could not parse property coordinates from JSON-LD');
+                    // Add marker with default coordinates
+                    L.marker([lat, lng]).addTo(map)
+                        .bindPopup('<b>Property Location</b>');
+                }
+            }
+
+            // Initialize map
+            const map = L.map('property-detail-map').setView([lat, lng], 14);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+        }
+    });
+</script>

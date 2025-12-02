@@ -7,7 +7,7 @@
    width="468"
    height="60"
    viewBox="0 0 468 60"
-   sodipodi:docname="brand_logo_UPDATED.svg"
+   sodipodi:docname="brand-logo-header.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,26 +23,34 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="9.4023105"
-     inkscape:cx="127.20278"
-     inkscape:cy="13.135069"
+     inkscape:zoom="3.3242188"
+     inkscape:cx="117.62162"
+     inkscape:cy="21.508813"
      inkscape:window-width="1920"
      inkscape:window-height="1111"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g28"
      showgrid="false"
      borderlayer="true" />
   <defs
      id="defs1">
     <pattern
        inkscape:collect="always"
+       xlink:href="#Terrain"
+       preserveAspectRatio="xMidYMid"
+       id="pattern28"
+       patternTransform="translate(909.96215,46.355732)"
+       x="5"
+       y="0" />
+    <pattern
+       inkscape:collect="always"
        xlink:href="#pattern26"
        preserveAspectRatio="xMidYMid"
        id="pattern27"
-       patternTransform="matrix(0.6,0,0,0.6,48.441815,46.562113)"
-       x="0"
+       patternTransform="matrix(0.4,0,0,0.4,48.441815,46.562113)"
+       x="13"
        y="0" />
     <pattern
        patternUnits="userSpaceOnUse"
@@ -66,9 +74,9 @@
        xlink:href="#Wood texture"
        preserveAspectRatio="xMidYMid"
        id="pattern25"
-       patternTransform="matrix(0.1,0,0,0.1,48.441815,46.562113)"
-       x="0"
-       y="0" />
+       patternTransform="matrix(0.05,0,0,0.05,48.441815,46.562113)"
+       x="17"
+       y="-11" />
     <pattern
        patternUnits="userSpaceOnUse"
        preserveAspectRatio="xMidYMid"
@@ -105,7 +113,9 @@
        xlink:href="#Terrain"
        preserveAspectRatio="xMidYMid"
        id="pattern2"
-       patternTransform="translate(889.44194,43.140065)" />
+       patternTransform="translate(889.44194,43.140065)"
+       x="0"
+       y="0" />
     <pattern
        patternUnits="userSpaceOnUse"
        preserveAspectRatio="xMidYMid"
@@ -447,7 +457,8 @@
          transform="matrix(0.23476124,0,0,0.20098051,-2.4859387,-47.438112)" />
       <g
          id="g27"
-         transform="matrix(1.041091,0,0,1.4091668,-7.1142443,-5.5310685)">
+         transform="matrix(1.041091,0,0,1.4091668,-7.1142443,-5.5310685)"
+         style="stroke:#120f0b;stroke-opacity:1">
         <text
            xml:space="preserve"
            style="font-size:29.4222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#c48c45;fill-opacity:0.764706;stroke:#120f0b;stroke-width:0.1;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
