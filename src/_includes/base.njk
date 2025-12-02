@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Properties 4 Creations</title>
+    <meta name="description" content="{{ description or 'Affordable housing solutions for families and veterans in East Texas.' }}">
+    <link rel="canonical" href="https://properties4creations.com{{ page.url }}">
+    
+    <link rel="preload" href="/public/images/logo/BRAND_LOGO.svg" as="image">
+    {% if banner.image %}
+    <link rel="preload" href="/public/images/{{ banner.image }}" as="image">
+    {% endif %}
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-brand-beige flex flex-col min-h-screen">
+    <a href="#main" class="skip-to-content btn-base bg-brand-wood text-white absolute -top-96 focus:top-4 focus:left-4 z-50">Skip to main content</a>
+
+    {% include "header.html" %}
+
+    {% if banner %}
+    <section id="page-banner" class="page-banner page-banner--hero relative min-h-[420px] flex items-center" role="banner" aria-label="Page banner">
+        <div class="page-banner__bg-container absolute inset-0 z-0 overflow-hidden">
+            <img src="/public/images/{{ banner.image }}" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/80 to-brand-navy/40"></div>
+        </div>
+        
+        <div class="page-banner__container relative z-10 max-w-7xl mx-auto px-4 w-full">
+            <div class="page-banner__content max-w-3xl">
+                {% if banner.eyebrow %}
+                <span class="page-banner__eyebrow inline-block py-1 px-3 rounded-full bg-brand-wood/20 border border-brand-wood/30 text-brand-gold text-xs font-bold uppercase tracking-wider mb-4">
+                    {{ banner.eyebrow }}
+                </span>
+                {% endif %}
+                
+                <h1 class="page-banner__title text-4xl md:text-6xl font-heading font-bold text-white mb-4 shadow-sm">
+                    {{ banner.title }}
+                </h1>
+                
+                {% if banner.subtitle %}
+                <p class="page-banner__subtitle text-lg md:text-xl text-slate-100 mb-8 max-w-2xl">
+                    {{ banner.subtitle }}
+                </p>
+                {% endif %}
+
+                <div class="flex flex-wrap gap-4">
+                    {% if banner.ctaText %}
+                    <a href="{{ banner.ctaHref }}" class="btn-primary page-banner__cta-btn">
+                        {{ banner.ctaText }}
+                    </a>
+                    {% endif %}
+                    
+                    {% if banner.showVoucherBadge %}
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur border border-white/20 text-white text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        Section 8 Vouchers Accepted
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <main id="main" class="flex-grow">
+        {{ content | safe }}
+    </main>
+
+    {% include "footer.html" %}
+
+    <script src="/js/banner-loader.js" defer></script>
+    <script src="/js/accessibility-enhanced.js" defer></script>
+    {% block scripts %}{% endblock %}
+
+    <!-- Scroll Animations -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+    </script>
+</body>
+</html>

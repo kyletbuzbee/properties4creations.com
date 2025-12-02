@@ -1,0 +1,190 @@
+---
+layout: base.njk
+title: "Browse Properties | Properties 4 Creations"
+description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact."
+banner:
+  variant: hero
+  title: "Transforming Properties into Homes"
+  subtitle: "Explore our East Texas property portfolio — all designed for families and veterans."
+  image: "banners/hero-projects-banner.webp"
+  eyebrow: "40+ Properties Renovated"
+  showVoucherBadge: false
+  ctaText: "Browse Properties"
+  ctaHref: "/get-started/"
+---
+
+        <section id="properties" class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-3 mb-10" id="filter-container">
+                    <button data-city="" class="filter-btn active px-6 py-2 rounded-full border-2 border-brand-navy bg-brand-navy text-white font-medium transition-all">
+                        All
+                    </button>
+                    <button data-city="tyler" class="filter-btn px-6 py-2 rounded-full border-2 border-brand-navy text-brand-navy hover:bg-brand-navy/10 font-medium transition-all">
+                        Tyler
+                    </button>
+                    <button data-city="longview" class="filter-btn px-6 py-2 rounded-full border-2 border-brand-navy text-brand-navy hover:bg-brand-navy/10 font-medium transition-all">
+                        Longview
+                    </button>
+                    <button data-city="jefferson" class="filter-btn px-6 py-2 rounded-full border-2 border-brand-navy text-brand-navy hover:bg-brand-navy/10 font-medium transition-all">
+                        Jefferson
+                    </button>
+                    <button data-city="marshall" class="filter-btn px-6 py-2 rounded-full border-2 border-brand-navy text-brand-navy hover:bg-brand-navy/10 font-medium transition-all">
+                        Marshall
+                    </button>
+                </div>
+                <div id="properties-container" class="space-y-12 max-w-5xl mx-auto min-h-[400px]"></div>
+
+{% block scripts %}
+<script>
+// Core logic preserved from original file
+let allProperties = [];
+
+async function loadProperties() {
+  // Ensure this path matches your static assets folder
+  const res = await fetch('/public/properties-data.json');
+  allProperties = await res.json();
+  renderProperties(allProperties);
+  bindCityFilter();
+}
+
+function normalizeUrl(url) {
+  if (!url) return '#';
+
+  // 1. Remove .html extension if present
+  let cleanUrl = url.replace('.html', '');
+
+  // 2. Handle paths that already look like 'projects/tyler-ranch-home'
+  //    (We want to ensure they don't get double-nested)
+  if (cleanUrl.startsWith('projects/')) {
+      return `/${cleanUrl}/`;
+  }
+
+  // 3. Handle known legacy filenames map
+  const map = {
+    'tyler-ranch': 'projects/tyler-ranch-home',
+    'longview-victorian': 'projects/longview-victorian',
+    'jefferson-riverfront': 'projects/jefferson-riverfront',
+    'marshall-townhome': 'projects/marshall-townhome'
+  };
+
+  // 4. Return the mapped path or the default structure
+  if (map[cleanUrl]) {
+      return `/${map[cleanUrl]}/`;
+  }
+
+  // Fallback
+  return `/projects/${cleanUrl}/`;
+}
+
+function renderProperties(properties = allProperties) {
+  const container = document.getElementById('properties-container');
+  container.innerHTML = '';
+
+  if (properties.length === 0) {
+      container.innerHTML = `<div class="text-center py-12 text-slate-500">No properties found matching your criteria.</div>`;
+      return;
+  }
+
+  properties.forEach(prop => {
+    const isVoucher = prop.tags?.includes('Section 8 Ready');
+    const badgeColor = isVoucher ? 'bg-green-600' : 'bg-brand-navy';
+    const badgeText = isVoucher ? 'Section 8 Ready' : 'Market Rate';
+
+    const image = (prop.images && prop.images[0]) || '/public/images/banners/hero-property-fallback.webp';
+    const imageBase = image.replace(/\.(png|jpg|jpeg|webp)$/i, '');
+
+    const cardHTML = `
+    <article class="bg-white rounded-2xl shadow-subtle hover:shadow-wood transition-all duration-300 hover:-translate-y-1 flex flex-col md:flex-row group border border-slate-100 overflow-hidden">
+      <div class="md:w-5/12 relative overflow-hidden h-64 md:h-auto">
+        <picture class="block w-full h-full">
+          <source srcset="${imageBase}-640.webp" type="image/webp">
+          <img src="${imageBase}.webp" alt="${prop.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+        </picture>
+
+        <div class="absolute top-4 left-4 z-10">
+          <span class="${badgeColor} text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md flex items-center gap-1">
+            ${isVoucher ? '<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>' : ''}
+            ${badgeText}
+          </span>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-brand-navy/90 to-transparent p-6 pt-12">
+          <p class="text-white font-bold text-xl font-heading">${prop.price?.formatted ?? ''}</p>
+        </div>
+      </div>
+
+      <div class="md:w-7/12 p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-1 mb-2 text-brand-wood font-medium text-sm">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>${prop.location}</span>
+          </div>
+
+          <h3 class="text-2xl font-heading font-bold text-brand-navy mb-3 leading-tight">
+            <a href="${normalizeUrl(prop.url)}" class="hover:text-brand-wood transition-colors">${prop.title}</a>
+          </h3>
+
+          <p class="text-slate-600 mb-6 text-sm line-clamp-3 leading-relaxed">${prop.story_description ?? ''}</p>
+
+          <div class="flex flex-wrap gap-2">
+            ${(prop.trust_badges || []).slice(0,3).map(b => `
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-600">
+                    <svg class="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    ${b}
+                </span>`).join('')}
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+          <div class="flex gap-4 text-sm text-slate-500 font-medium">
+             <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> ${prop.bedrooms} Bed</span>
+             <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> ${prop.bathrooms} Bath</span>
+          </div>
+
+          <div class="flex gap-3">
+            <a href="${normalizeUrl(prop.url)}" class="text-brand-wood hover:text-brand-walnut font-bold text-sm flex items-center gap-1 group/link">
+                View Home <span class="group-hover/link:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>`;
+    container.insertAdjacentHTML('beforeend', cardHTML);
+  });
+}
+
+function bindCityFilter() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Remove active class from all
+            buttons.forEach(b => {
+                b.classList.remove('bg-brand-navy', 'text-white');
+                b.classList.add('text-brand-navy', 'bg-transparent');
+            });
+
+            // Add active to clicked
+            e.target.classList.remove('text-brand-navy', 'bg-transparent');
+            e.target.classList.add('bg-brand-navy', 'text-white');
+
+            const city = e.target.dataset.city;
+            const filtered = city
+                ? allProperties.filter(p => (p.location || '').toLowerCase().includes(city))
+                : allProperties;
+            renderProperties(filtered);
+        });
+    });
+}
+
+// ... [Keep the rest of your normalizeUrl, renderProperties, and bindCityFilter logic here] ...
+// Ensure all image paths in the JS use absolute paths like '/public/images/...'
+
+document.addEventListener('DOMContentLoaded', loadProperties);
+</script>
+{% endblock %}
+
+            </div>
+        </section>

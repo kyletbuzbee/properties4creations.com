@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './*.html',
-    './components/**/*.{html,js}',
-    './projects/*.html'
+    './src/**/*.{html,njk,js}',  // Scan new source folder
+    './src/_includes/**/*.{html,njk}' // Scan layouts
   ],
+
   theme: {
     extend: {
       // Brand Colors from design-tokens.css

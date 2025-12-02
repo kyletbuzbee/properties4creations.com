@@ -1,1 +1,0 @@
-feat(hero): update homepage hero video to hero-banner-new.mp4

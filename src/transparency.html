@@ -1,0 +1,65 @@
+---
+layout: base.njk
+title: "Renovation Standards & Transparency | Properties 4 Creations"
+description: "See our renovation standards. We believe in total transparency about the quality and safety of our homes."
+banner:
+  variant: hero
+  title: "Our Renovation Standards"
+  subtitle: "We don't cut corners. See the 50-point checklist every Properties 4 Creations home must pass."
+  image: "banners/hero-transparency-banner.png"
+  eyebrow: "Safety & Quality First"
+  showVoucherBadge: true
+  ctaText: "View Available Homes"
+  ctaHref: "/projects/"
+---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Renovation Standards - Properties 4 Creations",
+  "description": "Our 50-point quality standard for affordable housing renovations."
+}
+</script>
+{% endblock %}
+
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-bold text-brand-navy mb-6">The Properties 4 Creations Standard</h2>
+                <p class="text-slate-600 mb-6">
+                    Every home we renovate undergoes a rigorous inspection and upgrade process.
+                    We prioritize systems that ensure safety, lower utility bills, and long-term comfort.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span><strong>HVAC:</strong> Serviced or New 14+ SEER Units</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span><strong>Plumbing:</strong> Leak-free PEX/Copper updates</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span><strong>Electrical:</strong> GFCI protection & modern panels</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <span><strong>Finish:</strong> Luxury Vinyl Plank & Quartz/Granite</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-slate-100 rounded-xl p-8">
+                <h3 class="text-xl font-bold text-brand-navy mb-4">Inspection Guarantee</h3>
+                <p class="text-sm text-slate-600 mb-6">
+                    Our properties are pre-inspected to pass Section 8 HQS (Housing Quality Standards)
+                    on the first visit. We fix issues before you ever see them.
+                </p>
+                <a href="/projects/" class="btn-primary w-full block text-center py-3 rounded-lg text-white font-bold">Find a Certified Home</a>
+            </div>
+        </div>
+    </div>
+</section>

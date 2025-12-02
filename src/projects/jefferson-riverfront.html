@@ -1,0 +1,104 @@
+---
+layout: base.njk
+title: "Jefferson Riverfront - Bayou Living at Big Cypress"
+description: "Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson. Waterfront living with Section 8 eligibility."
+banner:
+  variant: hero
+  title: "Affordable Homes for Families & Veterans in East Texas"
+  subtitle: "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride."
+  image: "banners/hero-property-fallback.webp"
+  eyebrow: "HUD-VASH & Section 8 Approved"
+  showVoucherBadge: true
+  ctaText: "Browse Homes for Families & Veterans"
+  ctaHref: "/get-started.html"
+---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SingleFamilyResidence",
+  "name": "Jefferson Riverfront - Charming 2BR Cabin",
+  "description": "Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson. Waterfront living with Section 8 eligibility and waterfront recreation access.",
+  "url": "https://properties4creations.com/projects/jefferson-riverfront.html",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jefferson",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "32.7571",
+    "longitude": "-94.3452"
+  },
+  "numberOfRooms": 4.5,
+  "numberOfBedrooms": 2,
+  "numberOfBathroomsTotal": 1.5,
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": 950,
+    "unitCode": "FTK"
+  },
+  "image": [
+    "https://properties4creations.com/public/images/properties/neighborhood/bayou-scene.jpg"
+  ]
+}
+</script>
+{% endblock %}
+
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2">
+                <h1 class="text-4xl font-bold text-brand-navy mb-4">Jefferson Riverfront</h1>
+
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Section 8 Ready</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Waterfront Property</span>
+                    <span class="text-2xl font-bold text-brand-navy">$900/mo</span>
+                </div>
+
+                <p class="text-lg text-slate-700 mb-6">
+                    Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson.
+                    Perfect for fishing, boating, and bayou recreation with Section 8 voucher acceptance.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Waterfront Lifestyle</h3>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Big Cypress Bayou access</li>
+                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Private boat dock</li>
+                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Fishing pier</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Home Comforts</h3>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Updated kitchen appliances</li>
+                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Wood-burning fireplace</li>
+                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Screened porch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-6 h-fit">
+                <h3 class="text-xl font-bold text-brand-navy mb-4">Tour This Waterfront Paradise</h3>
+                <form action="" method="POST" class="space-y-4">
+                    <input type="hidden" name="_subject" value="Lead: Jefferson Riverfront">
+                    <input type="hidden" name="_next" value="/thank-you.html">
+
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                    <input type="text" name="name" required class="w-full border p-2 rounded">
+
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                    <input type="email" name="email" required class="w-full border p-2 rounded">
+
+                    <button type="submit" class="btn-primary w-full rounded-lg py-3 mt-4 text-white font-bold">Request Tour</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
