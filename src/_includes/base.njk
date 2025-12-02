@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:image" content="https://properties4creations.com/public/images/{{ banner.image }}">
 
-    <link rel="preload" href="/images/logo/brand-logo-header.svg" as="image">
+    <link rel="preload" href="/public/images/logo/brand-logo-header.svg" as="image">
     {% if banner.image %}
     <link rel="preload" href="/public/images/{{ banner.image }}" as="image">
     {% endif %}
@@ -43,7 +43,7 @@
                         <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
                         <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
                         <img src="/public/images/{{ banner.image }}"
-                             alt="{{ banner.bannerTitle }}"
+                             alt="{{ banner.title }}"
                              class="w-full h-full object-cover"
                              fetchpriority="high">
                     </picture>
@@ -53,10 +53,10 @@
                 <picture class="w-full h-full object-cover">
                     <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
                     <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
-                    <img src="/public/images/{{ banner.image }}"
-                         alt="{{ banner.bannerTitle }}"
-                         class="w-full h-full object-cover"
-                         fetchpriority="high">
+                        <img src="/public/images/{{ banner.image }}"
+                             alt="{{ banner.title }}"
+                             class="w-full h-full object-cover"
+                             fetchpriority="high">
                 </picture>
             {% endif %}
 
@@ -72,12 +72,12 @@
                 {% endif %}
 
                 <h1 class="page-banner__title text-4xl md:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
-                    {{ banner.bannerTitle }}
+                    {{ banner.title }}
                 </h1>
 
-                {% if banner.bannerSubtitle %}
+                {% if banner.subtitle %}
                 <p class="page-banner__subtitle text-lg md:text-xl text-slate-50 mb-8 max-w-2xl drop-shadow-md font-medium">
-                    {{ banner.bannerSubtitle }}
+                    {{ banner.subtitle }}
                 </p>
                 {% endif %}
 
