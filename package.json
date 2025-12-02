@@ -24,5 +24,8 @@
     "east-texas"
   ],
   "author": "Properties 4 Creations",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "tailwind": "^4.0.0"
+  }
 }
