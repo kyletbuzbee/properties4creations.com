@@ -388,7 +388,7 @@
       </g>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.82523036px;font-family:Cambria;-inkscape-font-specification:'Cambria, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0.0475021px;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:199.631;display:inline;mix-blend-mode:saturation;fill:#b7780b;fill-opacity:1;stroke:#84531f;stroke-width:0.386002;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:0.943838"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.8252px;font-family:Cambria;-inkscape-font-specification:'Cambria, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0.0475021px;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:199.631;display:inline;mix-blend-mode:saturation;fill:#b7780b;fill-opacity:1;stroke:#84531f;stroke-width:0.386002;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:0.943838"
          x="135.44356"
          y="39.27784"
          id="text18"
@@ -397,9 +397,8 @@
          inkscape:transform-center-y="7.1939538"><tspan
            x="135.44356"
            y="39.27784"
-           id="tspan3"><tspan
-             style="fill:#fdfdfd"
-             id="tspan1">Properties 4 Creations </tspan></tspan></text>
+           id="tspan2"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.8252px;font-family:Cambria;-inkscape-font-specification:'Cambria, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fdfdfd;fill-opacity:1;stroke:#84531f;stroke-opacity:0.943838">Properties 4 Creations </tspan></text>
     </g>
   </g>
 </svg>
