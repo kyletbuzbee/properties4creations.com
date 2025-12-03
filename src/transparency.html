@@ -3,12 +3,10 @@ layout: base.njk
 title: "Renovation Standards & Transparency | Properties 4 Creations"
 description: "See our renovation standards. We believe in total transparency about the quality and safety of our homes."
 banner:
-  variant: hero
   title: "Our Renovation Standards"
   subtitle: "We don't cut corners. See the 50-point checklist every Properties 4 Creations home must pass."
-  image: "banners/hero-transparency-banner.png"
+  image: "hero-transparency-banner.webp"
   eyebrow: "Safety & Quality First"
-  showVoucherBadge: true
   ctaText: "View Available Homes"
   ctaHref: "/projects/"
 ---
@@ -17,9 +15,70 @@ banner:
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Renovation Standards - Properties 4 Creations",
-  "description": "Our 50-point quality standard for affordable housing renovations."
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://properties4creations.com/transparency/#organization",
+      "name": "Properties 4 Creations",
+      "url": "https://properties4creations.com",
+      "description": "Veteran-owned affordable housing provider specializing in premium renovations with complete transparency and quality guarantees.",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Properties 4 Creations Quality Standard",
+        "credentialCategory": "quality",
+        "competencyRequired": "50-point inspection and renovation checklist",
+        "recognizingAuthority": {
+          "@type": "Organization",
+          "name": "Properties 4 Creations"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Renovation Guarantee Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "HVAC Service & Replacement Guarantee",
+              "description": "All HVAC systems serviced or replaced with 14+ SEER efficiency units"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plumbing System Guarantee",
+              "description": "Leak-free PEX or copper plumbing systems with lifetime warranty"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Electrical Safety Guarantee",
+              "description": "GFCI protection and modern electrical panels for tenant safety"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Inspection Guarantee",
+              "description": "Pre-inspected properties that pass Section 8 HQS standards on first visit"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://properties4creations.com/transparency/",
+      "url": "https://properties4creations.com/transparency/",
+      "name": "Renovation Standards & Transparency | Properties 4 Creations",
+      "description": "See our renovation standards. We believe in total transparency about the quality and safety of our homes."
+    }
+  ]
 }
 </script>
 {% endblock %}
@@ -33,7 +92,7 @@ banner:
                     Every home we renovate undergoes a rigorous inspection and upgrade process.
                     We prioritize systems that ensure safety, lower utility bills, and long-term comfort.
                 </p>
-                <ul class="space-y-4">
+                <ul class="list-check space-y-4">
                     <li class="flex items-center gap-3">
                         <span class="text-green-500 text-xl">✓</span>
                         <span><strong>HVAC:</strong> Serviced or New 14+ SEER Units</span>
@@ -52,7 +111,7 @@ banner:
                     </li>
                 </ul>
             </div>
-            <div class="bg-slate-100 rounded-xl p-8">
+            <div class="card-elevated bg-slate-100 rounded-xl p-8">
                 <h3 class="text-xl font-bold text-brand-navy mb-4">Inspection Guarantee</h3>
                 <p class="text-sm text-slate-600 mb-6">
                     Our properties are pre-inspected to pass Section 8 HQS (Housing Quality Standards)

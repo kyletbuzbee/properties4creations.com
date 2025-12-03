@@ -3,14 +3,12 @@ layout: base.njk
 title: "Renovation Gallery | Properties 4 Creations"
 description: "See the transformation. Browse our gallery of veteran housing renovations in East Texas."
 banner:
-variant: "hero"
-bannerTitle: "Transformation Gallery"
-bannerSubtitle: "Seeing is believing. Slide to explore how we turn distressed properties into dignified family homes."
-image: "banners/hero-projects-banner.webp"
-eyebrow: "Before & After"
-showVoucherBadge: false
-ctaText: "Start Your Project"
-ctaHref: "/contact/"
+  title: "Transformation Gallery"
+  subtitle: "Seeing is believing. Slide to explore how we turn distressed properties into dignified family homes."
+  image: "hero-projects-banner.webp"
+  eyebrow: "Before & After"
+  ctaText: "Start Your Project"
+  ctaHref: "/contact/"
 ---
 
 <section class="py-20 bg-white">
@@ -24,29 +22,52 @@ ctaHref: "/contact/"
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="slider-group">
-                <h3 class="text-xl font-bold text-brand-navy mb-3">Modern Kitchen Upgrades</h3>
-                <div class="relative w-full h-[350px] overflow-hidden rounded-xl shadow-wood group">
-                    <div
-                        class="absolute inset-0 w-full h-full bg-slate-200 flex items-center justify-center text-slate-400">
-                        AFTER IMAGE</div>
-                    <div
-                        class="compare-overlay absolute inset-0 w-[50%] h-full bg-slate-800 border-r-2 border-white z-10 flex items-center justify-center text-white">
-                        BEFORE IMAGE</div>
+            <div class="compare-container relative w-full max-w-4xl mx-auto h-[350px] overflow-hidden rounded-xl shadow-lg group">
+                <h3 class="text-xl font-bold text-brand-navy mb-4 text-center">Living Room Transformation</h3>
 
-                    <input type="range" min="0" max="100" value="50"
-                        class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
-                        aria-label="Compare before and after images">
-                    <div
-                        class="slider-handle absolute inset-0 pointer-events-none z-20 w-[50%] border-r-2 border-white">
-                        <div
-                            class="absolute right-[-16px] top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
-                            <svg class="w-4 h-4 text-brand-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 9l4-4 4 4m0 6l-4 4-4-4" transform="rotate(90 12 12)" />
-                            </svg>
-                        </div>
-                    </div>
+                <!-- After Image -->
+                <picture>
+                    <source srcset="/public/images/properties/before-after/after_living_room-1920.avif" media="(min-width: 1280px)" type="image/avif">
+                    <source srcset="/public/images/properties/before-after/after_living_room-1280.avif" media="(min-width: 960px)" type="image/avif">
+                    <source srcset="/public/images/properties/before-after/after_living_room-640.avif" media="(min-width: 640px)" type="image/avif">
+                    <source srcset="/public/images/properties/before-after/after_living_room-1920.webp" media="(min-width: 1280px)" type="image/webp">
+                    <source srcset="/public/images/properties/before-after/after_living_room-1280.webp" media="(min-width: 960px)" type="image/webp">
+                    <source srcset="/public/images/properties/before-after/after_living_room-640.webp" media="(min-width: 640px)" type="image/webp">
+                    <img src="/public/images/properties/before-after/after_living_room.webp"
+                         alt="Living room after renovation with new flooring and paint"
+                         class="w-full h-full object-cover">
+                </picture>
+
+                <!-- Before Image Overlay -->
+                <div class="compare-overlay absolute inset-0 w-[50%] h-full z-10 border-r-2 border-white">
+                    <picture>
+                        <source srcset="/public/images/properties/before-after/patio_wood-1920.avif" media="(min-width: 1280px)" type="image/avif">
+                        <source srcset="/public/images/properties/before-after/patio_wood-1280.avif" media="(min-width: 960px)" type="image/avif">
+                        <source srcset="/public/images/properties/before-after/patio_wood-640.avif" media="(min-width: 640px)" type="image/avif">
+                        <source srcset="/public/images/properties/before-after/patio_wood-1920.webp" media="(min-width: 1280px)" type="image/webp">
+                        <source srcset="/public/images/properties/before-after/patio_wood-1280.webp" media="(min-width: 960px)" type="image/webp">
+                        <source srcset="/public/images/properties/before-after/patio_wood-640.webp" media="(min-width: 640px)" type="image/webp">
+                        <img src="/public/images/properties/before-after/patio_wood.webp"
+                             alt="Patio before renovation showing worn wood flooring"
+                             class="w-full h-full object-cover">
+                    </picture>
+                </div>
+
+                <!-- Slider Control -->
+                <input type="range"
+                       min="0"
+                       max="100"
+                       value="50"
+                       class="slider-control absolute bottom-4 left-1/2 transform -translate-x-1/2 w-3/4"
+                       aria-label="Compare before and after images"
+                       tabindex="0">
+
+                <!-- Labels -->
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-brand-navy px-3 py-1 rounded-full text-sm font-bold">
+                    BEFORE
+                </div>
+                <div class="absolute top-4 right-4 bg-brand-wood text-white px-3 py-1 rounded-full text-sm font-bold">
+                    AFTER
                 </div>
             </div>
         </div>
@@ -55,16 +76,30 @@ ctaHref: "/contact/"
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const sliders = document.querySelectorAll('.slider-group');
-        sliders.forEach(group => {
-            const input = group.querySelector('.slider-control');
-            const overlay = group.querySelector('.compare-overlay');
-            const handle = group.querySelector('.slider-handle');
-            if (input && overlay && handle) {
-                input.addEventListener('input', (e) => {
-                    const val = e.target.value + '%';
-                    overlay.style.width = val;
-                    handle.style.width = val;
+        const compareContainers = document.querySelectorAll('.compare-container');
+        compareContainers.forEach(container => {
+            const slider = container.querySelector('.slider-control');
+            const overlay = container.querySelector('.compare-overlay');
+
+            if (slider && overlay) {
+                // Set initial position
+                overlay.style.width = '50%';
+
+                slider.addEventListener('input', (e) => {
+                    const percentage = e.target.value + '%';
+                    overlay.style.width = percentage;
+                });
+
+                // Keyboard support
+                slider.addEventListener('keydown', (e) => {
+                    const currentValue = parseInt(slider.value);
+                    if (e.key === 'ArrowLeft' && currentValue > 0) {
+                        slider.value = currentValue - 5;
+                        overlay.style.width = slider.value + '%';
+                    } else if (e.key === 'ArrowRight' && currentValue < 100) {
+                        slider.value = currentValue + 5;
+                        overlay.style.width = slider.value + '%';
+                    }
                 });
             }
         });

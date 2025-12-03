@@ -1,14 +1,12 @@
 ---
 layout: base.njk
 title: "Contact Us | Properties 4 Creations"
-description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium
-renovations, and community impact."
+description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact."
 banner:
   title: "We're Here to Help"
   subtitle: "Reach out to learn more about our homes, programs, or how we serve East Texas families and veterans."
-  image: "banners/hero-contact-banner.webp"
+  image: "hero-contact-banner.webp"
   eyebrow: "Local Support, Real Answers"
-  showVoucherBadge: true
   ctaText: "Start Your Journey"
   ctaHref: "/get-started/"
 ---
@@ -135,5 +133,122 @@ banner:
 </script>
 
 {% block scripts %}
-<script src="/js/google-apps-script-submission.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const loadingOverlay = document.getElementById('form-loading-overlay');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    // Progressive form enhancement
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        // Basic validation
+        if (!data.name || !data.email || !data.message) {
+            showError('Please fill in all required fields.');
+            return;
+        }
+
+        // Show loading state
+        setLoading(true);
+
+        try {
+            // Submit to Google Apps Script
+            const response = await submitContactForm(data);
+
+            if (response.success) {
+                // Show success message
+                showSuccess('Thank you! Your message has been sent. We\'ll respond within 24 hours.');
+
+                // Reset form
+                contactForm.reset();
+
+                // Redirect after delay
+                setTimeout(() => {
+                    window.location.href = '/thank-you/';
+                }, 2000);
+            } else {
+                throw new Error(response.message || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showError(error.message || 'Failed to send message. Please try again or call us directly.');
+        } finally {
+            setLoading(false);
+        }
+    });
+
+    function setLoading(loading) {
+        if (loading) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = submitBtn.dataset.loadingText || 'Sending...';
+            loadingOverlay.style.display = 'flex';
+            showStatus('');
+        } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            loadingOverlay.style.display = 'none';
+        }
+    }
+
+    function showSuccess(message) {
+        showStatus(message, 'success');
+    }
+
+    function showError(message) {
+        showStatus(message, 'error');
+    }
+
+    function showStatus(message, type = '') {
+        // For now, using a simple alert. Could be enhanced with better UI
+        if (message) {
+            if (type === 'error') {
+                alert('Error: ' + message);
+            } else {
+                alert(message);
+            }
+        }
+    }
+
+    // Enhanced Google Apps Script submission
+    async function submitContactForm(data) {
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbx7ueoZrKMg4QoS2ZYTYRJyBvX6FcYuJCk_lOGQV/exec';
+
+        const payload = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone || '',
+            message: data.message,
+            veteran: data.veteran === 'yes' ? 'Yes' : 'No',
+            timestamp: new Date().toISOString(),
+            source: 'contact'
+        };
+
+        const response = await fetch(GAS_URL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            try {
+                const result = await response.json();
+                return { success: false, message: result.error || 'Server error' };
+            } catch {
+                return { success: false, message: 'Network error' };
+            }
+        }
+
+        const result = await response.json();
+        return { success: result.success, message: result.message };
+    }
+});
+</script>
 {% endblock %}

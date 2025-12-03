@@ -1,19 +1,20 @@
 ---
 layout: base.njk
-pageTitle: "Browse Properties | Properties 4 Creations"
-description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium
-renovations, and community impact."
+title: "Browse Properties | Properties 4 Creations"
+description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact."
 banner:
-variant: "hero"
-bannerTitle: "Transforming Properties into Homes"
-bannerSubtitle: "Explore our East Texas property portfolio — all designed for families and veterans."
-video: "hero-banner-new.mp4"
-image: "banners/hero-projects-banner.webp"
-eyebrow: "40+ Properties Renovated"
-showVoucherBadge: false
-ctaText: "Browse Properties"
-ctaHref: "/get-started/"
+  title: "Transforming Properties into Homes"
+  subtitle: "Explore our East Texas property portfolio — all designed for families and veterans."
+  image: "hero-projects-banner.webp"
+  eyebrow: "40+ Properties Renovated"
+  ctaText: "Browse Properties"
+  ctaHref: "/get-started/"
 ---
+
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+{% endblock %}
 
 <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
@@ -23,7 +24,7 @@ ctaHref: "/get-started/"
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                     <label for="bedrooms-filter" class="block text-sm font-medium text-slate-700 mb-1">Bedrooms</label>
-                    <select id="bedrooms-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full">
+                    <select id="bedrooms-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full" aria-label="Filter properties by number of bedrooms">
                         <option value="">All Bedrooms</option>
                         <option value="2">2 Bedrooms</option>
                         <option value="3">3 Bedrooms</option>
@@ -32,7 +33,7 @@ ctaHref: "/get-started/"
                 </div>
                 <div>
                     <label for="status-filter" class="block text-sm font-medium text-slate-700 mb-1">Status</label>
-                    <select id="status-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full">
+                    <select id="status-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full" aria-label="Filter properties by availability status">
                         <option value="">All Status</option>
                         <option value="Available">Available</option>
                         <option value="Coming Soon">Coming Soon</option>
@@ -40,7 +41,7 @@ ctaHref: "/get-started/"
                 </div>
                 <div>
                     <label for="city-filter" class="block text-sm font-medium text-slate-700 mb-1">City</label>
-                    <select id="city-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full">
+                    <select id="city-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full" aria-label="Filter properties by city location">
                         <option value="">All Cities</option>
                         <option value="Tyler">Tyler</option>
                         <option value="Longview">Longview</option>

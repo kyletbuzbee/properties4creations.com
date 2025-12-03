@@ -85,15 +85,33 @@
                 },
                 "datePublished": "2024-01-01",
                 "dateModified": "2024-01-01T00:00:00Z"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://properties4creations.com{{ page.url }}#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://properties4creations.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "{{ title or 'Properties 4 Creations' }}",
+                        "item": "https://properties4creations.com{{ page.url }}"
+                    }
+                ]
             }
         ]
     }
     </script>
 
     <!-- Performance Optimizations -->
-    <link rel="preload" href="/public/images/logo/brand-logo-header.svg" as="image">
+    <link rel="preload" href="/public/images/logo/brand-logo-header.svg" as="image" crossorigin>
     {% if banner and banner.image %}
-    <link rel="preload" href="/public/images/{{ banner.image }}" as="image">
+    <link rel="preload" href="/public/images/optimized/banners/{{ banner.image | replace('.webp','') }}.jpg" as="image" crossorigin>
     {% endif %}
 
     <!-- Font preloading for performance -->
@@ -132,78 +150,7 @@
 
     {% include "header.html" %}
 
-    {% if banner %}
-    <section id="page-banner" class="page-banner page-banner--hero relative min-h-[420px] flex items-center" role="banner" aria-label="Page banner">
-        <div class="page-banner__bg-container absolute inset-0 z-0 overflow-hidden">
-            {% if banner.video %}
-                <video autoplay loop muted playsinline preload="auto" aria-label="Hero banner video showing renovated homes" class="page-banner__bg-video">
-                    <source src="/public/videos/Hero-Banner Updated 720P(1).mp4" type="video/mp4" media="(max-width: 768px)">
-                    <source src="/public/videos/hero-banner_updated_1080p.mp4" type="video/mp4" media="(min-width: 769px)">
-                    <source src="/public/videos/{{ banner.video }}" type="video/mp4">
-                    {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
-                    <picture class="w-full h-full object-cover">
-                        <source media="(min-width: 1280px)" srcset="/public/images/{{ bannerBase }}-1920.webp">
-                        <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1280.webp">
-                        <source media="(min-width: 640px)" srcset="/public/images/{{ bannerBase }}-960.webp">
-                        <img src="/public/images/{{ banner.image }}"
-                             alt="{{ banner.title }}"
-                             class="w-full h-full object-cover"
-                             fetchpriority="high">
-                    </picture>
-                </video>
-                <div class="page-banner__overlay"></div>
-            {% else %}
-                {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
-                <picture class="w-full h-full object-cover">
-                    <source media="(min-width: 1280px)" srcset="/public/images/{{ bannerBase }}-1920.webp">
-                    <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1280.webp">
-                    <source media="(min-width: 640px)" srcset="/public/images/{{ bannerBase }}-960.webp">
-                        <img src="/public/images/{{ banner.image }}"
-                             alt="{{ banner.title }}"
-                             class="w-full h-full object-cover"
-                             fetchpriority="high">
-                </picture>
-            {% endif %}
-
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/70 to-brand-navy/40 mix-blend-multiply"></div>
-        </div>
-
-        <div class="page-banner__container relative z-10 max-w-7xl mx-auto px-4 w-full">
-            <div class="page-banner__content max-w-3xl">
-                {% if banner.eyebrow %}
-                <span class="page-banner__eyebrow inline-block py-1 px-3 rounded-full bg-brand-wood/20 border border-brand-wood/30 text-brand-gold text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-sm">
-                    {{ banner.eyebrow }}
-                </span>
-                {% endif %}
-
-                <h1 class="page-banner__title text-4xl md:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
-                    {{ banner.title }}
-                </h1>
-
-                {% if banner.subtitle %}
-                <p class="page-banner__subtitle text-lg md:text-xl text-slate-50 mb-8 max-w-2xl drop-shadow-md font-medium">
-                    {{ banner.subtitle }}
-                </p>
-                {% endif %}
-
-                <div class="flex flex-wrap gap-4">
-                    {% if banner.ctaText %}
-                    <a href="{{ banner.ctaHref }}" class="btn-primary page-banner__cta-btn shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
-                        {{ banner.ctaText }}
-                    </a>
-                    {% endif %}
-
-                    {% if banner.showVoucherBadge %}
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                        Section 8 Vouchers Accepted
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </section>
-    {% endif %}
+    {% include "banner.njk" %}
 
     <main id="main" class="flex-grow">
         {{ content | safe }}

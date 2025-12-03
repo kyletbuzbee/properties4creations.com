@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     './src/**/*.{html,njk,js}',  // Scan new source folder
-    './src/_includes/**/*.{html,njk}' // Scan layouts
+    './src/_includes/**/*.{html,njk}', // Scan layouts
+    './dist/**/*.html'  // Scan built HTML files
   ],
 
   theme: {
