@@ -1,0 +1,142 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - generic:
+        - link "Properties 4 Creations Home":
+          - /url: /
+          - img "Properties 4 Creations Logo"
+      - generic [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Properties" [ref=e7] [cursor=pointer]:
+          - /url: /projects/
+        - link "Gallery" [ref=e8] [cursor=pointer]:
+          - /url: /projects/
+        - link "Resources" [ref=e9] [cursor=pointer]:
+          - /url: /resources/
+        - link "Impact" [ref=e10] [cursor=pointer]:
+          - /url: /impact/
+        - link "Standards" [ref=e11] [cursor=pointer]:
+          - /url: /transparency/
+        - link "Start Here" [ref=e12] [cursor=pointer]:
+          - /url: /contact/
+          - generic [ref=e13]: Start Here
+          - img [ref=e14]
+  - banner "Page banner" [ref=e16]:
+    - img "Affordable Homes for Families & Veterans in East Texas" [ref=e19]
+    - generic [ref=e22]:
+      - generic [ref=e23]: HUD-VASH & Section 8 Approved
+      - heading "Affordable Homes for Families & Veterans in East Texas" [level=1] [ref=e24]
+      - paragraph [ref=e25]: We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride.
+      - generic [ref=e26]:
+        - link "Browse Homes for Families & Veterans" [ref=e27] [cursor=pointer]:
+          - /url: /projects/
+        - generic [ref=e28]: Section 8 Vouchers Accepted
+  - main [ref=e30]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: 40+
+        - generic [ref=e36]: Families Housed in East Texas
+      - generic [ref=e37]:
+        - generic [ref=e38]: "25"
+        - generic [ref=e39]: Properties Renovated in East Texas
+      - generic [ref=e40]:
+        - generic [ref=e41]: "4"
+        - generic [ref=e42]: East Texas Cities Served
+      - generic [ref=e43]:
+        - generic [ref=e44]: 100%
+        - generic [ref=e45]: East Texas Voucher Acceptance
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - text: Why Choose Us
+        - heading "More Than Just a Voucher" [level=2] [ref=e49]
+        - paragraph [ref=e50]: Most affordable housing settles for "good enough." We aim for "dream home." Every property features premium renovations tailored for safety, durability, and family life.
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - img [ref=e54]
+          - heading "Rigorous Renovation Standards" [level=3] [ref=e55]
+          - paragraph [ref=e56]: East Texas homes face unique challenges — from pine tree roots to flood plains. Our renovation standards are built specifically for our region's climate, soil conditions, and community needs.
+        - generic [ref=e57]:
+          - img [ref=e59]
+          - heading "Craftsmanship That Honors Veterans" [level=3] [ref=e60]
+          - paragraph [ref=e61]: We honor veterans' service with exceptional craftsmanship. Every renovation reflects our deep appreciation for those who serve, building homes worthy of their dignity and sacrifice.
+        - generic [ref=e62]:
+          - img [ref=e64]
+          - heading "Dedicated Housing for Those Who Served" [level=3] [ref=e65]
+          - paragraph [ref=e66]: Veteran-owned, veteran-focused. We understand military housing challenges firsthand and prioritize service members across East Texas with expedited processing and tribute renovations.
+  - contentinfo [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e71]:
+          - generic [ref=e73]: Section 8 Vouchers Accepted
+          - generic [ref=e74]: "(Live Status: Active)"
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - img "Properties 4 Creations Logo" [ref=e78]
+            - generic [ref=e79]:
+              - heading "Properties 4 Creations" [level=3] [ref=e80]
+              - paragraph [ref=e81]: Affordable Housing for Families & Veterans
+          - paragraph [ref=e82]:
+            - strong [ref=e83]: Properties 4 Creations, Tyler, TX 75701
+            - text: Expert renovations and fair housing solutions for families and veterans. Transparent pricing, quality workmanship, East Texas regional focus.
+          - generic [ref=e84]:
+            - generic [ref=e85]:
+              - img [ref=e86]
+              - link "contact@properties4creations.com" [ref=e88] [cursor=pointer]:
+                - /url: mailto:contact@properties4creations.com
+            - generic [ref=e89]:
+              - img [ref=e90]
+              - link "(903) 283-1770" [ref=e92] [cursor=pointer]:
+                - /url: tel:+19032831770
+        - generic [ref=e93]:
+          - heading "Company" [level=4] [ref=e94]
+          - list [ref=e95]:
+            - listitem [ref=e96]:
+              - link "About Us" [ref=e97] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e98]:
+              - link "Renovation Standards" [ref=e99] [cursor=pointer]:
+                - /url: /transparency/
+            - listitem [ref=e100]:
+              - link "Our Impact" [ref=e101] [cursor=pointer]:
+                - /url: /impact/
+            - listitem [ref=e102]:
+              - link "Contact" [ref=e103] [cursor=pointer]:
+                - /url: /contact/
+        - generic [ref=e104]:
+          - heading "Resources" [level=4] [ref=e105]
+          - list [ref=e106]:
+            - listitem [ref=e107]:
+              - link "Housing Support" [ref=e108] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e109]:
+              - link "Our Work" [ref=e110] [cursor=pointer]:
+                - /url: /projects/
+            - listitem [ref=e111]:
+              - link "Success Stories" [ref=e112] [cursor=pointer]:
+                - /url: /impact/
+        - generic [ref=e113]:
+          - heading "Services" [level=4] [ref=e114]
+          - list [ref=e115]:
+            - listitem [ref=e116]:
+              - link "Get Started" [ref=e117] [cursor=pointer]:
+                - /url: /get-started/
+            - listitem [ref=e118]:
+              - link "Eligibility Tools" [ref=e119] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e120]:
+              - link "Veteran Portal" [ref=e121] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e122]:
+        - paragraph [ref=e123]: © 2025 Properties 4 Creations. All rights reserved.
+        - generic [ref=e124]:
+          - link "Privacy" [ref=e125] [cursor=pointer]:
+            - /url: /privacy/
+          - link "Terms" [ref=e126] [cursor=pointer]:
+            - /url: /terms/
+```

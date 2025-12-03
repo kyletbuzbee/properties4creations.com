@@ -62,7 +62,7 @@ ctaHref: "/get-started/"
             <div class="property-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-property-id="{{ propId }}" data-bedrooms="{{ prop.bedrooms }}" data-status="{{ prop.status }}" data-city="{{ prop.city }}">
                 <div class="h-48 bg-slate-300 flex items-center justify-center relative">
                     {% if prop.img %}
-                    <img src="/public/images/{{ prop.img }}" alt="{{ prop.title }}" class="w-full h-full object-cover">
+                    <img src="/public/images/{{ prop.img }}" alt="{{ prop.title }}" class="w-full h-full object-cover" loading="lazy">
                     {% else %}
                     <svg class="w-12 h-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -80,7 +80,7 @@ ctaHref: "/get-started/"
                     <div class="text-slate-600 text-sm mb-4">{{ prop.bedrooms }} Bed • {{ prop.bathrooms }} Bath • {{ prop.sqft }} sqft</div>
                     <div class="flex justify-between items-center">
                         <span class="text-2xl font-bold text-brand-navy">${{ prop.price }}/mo</span>
-                        <a href="{{ prop.link }}" class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                        <a href="{{ prop.link }}" class="btn-primary">View Details →</a>
                     </div>
                 </div>
             </div>

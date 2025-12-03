@@ -136,7 +136,9 @@
     <section id="page-banner" class="page-banner page-banner--hero relative min-h-[420px] flex items-center" role="banner" aria-label="Page banner">
         <div class="page-banner__bg-container absolute inset-0 z-0 overflow-hidden">
             {% if banner.video %}
-                <video autoplay loop muted playsinline class="page-banner__bg-video">
+                <video autoplay loop muted playsinline preload="auto" aria-label="Hero banner video showing renovated homes" class="page-banner__bg-video">
+                    <source src="/public/videos/Hero-Banner Updated 720P(1).mp4" type="video/mp4" media="(max-width: 768px)">
+                    <source src="/public/videos/hero-banner_updated_1080p.mp4" type="video/mp4" media="(min-width: 769px)">
                     <source src="/public/videos/{{ banner.video }}" type="video/mp4">
                     {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
                     <picture class="w-full h-full object-cover">
@@ -149,6 +151,7 @@
                              fetchpriority="high">
                     </picture>
                 </video>
+                <div class="page-banner__overlay"></div>
             {% else %}
                 {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
                 <picture class="w-full h-full object-cover">

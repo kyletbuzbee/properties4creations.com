@@ -616,6 +616,10 @@ select {
   position: relative;
 }
 
+.form-group .error-message.hidden {
+  display: none;
+}
+
 .form-group .error-message::before {
   content: "";
   width: 1rem;
@@ -649,6 +653,10 @@ select {
   border-radius: var(--radius-sm);
   border: 1px solid rgba(16, 185, 129, 0.15);
   animation: slideDown 0.3s ease-out;
+}
+
+.form-group .success-message.hidden {
+  display: none;
 }
 
 .form-group .success-message::before {
@@ -1139,6 +1147,13 @@ select {
   to {
     opacity: 0.85;
   }
+}
+
+/* School Rating Progress Bars */
+.rating-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease-out;
 }
 
 /* ============================================================================
