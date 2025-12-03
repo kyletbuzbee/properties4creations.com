@@ -6,7 +6,7 @@ const Critters = require('critters');
 
 module.exports = function (eleventyConfig) {
   // 1. Passthrough Copy: Directly copy static assets to output
-  eleventyConfig.addPassthroughCopy({ "public": "public" });
+  eleventyConfig.addPassthroughCopy({ "public": "/" });
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
 
