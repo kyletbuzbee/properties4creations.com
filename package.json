@@ -6,17 +6,30 @@
     "start": "npm-run-all --parallel dev:*",
     "dev:11ty": "eleventy --serve --quiet",
     "dev:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --watch",
-    "build": "npm-run-all build:css build:seo build:11ty",
+    "build": "npm-run-all build:css build:seo build:sw build:11ty",
     "build:11ty": "eleventy",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --minify",
     "build:seo": "node scripts/generate-sitemap.js",
-    "test": "echo 'No tests specified' && exit 0"
+    "build:sw": "npx workbox generateSW workbox-config.js",
+    "test": "playwright test",
+    "test:install": "playwright install",
+    "lint:js": "eslint src/js/**/*.js tests/**/*.js scripts/**/*.js",
+    "lint:css": "stylelint src/css/**/*.css",
+    "lint": "npm run lint:js && npm run lint:css",
+    "format": "prettier --write \"**/*.{js,json,css,md,html,njk}\""
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@playwright/test": "^1.57.0",
+    "critters": "^0.0.23",
+    "eslint": "^9.39.1",
     "npm-run-all": "^4.1.5",
+    "prettier": "^3.7.3",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.18"
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^39.0.1",
+    "tailwindcss": "^3.4.18",
+    "workbox-cli": "^7.4.0"
   },
   "keywords": [
     "housing",

@@ -14,3 +14,176 @@ showVoucherBadge: false
 ctaText: "Browse Properties"
 ctaHref: "/get-started/"
 ---
+
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <!-- Filters -->
+        <div class="mb-8 p-6 bg-slate-50 rounded-lg">
+            <h3 class="text-xl font-bold text-brand-navy mb-4">Filter Properties</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <select id="bedrooms-filter" class="border border-slate-300 rounded-lg px-3 py-2">
+                    <option value="">All Bedrooms</option>
+                    <option value="2">2 Bedrooms</option>
+                    <option value="3">3 Bedrooms</option>
+                    <option value="4">4 Bedrooms</option>
+                </select>
+                <select id="status-filter" class="border border-slate-300 rounded-lg px-3 py-2">
+                    <option value="">All Status</option>
+                    <option value="Available">Available</option>
+                    <option value="Coming Soon">Coming Soon</option>
+                </select>
+                <select id="city-filter" class="border border-slate-300 rounded-lg px-3 py-2">
+                    <option value="">All Cities</option>
+                    <option value="Tyler">Tyler</option>
+                    <option value="Longview">Longview</option>
+                    <option value="Jefferson">Jefferson</option>
+                    <option value="Marshall">Marshall</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Map Container -->
+        <div id="properties-map" class="w-full h-96 rounded-xl shadow-md z-0 mb-12"></div>
+
+        <!-- Properties Grid -->
+        <div id="properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for property in properties %}
+            {% set propId = property[0] %}
+            {% set prop = property[1] %}
+            <div class="property-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-property-id="{{ propId }}" data-bedrooms="{{ prop.bedrooms }}" data-status="{{ prop.status }}" data-city="{{ prop.city }}">
+                <div class="h-48 bg-slate-300 flex items-center justify-center relative">
+                    {% if prop.img %}
+                    <img src="/public/images/{{ prop.img }}" alt="{{ prop.title }}" class="w-full h-full object-cover">
+                    {% else %}
+                    <svg class="w-12 h-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    {% endif %}
+
+                    <div class="absolute top-4 right-4">
+                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">{{ prop.status }}</span>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">{{ prop.title }}</h3>
+                    <div class="text-slate-600 text-sm mb-2">{{ prop.city }}, TX</div>
+                    <div class="text-slate-600 text-sm mb-4">{{ prop.bedrooms }} Bed • {{ prop.bathrooms }} Bath • {{ prop.sqft }} sqft</div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-brand-navy">${{ prop.price }}/mo</span>
+                        <a href="{{ prop.link }}" class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Load properties data
+    fetch('/public/properties-data.json')
+        .then(response => response.json())
+        .then(data => {
+            const properties = Object.entries(data);
+            let map;
+            let markers = [];
+            let allMarkers = [];
+
+            // Initialize map
+            if (typeof L !== 'undefined') {
+                map = L.map('properties-map').setView([32.3513, -95.3011], 8);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
+            }
+
+            // Create markers
+            properties.forEach(([id, property]) => {
+                if (property.coords && typeof L !== 'undefined') {
+                    const marker = L.marker(property.coords)
+                        .bindPopup(`<b>${property.title}</b><br>${property.city}, TX<br>$${property.price}/mo<br><a href="${property.link}">View Details</a>`);
+                    marker.options.bedrooms = property.bedrooms;
+                    marker.options.status = property.status;
+                    marker.options.city = property.city;
+                    allMarkers.push(marker);
+                    marker.addTo(map);
+                    markers.push(marker);
+                }
+            });
+
+            // Fit map to show all markers
+            if (markers.length > 0 && map) {
+                const group = new L.featureGroup(markers);
+                map.fitBounds(group.getBounds().pad(0.1));
+            }
+
+            // Filter functionality
+            const updateFilters = () => {
+                const bedroomsFilter = document.getElementById('bedrooms-filter').value;
+                const statusFilter = document.getElementById('status-filter').value;
+                const cityFilter = document.getElementById('city-filter').value;
+
+                // Filter markers
+                markers.forEach(marker => {
+                    let show = true;
+
+                    if (bedroomsFilter && marker.options.bedrooms != parseInt(bedroomsFilter.split(' ')[0])) {
+                        show = false;
+                    }
+                    if (statusFilter && marker.options.status !== statusFilter) {
+                        show = false;
+                    }
+                    if (cityFilter && marker.options.city !== cityFilter) {
+                        show = false;
+                    }
+
+                    if (show) {
+                        if (!map.hasLayer(marker)) {
+                            marker.addTo(map);
+                        }
+                    } else {
+                        if (map.hasLayer(marker)) {
+                            map.removeLayer(marker);
+                        }
+                    }
+                });
+
+                // Filter property cards
+                const propertyCards = document.querySelectorAll('.property-card');
+                propertyCards.forEach(card => {
+                    let show = true;
+
+                    if (bedroomsFilter && card.dataset.bedrooms != parseInt(bedroomsFilter.split(' ')[0])) {
+                        show = false;
+                    }
+                    if (statusFilter && card.dataset.status !== statusFilter) {
+                        show = false;
+                    }
+                    if (cityFilter && card.dataset.city !== cityFilter) {
+                        show = false;
+                    }
+
+                    card.style.display = show ? 'block' : 'none';
+                });
+
+                // Adjust map bounds to visible markers
+                const visibleMarkers = markers.filter(marker => map.hasLayer(marker));
+                if (visibleMarkers.length > 0) {
+                    const group = new L.featureGroup(visibleMarkers);
+                    map.fitBounds(group.getBounds().pad(0.1));
+                }
+            };
+
+            // Add event listeners
+            document.getElementById('bedrooms-filter').addEventListener('change', updateFilters);
+            document.getElementById('status-filter').addEventListener('change', updateFilters);
+            document.getElementById('city-filter').addEventListener('change', updateFilters);
+        })
+        .catch(error => {
+            console.error('Error loading properties data:', error);
+        });
+});
+</script>

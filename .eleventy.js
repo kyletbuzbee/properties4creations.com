@@ -2,6 +2,8 @@
  * Eleventy SSG Configuration
  * Handles static asset passthrough and template rendering.
  */
+const Critters = require('critters');
+
 module.exports = function (eleventyConfig) {
   // 1. Passthrough Copy: Directly copy static assets to output
   eleventyConfig.addPassthroughCopy({ "public": "public" });
@@ -71,6 +73,15 @@ module.exports = function (eleventyConfig) {
     return `<svg class="w-6 h-6 ${className}" ${aria} role="img">
       <use href="/public/images/icons/icons.svg#${name}"></use>
     </svg>`;
+  });
+
+  // 5. Critical CSS Inlining with Critters
+  eleventyConfig.addTransform("critters", async (content, outputPath) => {
+    if (outputPath && outputPath.endsWith(".html")) {
+      const critters = new Critters({ preload: "swap" });
+      return await critters.process(content);
+    }
+    return content;
   });
 
   return {
