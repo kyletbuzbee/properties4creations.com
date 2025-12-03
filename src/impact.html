@@ -5,11 +5,40 @@ description: "Affordable housing solutions for families and veterans in East Tex
 banner:
   title: "Real Families, Real Sanctuaries"
   subtitle: "See the human impact of fair housing through stories of veterans rebuilding their futures."
-  image: "hero-impact-banner.webp"
+  image: "banners/hero-impact-banner.webp"
+  video: "hero-impact-banner.mp4"
   eyebrow: "Community Impact"
   ctaText: "Share Your Story"
   ctaHref: "/contact/"
 ---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Impact Stories - Veteran Housing",
+  "description": "Banner video highlighting real families and veterans finding affordable housing in East Texas.",
+  "thumbnailUrl": [
+    "https://properties4creations.com/public/images/optimized/banners/hero-impact-banner-1280.jpg"
+  ],
+  "uploadDate": "2025-12-03",
+  "duration": "PT0M30S",
+  "contentUrl": "https://properties4creations.com/public/videos/hero-impact-banner-1080.mp4",
+  "embedUrl": "https://properties4creations.com/impact/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Properties 4 Creations",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://properties4creations.com/public/images/logo/brand-logo-header.svg",
+      "width": 200,
+      "height": 60
+    }
+  }
+}
+</script>
+{% endblock %}
 
 <!-- Story JSON-LD for Reynolds Family -->
 <script type="application/ld+json">

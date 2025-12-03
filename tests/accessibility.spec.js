@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const AxeBuilder = require('@axe-core/playwright').AxeBuilder;
+const AxeBuilder = require('axe-playwright').AxeBuilder;
 
 /**
  * Properties 4 Creations - Comprehensive Accessibility Testing Suite

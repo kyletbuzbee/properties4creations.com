@@ -1,19 +1,60 @@
 <section class="page-banner relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
-  <picture>
-    <!-- AVIF -->
-    <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1920.avif') }}" media="(min-width: 1280px)" type="image/avif">
-    <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1280.avif') }}" media="(min-width: 960px)" type="image/avif">
-    <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-640.avif') }}" media="(min-width: 640px)" type="image/avif">
+  <!-- Background container -->
+  <div class="page-banner__bg-container">
+    {% if banner.video %}
+      <video class="page-banner__bg-video"
+             autoplay
+             muted
+             loop
+             playsinline
+             preload="auto">
+        <source src="/public/videos/hero-impact-banner-1080.mp4" type="video/mp4" media="(min-width: 960px)">
+        <source src="/public/videos/hero-impact-banner-720.mp4" type="video/mp4" media="(max-width: 959px)">
+        <source src="/public/videos/{{ banner.video }}" type="video/mp4">
+        <!-- Fallback image -->
+        <img src="/public/images/optimized/banners/{{ banner.image | replace('.webp','.jpg') }}"
+             alt="{{ banner.title }}"
+             class="page-banner__bg-image">
+      </video>
+    {% else %}
+      <picture class="page-banner__bg-picture">
+        <!-- AVIF -->
+        <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1920.avif') }}" media="(min-width: 1280px)" type="image/avif">
+        <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1280.avif') }}" media="(min-width: 960px)" type="image/avif">
+        <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-640.avif') }}" media="(min-width: 640px)" type="image/avif">
 
-    <!-- WebP -->
-    <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1920.webp') }}" media="(min-width: 1280px)" type="image/webp">
-    <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1280.webp') }}" media="(min-width: 960px)" type="image/webp">
-    <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-640.webp') }}" media="(min-width: 640px)" type="image/webp">
+        <!-- WebP -->
+        <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1920.webp') }}" media="(min-width: 1280px)" type="image/webp">
+        <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-1280.webp') }}" media="(min-width: 960px)" type="image/webp">
+        <source srcset="/public/images/optimized/banners/{{ banner.image | replace('.webp','-640.webp') }}" media="(min-width: 640px)" type="image/webp">
 
-    <!-- JPG fallback -->
-    <img src="/public/images/optimized/banners/{{ banner.image | replace('.webp','.jpg') }}"
-         alt="{{ banner.title }}"
-         class="page-banner__bg-image w-full h-full object-cover"
-         loading="eager">
-  </picture>
+        <!-- JPG fallback -->
+        <img src="/public/images/optimized/banners/{{ banner.image | replace('.webp','.jpg') }}"
+             alt="{{ banner.title }}"
+             class="page-banner__bg-image w-full h-full object-cover"
+             loading="eager">
+      </picture>
+    {% endif %}
+    <div class="page-banner__overlay absolute inset-0 bg-brand-navy/30"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="page-banner__container absolute inset-0 flex items-center justify-center">
+    <div class="page-banner__content text-center text-white px-4 max-w-4xl mx-auto">
+      {% if banner.eyebrow %}
+        <span class="page-banner__eyebrow inline-block bg-brand-wood text-brand-navy px-4 py-2 rounded-full text-sm font-bold mb-4">{{ banner.eyebrow }}</span>
+      {% endif %}
+      <h1 class="page-banner__title text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4">{{ banner.title }}</h1>
+      {% if banner.subtitle %}
+        <p class="page-banner__subtitle text-lg md:text-xl mb-8 max-w-2xl mx-auto">{{ banner.subtitle }}</p>
+      {% endif %}
+      {% if banner.ctaText and banner.ctaHref %}
+        <div class="page-banner__cta">
+          <a href="{{ banner.ctaHref }}" class="btn-primary bg-brand-wood hover:bg-brand-walnut text-brand-navy font-bold px-8 py-3 rounded-lg transition-colors inline-block">
+            {{ banner.ctaText }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
 </section>
