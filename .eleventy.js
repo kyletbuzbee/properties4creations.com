@@ -65,6 +65,14 @@ module.exports = function (eleventyConfig) {
     return pictureHtml;
   });
 
+  // 4. SVG Icon Shortcode
+  eleventyConfig.addShortcode("icon", function (name, className = "") {
+    const aria = 'aria-hidden="true"';
+    return `<svg class="w-6 h-6 ${className}" ${aria} role="img">
+      <use href="/public/images/icons/icons.svg#${name}"></use>
+    </svg>`;
+  });
+
   return {
     dir: {
       input: "src",      // Source code location

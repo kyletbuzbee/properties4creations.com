@@ -1,5 +1,18 @@
 {
     "svg.preview.background": "transparent",
     "typescript.inlayHints.enumMemberValues.enabled": false,
-    "yaml.validate": false
+    "yaml.validate": false,
+    "yaml.completion": false,
+    "yaml.disableAdditionalProperties": false,
+    "yaml.disableDefaultProperties": false,
+    "yaml.format.enable": false,
+    "yaml.format.bracketSpacing": false,
+    "yaml.extension.recommendations": false,
+    "yaml.hover": false,
+    "yaml.style.flowMapping": "forbid",
+    "yaml.style.flowSequence": "forbid",
+    "editor.defaultFormatter": "ms-vscode.powershell",
+    "[yaml]": {
+        "editor.defaultFormatter": "ms-vscode.powershell"
+    }
 }
