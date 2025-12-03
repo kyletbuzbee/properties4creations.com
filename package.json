@@ -6,9 +6,11 @@
     "start": "npm-run-all --parallel dev:*",
     "dev:11ty": "eleventy --serve --quiet",
     "dev:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --watch",
-    "build": "npm-run-all build:css build:11ty",
+    "build": "npm-run-all build:images build:css build:11ty",
     "build:11ty": "eleventy",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --minify",
+    "build:images": "node scripts/optimize-images.js",
+    "optimize:images": "node scripts/optimize-images.js",
     "test": "echo 'No tests specified' && exit 0"
   },
   "devDependencies": {
