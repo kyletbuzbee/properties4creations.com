@@ -21,24 +21,33 @@ ctaHref: "/get-started/"
         <div class="mb-8 p-6 bg-slate-50 rounded-lg">
             <h3 class="text-xl font-bold text-brand-navy mb-4">Filter Properties</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <select id="bedrooms-filter" class="border border-slate-300 rounded-lg px-3 py-2">
-                    <option value="">All Bedrooms</option>
-                    <option value="2">2 Bedrooms</option>
-                    <option value="3">3 Bedrooms</option>
-                    <option value="4">4 Bedrooms</option>
-                </select>
-                <select id="status-filter" class="border border-slate-300 rounded-lg px-3 py-2">
-                    <option value="">All Status</option>
-                    <option value="Available">Available</option>
-                    <option value="Coming Soon">Coming Soon</option>
-                </select>
-                <select id="city-filter" class="border border-slate-300 rounded-lg px-3 py-2">
-                    <option value="">All Cities</option>
-                    <option value="Tyler">Tyler</option>
-                    <option value="Longview">Longview</option>
-                    <option value="Jefferson">Jefferson</option>
-                    <option value="Marshall">Marshall</option>
-                </select>
+                <div>
+                    <label for="bedrooms-filter" class="block text-sm font-medium text-slate-700 mb-1">Bedrooms</label>
+                    <select id="bedrooms-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full">
+                        <option value="">All Bedrooms</option>
+                        <option value="2">2 Bedrooms</option>
+                        <option value="3">3 Bedrooms</option>
+                        <option value="4">4 Bedrooms</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="status-filter" class="block text-sm font-medium text-slate-700 mb-1">Status</label>
+                    <select id="status-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full">
+                        <option value="">All Status</option>
+                        <option value="Available">Available</option>
+                        <option value="Coming Soon">Coming Soon</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="city-filter" class="block text-sm font-medium text-slate-700 mb-1">City</label>
+                    <select id="city-filter" class="border border-slate-300 rounded-lg px-3 py-2 w-full">
+                        <option value="">All Cities</option>
+                        <option value="Tyler">Tyler</option>
+                        <option value="Longview">Longview</option>
+                        <option value="Jefferson">Jefferson</option>
+                        <option value="Marshall">Marshall</option>
+                    </select>
+                </div>
             </div>
         </div>
 

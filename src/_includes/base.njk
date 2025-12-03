@@ -136,7 +136,7 @@
     <section id="page-banner" class="page-banner page-banner--hero relative min-h-[420px] flex items-center" role="banner" aria-label="Page banner">
         <div class="page-banner__bg-container absolute inset-0 z-0 overflow-hidden">
             {% if banner.video %}
-                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <video autoplay loop muted playsinline class="page-banner__bg-video">
                     <source src="/public/videos/{{ banner.video }}" type="video/mp4">
                     {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
                     <picture class="w-full h-full object-cover">
