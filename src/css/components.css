@@ -1149,11 +1149,29 @@ main {
 
 /* Glassmorphism Navy Header */
 .nav-glass-navy {
-  background: rgba(11, 17, 32, 0.75); /* semi-transparent navy */
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(194, 142, 90, 0.25); /* subtle gold accent */
-  box-shadow: var(--shadow-floating);
+  background: linear-gradient(
+    135deg,
+    rgba(11, 17, 32, 0.85),
+    rgba(11, 17, 32, 0.65)
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(194, 142, 90, 0.25);
+  box-shadow: 0 8px 24px rgba(11, 17, 32, 0.4);
+  position: relative;
+}
+
+/* Optional subtle inner glow */
+.nav-glass-navy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top center,
+    rgba(255, 255, 255, 0.05),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 /* ============================================================================

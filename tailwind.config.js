@@ -16,6 +16,7 @@ module.exports = {
         'brand-gold-light': 'var(--color-accent-gold-light)',
         'brand-walnut': 'var(--color-secondary-walnut)',
         'brand-beige': 'var(--color-neutral-beige)',
+        'navy-glass': 'rgba(11, 17, 32, 0.75)',
         primary: {
           navy: 'var(--color-primary-navy)'
         },
@@ -71,6 +72,10 @@ module.exports = {
         lg: 'var(--radius-lg)',
         xl: 'var(--radius-xl)',
         full: 'var(--radius-full)'
+      },
+      // Backdrop blur for glass effects
+      backdropBlur: {
+        'glass': '16px',
       }
     }
   },

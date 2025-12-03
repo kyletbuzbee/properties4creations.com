@@ -65,3 +65,154 @@ ctaHref: "/impact/"
         </div>
     </div>
 </section>
+
+<!-- Enhanced Organization Schema for About Page -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://properties4creations.com/about/#organization",
+            "name": "Properties 4 Creations",
+            "alternateName": "P4C",
+            "url": "https://properties4creations.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://properties4creations.com/public/images/logo/brand-logo.svg",
+                "width": 200,
+                "height": 60
+            },
+            "description": "Properties 4 Creations is a veteran-owned and operated affordable housing provider dedicated to serving families and veterans in East Texas. We transform distressed properties into premium family sanctuaries with transparent pricing and fair housing practices.",
+            "foundingDate": "2024",
+            "founder": {
+                "@type": "Person",
+                "name": "Military Veteran",
+                "jobTitle": "Founder & CEO"
+            },
+            "additionalType": "VeteranOwnedBusiness",
+            "knowsAbout": [
+                "Affordable Housing",
+                "Veteran Housing Assistance",
+                "Section 8 Vouchers",
+                "HUD-VASH Program",
+                "East Texas Real Estate",
+                "Property Renovation"
+            ],
+            "slogan": "From service to stability, we honor families and veterans with premium renovations and fair pricing.",
+            "serviceArea": {
+                "@type": "Place",
+                "name": "East Texas",
+                "addressRegion": "TX",
+                "addressCountry": "US"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "@id": "https://properties4creations.com/about/#contactPoint",
+                "telephone": "+1-903-283-1770",
+                "email": "contact@properties4creations.com",
+                "contactType": "Customer Service",
+                "availableLanguage": "English",
+                "hoursAvailable": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00",
+                    "closes": "18:00",
+                    "description": "We provide responsive management and typically respond within 24 hours"
+                }
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "@id": "https://properties4creations.com/about/#address",
+                "addressLocality": "Tyler",
+                "addressRegion": "TX",
+                "postalCode": "75701",
+                "addressCountry": "US"
+            },
+            "areaServed": [
+                {
+                    "@type": "City",
+                    "name": "Tyler",
+                    "addressRegion": "TX"
+                },
+                {
+                    "@type": "City",
+                    "name": "Longview",
+                    "addressRegion": "TX"
+                },
+                {
+                    "@type": "City",
+                    "name": "Jefferson",
+                    "addressRegion": "TX"
+                },
+                {
+                    "@type": "City",
+                    "name": "Marshall",
+                    "addressRegion": "TX"
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Housing Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Affordable Rental Housing",
+                            "description": "Premium renovated homes available for rent with fair pricing and good credit not always required"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Veteran Housing Assistance",
+                            "description": "Priority housing assistance and support for military veterans and their families"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Section 8 Voucher Acceptance",
+                            "description": "We proudly participate in HUD Section 8 and VASH programs"
+                        }
+                    }
+                ]
+            },
+            "sameAs": [
+                "https://www.facebook.com/properties4creations",
+                "https://www.instagram.com/properties4creations"
+            ]
+        },
+        {
+            "@type": "AboutPage",
+            "@id": "https://properties4creations.com/about/#aboutPage",
+            "url": "https://properties4creations.com/about/",
+            "name": "About Properties 4 Creations - Veteran Housing Mission",
+            "description": "Founded by veterans, for veterans. Our mission is to provide dignified, affordable housing solutions for families and service members in East Texas.",
+            "mainEntity": {
+                "@id": "https://properties4creations.com/about/#organization"
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://properties4creations.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "About",
+                        "item": "https://properties4creations.com/about/"
+                    }
+                ]
+            }
+        }
+    ]
+}
+</script>
