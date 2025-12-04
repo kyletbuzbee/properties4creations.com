@@ -204,19 +204,65 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showStatus(message, type = '') {
-        // For now, using a simple alert. Could be enhanced with better UI
         if (message) {
+            // Remove any existing notifications
+            const existingAlerts = contactForm.parentNode.querySelectorAll('.notification-alert');
+            existingAlerts.forEach(alert => alert.remove());
+
+            // Create notification element
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `notification-alert ${type === 'error' ? 'bg-red-50 border border-red-200 text-red-800' : 'bg-green-50 border border-green-200 text-green-800'} px-4 py-3 rounded-lg mb-6 flex items-start gap-3`;
+
+            // Add proper ARIA attributes
+            alertDiv.setAttribute('role', 'alert');
+            alertDiv.setAttribute('aria-live', 'assertive');
+
+            const iconDiv = document.createElement('div');
+            iconDiv.className = 'flex-shrink-0';
+
             if (type === 'error') {
-                alert('Error: ' + message);
+                iconDiv.innerHTML = `
+                    <svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                    </svg>
+                `;
             } else {
-                alert(message);
+                iconDiv.innerHTML = `
+                    <svg class="h-5 w-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                `;
             }
+
+            const contentDiv = document.createElement('div');
+            contentDiv.innerHTML = `
+                <h3 class="text-sm font-medium ${type === 'error' ? 'text-red-800' : 'text-green-800'}">
+                    ${type === 'error' ? 'Error' : 'Success'}
+                </h3>
+                <div class="mt-2 text-sm ${type === 'error' ? 'text-red-700' : 'text-green-700'}">
+                    <p>${message}</p>
+                    ${type === 'error' ? '<p class="mt-2"><a href="tel:+19032831770" class="text-red-600 underline">Call us directly: (903) 283-1770</a></p>' : ''}
+                </div>
+            `;
+
+            alertDiv.appendChild(iconDiv);
+            alertDiv.appendChild(contentDiv);
+
+            // Insert notification above the form
+            contactForm.parentNode.insertBefore(alertDiv, contactForm);
+
+            // Auto-remove after 10 seconds for errors, 8 seconds for success
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, type === 'error' ? 15000 : 10000);
         }
     }
 
     // Enhanced Google Apps Script submission
     async function submitContactForm(data) {
-        const GAS_URL = 'https://script.google.com/macros/s/AKfycbx7ueoZrKMg4QoS2ZYTYRJyBvX6FcYuJCk_lOGQV/exec';
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbwxz5eoaGgYOoaKTKEfMm2jHo7buxNnHyu5lkZCkhDYLfbRqNRUW90Sk9yrXGRLjMM3Gw/exec';
 
         const payload = {
             name: data.name,
