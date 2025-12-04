@@ -20,7 +20,7 @@
 
     <link rel="preload" href="/images/logo/brand-logo-header.svg" as="image">
     {% if banner.image %}
-    <link rel="preload" href="/public/images/{{ banner.image }}" as="image">
+    <link rel="preload" href="/images/{{ banner.image }}" as="image">
     {% endif %}
 
     <link rel="stylesheet" href="/css/style.css">
@@ -37,23 +37,24 @@
         <div class="page-banner__bg-container absolute inset-0 z-0 overflow-hidden">
             {% if banner.video %}
                 <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                    <source src="/public/videos/{{ banner.video }}" type="video/mp4">
+                    <source src="/videos/{{ banner.video }}" type="video/mp4">
                     {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
-                    <picture class="w-full h-full object-cover">
-                        <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
-                        <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
-                        <img src="/public/images/{{ banner.image }}"
-                             alt="{{ banner.bannerTitle }}"
-                             class="w-full h-full object-cover"
-                             fetchpriority="high">
-                    </picture>
+                <picture class="w-full h-full object-cover">
+                    <source media="(min-width: 1280px)" srcset="/images/{{ bannerBase }}-1280.webp">
+                    <source media="(min-width: 960px)" srcset="/images/{{ bannerBase }}-960.webp">
+                    <source media="(min-width: 640px)" srcset="/images/{{ bannerBase }}-640.webp">
+                    <img src="/images/{{ banner.image }}"
+                         alt="{{ banner.bannerTitle }}"
+                         class="w-full h-full object-cover"
+                         fetchpriority="high">
+                </picture>
                 </video>
             {% else %}
                 {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
                 <picture class="w-full h-full object-cover">
-                    <source media="(min-width: 1024px)" srcset="/public/images/{{ bannerBase }}-1024.webp">
-                    <source media="(min-width: 768px)" srcset="/public/images/{{ bannerBase }}-768.webp">
-                    <img src="/public/images/{{ banner.image }}"
+                    <source media="(min-width: 1024px)" srcset="/images/{{ bannerBase }}-1024.webp">
+                    <source media="(min-width: 768px)" srcset="/images/{{ bannerBase }}-768.webp">
+                    <img src="/images/{{ banner.image }}"
                          alt="{{ banner.bannerTitle }}"
                          class="w-full h-full object-cover"
                          fetchpriority="high">
