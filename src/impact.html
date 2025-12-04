@@ -1,18 +1,71 @@
 ---
 layout: base.njk
-pageTitle: "Community Impact & Family Success Stories - Properties 4 Creations"
-description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium
-renovations, and community impact."
+title: "Community Impact & Family Success Stories - Properties 4 Creations"
+description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact."
 banner:
-  variant: "hero"
-  bannerTitle: "Real Families, Real Sanctuaries"
-  bannerSubtitle: "See the human impact of fair housing through stories of veterans rebuilding their futures."
+  title: "Real Families, Real Sanctuaries"
+  subtitle: "See the human impact of fair housing through stories of veterans rebuilding their futures."
   image: "banners/hero-impact-banner.webp"
+  video: "hero-impact-banner.mp4"
   eyebrow: "Community Impact"
-  showVoucherBadge: true
   ctaText: "Share Your Story"
   ctaHref: "/contact/"
 ---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Impact Stories - Veteran Housing",
+  "description": "Banner video highlighting real families and veterans finding affordable housing in East Texas.",
+  "thumbnailUrl": [
+    "https://properties4creations.com/images/optimized/banners/hero-impact-banner-1280.jpg"
+  ],
+  "uploadDate": "2025-12-03",
+  "duration": "PT0M30S",
+  "contentUrl": "https://properties4creations.com/public/videos/hero-impact-banner-1080.mp4",
+  "embedUrl": "https://properties4creations.com/impact/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Properties 4 Creations",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://properties4creations.com/images/logo/brand-logo-header.svg",
+      "width": 200,
+      "height": 60
+    }
+  }
+}
+</script>
+{% endblock %}
+
+<!-- Story JSON-LD for Reynolds Family -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://properties4creations.com/impact/#reynolds-story",
+  "headline": "The Reynolds Family - Veteran Housing Success Story",
+  "description": "Sgt. Reynolds and his family's journey from homelessness to stable housing through Properties 4 Creations",
+  "image": "https://properties4creations.com/images/properties/before-after/patio_wood.webp",
+  "datePublished": "2024-10-01",
+  "author": {
+    "@type": "Organization",
+    "name": "Properties 4 Creations",
+    "url": "https://properties4creations.com"
+  },
+  "publisher": {
+    "@id": "https://properties4creations.com/#organization"
+  },
+  "about": {
+    "@type": "Organization",
+    "name": "Properties 4 Creations",
+    "description": "Veteran-owned affordable housing provider",
+    "serviceType": ["Affordable Housing", "Veteran Housing", "HUD-VASH Program", "Section 8 Housing"]
+  }
+}
+</script>
 
 <!-- Featured Family Story -->
 <section class="py-20 bg-white">
@@ -26,8 +79,8 @@ banner:
             <div class="lg:w-1/2 relative">
                 <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-beige rounded-full z-0"></div>
                 <picture class="relative z-10 rounded-2xl shadow-xl w-full">
-                    <source srcset="/public/images/properties/before-after/patio_wood.webp" type="image/webp">
-                    <img src="/public/images/properties/before-after/patio_wood.jpg"
+                    <source srcset="/images/properties/before-after/patio_wood.webp" type="image/webp">
+                    <img src="/images/properties/before-after/patio_wood.jpg"
                         class="relative z-10 rounded-2xl shadow-xl w-full"
                         alt="Reynolds Family Home before-and-after renovation" loading="lazy" decoding="async">
                 </picture>
@@ -113,10 +166,10 @@ banner:
             <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
                 <div class="flex items-start gap-4">
                     <picture class="w-16 h-16 rounded-full">
-                        <source srcset="/public/images/avatars/team/team-placeholder.webp" type="image/webp">
-                        <img src="/public/images/avatars/team/team-placeholder.png" alt="Martinez family photo"
+                        <source srcset="/images/avatars/team/team-placeholder.webp" type="image/webp">
+                        <img src="/images/avatars/team/team-placeholder.png" alt="Martinez family photo"
                             class="w-16 h-16 rounded-full object-cover"
-                            onerror="this.src='/public/images/icons/021-family.png'" loading="lazy" decoding="async">
+                            onerror="this.src='/images/icons/021-family.png'" loading="lazy" decoding="async">
                     </picture>
                     <div>
                         <h3 class="text-xl font-bold text-brand-navy mb-2">The Martinez Family</h3>
@@ -147,7 +200,7 @@ banner:
             <!-- Story Card 2 -->
             <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
                 <div class="flex items-start gap-4">
-                    <img src="/public/images/icons/034-soldier.png" alt="Staff Sgt. Thompson veteran photo"
+                    <img src="/images/icons/034-soldier.png" alt="Staff Sgt. Thompson veteran photo"
                         class="w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async">
                     <div>
                         <h3 class="text-xl font-bold text-brand-navy mb-2">Staff Sgt. Thompson</h3>
@@ -177,7 +230,7 @@ banner:
             <!-- Story Card 3 -->
             <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
                 <div class="flex items-start gap-4">
-                    <img src="/public/images/icons/022-family-1.png" alt="Garcia seniors family photo"
+                    <img src="/images/icons/022-family-1.png" alt="Garcia seniors family photo"
                         class="w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async">
                     <div>
                         <h3 class="text-xl font-bold text-brand-navy mb-2">The Garcia Seniors</h3>

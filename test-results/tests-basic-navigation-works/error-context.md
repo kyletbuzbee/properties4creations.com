@@ -1,0 +1,133 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - generic:
+        - link "Properties 4 Creations Home":
+          - /url: /
+          - img "Properties 4 Creations Logo"
+      - generic [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Properties" [ref=e7] [cursor=pointer]:
+          - /url: /projects/
+        - link "Gallery" [ref=e8] [cursor=pointer]:
+          - /url: /projects/
+        - link "Resources" [ref=e9] [cursor=pointer]:
+          - /url: /resources/
+        - link "Impact" [ref=e10] [cursor=pointer]:
+          - /url: /impact/
+        - link "Standards" [ref=e11] [cursor=pointer]:
+          - /url: /transparency/
+        - link "Start Here" [ref=e12] [cursor=pointer]:
+          - /url: /contact/
+          - generic [ref=e13]: Start Here
+          - img [ref=e14]
+  - img "Affordable Homes for Families & Veterans in East Texas" [ref=e18]
+  - main [ref=e19]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]: 40+
+        - generic [ref=e25]: Families Housed in East Texas
+      - generic [ref=e26]:
+        - generic [ref=e27]: "25"
+        - generic [ref=e28]: Properties Renovated in East Texas
+      - generic [ref=e29]:
+        - generic [ref=e30]: "4"
+        - generic [ref=e31]: East Texas Cities Served
+      - generic [ref=e32]:
+        - generic [ref=e33]: 100%
+        - generic [ref=e34]: East Texas Voucher Acceptance
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - text: Why Choose Us
+        - heading "More Than Just a Voucher" [level=2] [ref=e38]
+        - paragraph [ref=e39]: Most affordable housing settles for "good enough." We aim for "dream home." Every property features premium renovations tailored for safety, durability, and family life.
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - img [ref=e43]
+          - heading "Rigorous Renovation Standards" [level=3] [ref=e44]
+          - paragraph [ref=e45]: East Texas homes face unique challenges — from pine tree roots to flood plains. Our renovation standards are built specifically for our region's climate, soil conditions, and community needs.
+        - generic [ref=e46]:
+          - img [ref=e48]
+          - heading "Craftsmanship That Honors Veterans" [level=3] [ref=e49]
+          - paragraph [ref=e50]: We honor veterans' service with exceptional craftsmanship. Every renovation reflects our deep appreciation for those who serve, building homes worthy of their dignity and sacrifice.
+        - generic [ref=e51]:
+          - img [ref=e53]
+          - heading "Dedicated Housing for Those Who Served" [level=3] [ref=e54]
+          - paragraph [ref=e55]: Veteran-owned, veteran-focused. We understand military housing challenges firsthand and prioritize service members across East Texas with expedited processing and tribute renovations.
+  - contentinfo [ref=e56]:
+    - navigation "Footer" [ref=e58]:
+      - generic [ref=e59]:
+        - generic [ref=e61]:
+          - generic [ref=e63]: Section 8 Vouchers Accepted
+          - generic [ref=e64]: "(Live Status: Active)"
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - img "Properties 4 Creations Logo" [ref=e68]
+            - generic [ref=e69]:
+              - heading "Properties 4 Creations" [level=3] [ref=e70]
+              - paragraph [ref=e71]: Affordable Housing for Families & Veterans
+          - paragraph [ref=e72]:
+            - strong [ref=e73]: Properties 4 Creations, Tyler, TX 75701
+            - text: Expert renovations and fair housing solutions for families and veterans. Transparent pricing, quality workmanship, East Texas regional focus.
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - img [ref=e76]
+              - link "contact@properties4creations.com" [ref=e78] [cursor=pointer]:
+                - /url: mailto:contact@properties4creations.com
+            - generic [ref=e79]:
+              - img [ref=e80]
+              - link "(903) 283-1770" [ref=e82] [cursor=pointer]:
+                - /url: tel:+19032831770
+        - generic [ref=e83]:
+          - heading "Company" [level=4] [ref=e84]
+          - list [ref=e85]:
+            - listitem [ref=e86]:
+              - link "About Us" [ref=e87] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e88]:
+              - link "Renovation Standards" [ref=e89] [cursor=pointer]:
+                - /url: /transparency/
+            - listitem [ref=e90]:
+              - link "Our Impact" [ref=e91] [cursor=pointer]:
+                - /url: /impact/
+            - listitem [ref=e92]:
+              - link "Contact" [ref=e93] [cursor=pointer]:
+                - /url: /contact/
+        - generic [ref=e94]:
+          - heading "Resources" [level=4] [ref=e95]
+          - list [ref=e96]:
+            - listitem [ref=e97]:
+              - link "Housing Support" [ref=e98] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e99]:
+              - link "Our Work" [ref=e100] [cursor=pointer]:
+                - /url: /projects/
+            - listitem [ref=e101]:
+              - link "Success Stories" [ref=e102] [cursor=pointer]:
+                - /url: /impact/
+        - generic [ref=e103]:
+          - heading "Services" [level=4] [ref=e104]
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - link "Get Started" [ref=e107] [cursor=pointer]:
+                - /url: /get-started/
+            - listitem [ref=e108]:
+              - link "Eligibility Tools" [ref=e109] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e110]:
+              - link "Veteran Portal" [ref=e111] [cursor=pointer]:
+                - /url: /contact/
+    - generic [ref=e112]:
+      - paragraph [ref=e113]: © 2025 Properties 4 Creations. All rights reserved.
+      - generic [ref=e114]:
+        - link "Privacy" [ref=e115] [cursor=pointer]:
+          - /url: /privacy/
+        - link "Terms" [ref=e116] [cursor=pointer]:
+          - /url: /terms/
+```

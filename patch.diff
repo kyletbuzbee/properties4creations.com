@@ -1,0 +1,205 @@
+# Comprehensive Patch File for Properties 4 Creations
+# Phases 8-13: Footer Cohesion, Performance, Accessibility, SEO, Data Ops, Testing
+# Generated: 2025-12-03
+
+# =============================================
+# PHASE 8: Footer Cohesion
+# =============================================
+
+diff --git a/src/_includes/footer.njk b/src/_includes/footer.njk
+--- a/src/_includes/footer.njk
++++ b/src/_includes/footer.njk
+@@
+- <div class="footer-links">
+-   <a href="/about/">About Us</a>
+-   <a href="/impact/">Impact</a>
+- </div>
++ <nav aria-label="Footer">
++   <ul>
++     <li><a href="/about/">About Us</a></li>
++     <li><a href="/impact/">Impact</a></li>
++     <li><a href="/resources/">Resources</a></li>
++     <li><a href="/contact/">Contact</a></li>
++   </ul>
++ </nav>
+
+- <div class="section8-status">Section 8 Vouchers Accepted</div>
++ <div class="badge badge-success">
++   Section 8 Vouchers Accepted
++ </div>
+
+# =============================================
+# PHASE 9: Performance & Reliability
+# =============================================
+
+diff --git a/tailwind.config.js b/tailwind.config.js
+--- a/tailwind.config.js
++++ b/tailwind.config.js
+@@
+- content: [],
++ content: ["./src/**/*.{njk,html,md}", "./dist/**/*.html"],
+
+diff --git a/workbox-config.js b/workbox-config.js
+--- a/workbox-config.js
++++ b/workbox-config.js
+@@
++ module.exports = {
++   globDirectory: "dist/",
++   globPatterns: ["**/*.{html,css,js,webp,avif,png,jpg,svg,json}"],
++   swDest: "dist/sw.js",
++   runtimeCaching: [
++     {
++       urlPattern: ({url}) => url.pathname.startsWith('/public/images/'),
++       handler: 'StaleWhileRevalidate'
++     },
++     {
++       urlPattern: ({url}) => url.pathname.startsWith('/public/videos/'),
++       handler: 'CacheFirst'
++     }
++   ]
++ };
+
+diff --git a/package.json b/package.json
+--- a/package.json
++++ b/package.json
+@@
+- "build": "npm run build:validate && npm-run-all build:css build:seo build:sw build:11ty",
++ "build": "npm run build:data && npm run build:validate && npm-run-all build:css build:seo build:sw build:11ty",
+
++ "build:data": "node scripts/validate-properties.js",
+
+diff --git a/src/_includes/base.njk b/src/_includes/base.njk
+--- a/src/_includes/base.njk
++++ b/src/_includes/base.njk
+@@
++ <link rel="preload" href="/public/fonts/brand.woff2" as="font" type="font/woff2" crossorigin>
+
+# =============================================
+# PHASE 10: Accessibility
+# =============================================
+
+diff --git a/src/_includes/base.njk b/src/_includes/base.njk
+--- a/src/_includes/base.njk
++++ b/src/_includes/base.njk
+@@
++ <a href="#main" class="skip-to-content">Skip to Content</a>
++ <main id="main">
+
+diff --git a/src/projects.html b/src/projects.html
+--- a/src/projects.html
++++ b/src/projects.html
+@@
+- <select id="status">
++ <label for="status">Status</label>
++ <select id="status" aria-label="Status">
+
+# =============================================
+# PHASE 11: SEO & Structured Data
+# =============================================
+
+diff --git a/src/_includes/base.njk b/src/_includes/base.njk
+--- a/src/_includes/base.njk
++++ b/src/_includes/base.njk
+@@
++ <link rel="canonical" href="{{ site.url }}{{ page.url }}">
++ <meta property="og:title" content="{{ pageTitle }}">
++ <meta property="og:description" content="{{ description }}">
++ <meta property="og:image" content="/public/images/social-share-default.webp">
++ <meta property="og:url" content="{{ site.url }}{{ page.url }}">
++ <meta name="twitter:card" content="summary_large_image">
+
+diff --git a/src/projects.html b/src/projects.html
+--- a/src/projects.html
++++ b/src/projects.html
+@@
++ <script type="application/ld+json">
++ {
++   "@context": "https://schema.org",
++   "@type": "VideoObject",
++   "name": "Properties Banner Video",
++   "description": "Cinematic banner video showcasing affordable housing projects.",
++   "thumbnailUrl": ["/public/images/optimized/banners/hero-projects-banner-1280.jpg"],
++   "uploadDate": "2025-12-03",
++   "duration": "PT0M30S",
++   "contentUrl": "/public/videos/hero-banner-new-1080p.mp4",
++   "embedUrl": "/projects/",
++   "publisher": {
++     "@type": "Organization",
++     "name": "Properties 4 Creations",
++     "logo": {
++       "@type": "ImageObject",
++       "url": "/public/images/logo/brand-logo-header.svg",
++       "width": 200,
++       "height": 60
++     }
++   }
++ }
++ </script>
+
+diff --git a/src/impact.html b/src/impact.html
+--- a/src/impact.html
++++ b/src/impact.html
+@@
++ <script type="application/ld+json">
++ {
++   "@context": "https://schema.org",
++   "@type": "CreativeWork",
++   "name": "Impact Story",
++   "description": "Case study of a family finding housing",
++   "author": "Properties 4 Creations"
++ }
++ </script>
+
+# =============================================
+# PHASE 12: Data Ops
+# =============================================
+
+diff --git a/scripts/validate-properties.js b/scripts/validate-properties.js
+--- a/scripts/validate-properties.js
++++ b/scripts/validate-properties.js
+@@
++ const fs = require('fs');
++ const data = JSON.parse(fs.readFileSync('public/properties-data.json'));
++ for (const [id, prop] of Object.entries(data)) {
++   if (!prop.title || !prop.city || !prop.coords) {
++     throw new Error(`Property ${id} missing required fields`);
++   }
++ }
+
+diff --git a/package.json b/package.json
+--- a/package.json
++++ b/package.json
+@@
++ "build:data": "node scripts/validate-properties.js",
+
+# =============================================
+# PHASE 13: Testing & CI/CD
+# =============================================
+
+diff --git a/tests/a11y.spec.ts b/tests/a11y.spec.ts
+--- a/tests/a11y.spec.ts
++++ b/tests/a11y.spec.ts
+@@
++ import { test, expect } from '@playwright/test';
++ import AxeBuilder from '@axe-core/playwright';
++
++ test('accessibility scan', async ({ page }) => {
++   await page.goto('/');
++   const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
++   expect(accessibilityScanResults.violations).toEqual([]);
++ });
+
+diff --git a/tests/visual.spec.ts b/tests/visual.spec.ts
+--- a/tests/visual.spec.ts
++++ b/tests/visual.spec.ts
+@@
++ import { test, expect } from '@playwright/test';
++
++ test('banner visual regression', async ({ page }) => {
++   await page.goto('/impact/');
++   expect(await page.screenshot()).toMatchSnapshot('impact-banner.png');
++ });
+
+# =============================================
+# END OF COMPREHENSIVE PATCH
+# =============================================

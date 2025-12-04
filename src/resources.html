@@ -3,15 +3,82 @@ layout: base.njk
 title: "Housing Support Resources | Properties 4 Creations"
 description: "Complete housing support guide for East Texas veterans and families. Access Section 8, VA benefits, and fair housing info."
 banner:
-  variant: hero
   title: "Housing Support Resources"
   subtitle: "Complete guide to housing programs for families and veterans. Navigate the system with confidence."
-  image: "banners/hero-resources-banner.png"
+  image: "hero-resources-banner.webp"
   eyebrow: "Housing Assistance Guide"
-  showVoucherBadge: false
   ctaText: "Get Started"
   ctaHref: "/get-started/"
 ---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://properties4creations.com/resources/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the HUD-VASH program and how does it work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The HUD-Veterans Affairs Supportive Housing (HUD-VASH) program combines Housing Choice Voucher (HCV) rental assistance for homeless Veterans with case management and clinical services provided by the Department of Veterans Affairs (VA). Veterans with disabilities are prioritized in the program."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I apply for Section 8 housing assistance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To apply for Section 8 housing assistance, contact your local Public Housing Authority (PHA). In East Texas, you can reach the Tyler Housing Agency at (903) 531-1303, Longview Housing Authority at (903) 758-5596, or Marshall Housing Authority at (903) 938-0717. Some Veterans may also qualify for HUD-VASH."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What housing programs are available for Veterans in East Texas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "East Texas Veterans can access HUD-VASH (Housing and Urban Development - VA Supportive Housing), Section 8 Housing Choice Vouchers, VA housing assistance programs, and properties that accept both VA and Section 8 vouchers. Properties 4 Creations works directly with Veterans to ensure eligibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my VA disability benefits for housing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Veterans with VA disability ratings (10% or higher for HUD-VASH, 50% or higher for regular VA programs) may qualify for housing assistance. Many Properties 4 Creations locations accept VA vouchers alongside Section 8."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between HUD-VASH and regular Section 8?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HUD-VASH specifically serves Veterans experiencing homelessness and combines rental assistance with VA case management services. Regular Section 8 (Housing Choice Vouchers) is available to low-income families and individuals but includes priority for Veterans."
+      }
+    }
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://properties4creations.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Housing Support Resources",
+        "item": "https://properties4creations.com/resources/"
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
 
 <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
@@ -26,7 +93,7 @@ banner:
 
             <div class="bg-slate-50 p-8 rounded-xl mb-8 border-l-4 border-brand-navy">
                 <h3 class="text-xl font-bold text-brand-navy mb-4">East Texas Housing Authorities</h3>
-                <ul class="space-y-2 list-none pl-0">
+                <ul class="space-y-2 list-disc list-inside">
                     <li><strong>Tyler Housing Agency:</strong> (903) 531-1303</li>
                     <li><strong>Longview Housing Authority:</strong> (903) 758-5596</li>
                     <li><strong>Marshall Housing Authority:</strong> (903) 938-0717</li>

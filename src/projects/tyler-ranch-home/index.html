@@ -1,0 +1,541 @@
+---
+layout: base.njk
+pageTitle: "Tyler Ranch Home"
+description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact."
+banner:
+<<<<<<< HEAD:src/projects/tyler-ranch-home.html
+  variant: "hero"
+  bannerTitle: "Affordable Homes for Families & Veterans in East Texas"
+  bannerSubtitle: "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride."
+  image: "banners/hero-property-fallback.webp"
+  eyebrow: "HUD-VASH & Section 8 Approved"
+  showVoucherBadge: true
+  ctaText: "Browse Homes for Families & Veterans"
+  ctaHref: "/get-started/"
+=======
+variant: "hero"
+bannerTitle: "Affordable Homes for Families & Veterans in East Texas"
+bannerSubtitle: "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust,
+and
+local pride."
+image: "banners/hero-property-fallback.webp"
+eyebrow: "HUD-VASH & Section 8 Approved"
+showVoucherBadge: true
+ctaText: "Browse Homes for Families & Veterans"
+ctaHref: "/get-started/"
+>>>>>>> b0fdc863df6dd42a1ed88bc2bf5337fd1486c796:src/projects/tyler-ranch-home/index.html
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://properties4creations.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Properties", "item": "https://properties4creations.com/projects/" },
+    { "@type": "ListItem", "position": 3, "name": "Tyler Ranch Home", "item": "https://properties4creations.com/projects/tyler-ranch-home/" }
+  ]
+}
+</script>
+
+<!-- Main Content -->
+
+
+<!-- Before/After Comparison Hero -->
+<section class="bg-slate-900 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="bg-slate-800 rounded-lg p-8 text-center">
+            <div class="compare-slider relative w-full h-[500px] md:h-[600px] overflow-hidden group rounded-xl shadow-2xl my-8">
+
+                <div class="compare-after absolute inset-0 w-full h-full bg-cover bg-center"
+                    data-background="/images/projects_finished_wood_deck.jpg"></div>
+
+                <div id="compare-overlay" class="compare-before absolute inset-0 w-[50%] h-full bg-cover bg-center border-r-4 border-white z-10"
+                    data-background="/images/projects_before_wood_deck.jpg"></div>
+
+<<<<<<< HEAD:src/projects/tyler-ranch-home.html
+                <input type="range" min="0" max="100" value="50"
+                    class="compare-slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+                    oninput="document.getElementById('compare-overlay').style.width = this.value + '%'">
+=======
+                    <label for="before-after-slider" class="sr-only">Adjust before and after comparison (left for before, right for after)</label>
+                    <input type="range" id="before-after-slider" min="0" max="100" value="50"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+>>>>>>> b0fdc863df6dd42a1ed88bc2bf5337fd1486c796:src/projects/tyler-ranch-home/index.html
+
+                <div class="compare-center absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                    <div class="compare-center-element bg-white text-brand-navy rounded-full p-2 shadow-xl border-2 border-brand-navy transform hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="compare-label compare-label-after absolute top-6 right-6 bg-brand-sage/90 backdrop-blur text-white px-4 py-2 rounded-lg font-bold shadow-lg z-20">
+                    AFTER: Premium Finish
+                </div>
+
+                <div class="compare-label compare-label-before absolute top-6 left-6 bg-slate-800/90 backdrop-blur text-white px-4 py-2 rounded-lg font-bold shadow-lg">
+                    BEFORE: Initial State
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block scripts %}
+<script>
+    // Initialize before/after comparison slider
+    document.addEventListener('DOMContentLoaded', function () {
+        // Set background images from data attributes
+        const afterElement = document.querySelector('.compare-after');
+        const beforeElement = document.querySelector('.compare-before');
+
+        if (afterElement && afterElement.dataset.background) {
+            afterElement.style.backgroundImage = 'url(' + afterElement.dataset.background + ')';
+        }
+
+        if (beforeElement && beforeElement.dataset.background) {
+            beforeElement.style.backgroundImage = 'url(' + beforeElement.dataset.background + ')';
+        }
+    });
+</script>
+{% endblock %}
+
+<!-- Property Overview -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Property Details -->
+            <div class="lg:col-span-2">
+                <h1 class="text-4xl font-bold text-brand-navy mb-4">Tyler Ranch Home</h1>
+
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Section 8
+                        Ready</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Family
+                        Friendly</span>
+                    <span class="text-2xl font-bold text-brand-navy">$1,800/mo</span>
+                </div>
+
+                <p class="text-lg text-slate-700 mb-6">
+                    Charming 3BR/2BA ranch-style home on 1.5 acres in Tyler, perfect for growing families.
+                    Recently renovated with modern amenities while maintaining its classic East Texas character.
+                    Walking distance to excellent Carmel Academy and Tyler Junior College.
+                </p>
+
+                <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm my-12">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-brand-navy">Renovation Specifications</h3>
+                        <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">CERTIFIED
+                            INSPECTION</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12 text-sm">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500">HVAC System</span>
+                            <span class="font-semibold text-brand-navy">Brand New 16-SEER Unit (2024)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500">Roofing</span>
+                            <span class="font-semibold text-brand-navy">30-Year Architectural Shingle</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500">Plumbing</span>
+                            <span class="font-semibold text-brand-navy">Complete PEX Re-pipe</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500">Flooring</span>
+                            <span class="font-semibold text-brand-navy">Waterproof Luxury Vinyl Plank</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500">Countertops</span>
+                            <span class="font-semibold text-brand-navy">Quartz (Stain Resistant)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500">Safety</span>
+                            <span class="font-semibold text-brand-navy">Hardwired Smoke/CO Detectors</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-slate-50 rounded-lg flex items-start gap-3">
+                        <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            <strong>Landlord Guarantee:</strong> We manage what we renovate. This property includes 24/7
+                            emergency maintenance and quarterly systems checks to ensure your home stays in this
+                            condition.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Facts -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-brand-navy">3</div>
+                        <div class="text-sm text-slate-600">Bedrooms</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-brand-navy">2</div>
+                        <div class="text-sm text-slate-600">Bathrooms</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-brand-navy">1,850</div>
+                        <div class="text-sm text-slate-600">Sq Ft</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-brand-navy">1.5</div>
+                        <div class="text-sm text-slate-600">Acres</div>
+                    </div>
+                </div>
+
+                <!-- Amenities -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Interior Features</h3>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Newly renovated kitchen
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Hardwood floors throughout
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Updated bathrooms
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Ceiling fans in every room
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Large walk-in closets
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Exterior Features</h3>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                1.5-acre lot with mature trees
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Two-car carport
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Storage building/workshop
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Chain-link fencing
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-500">✓</span>
+                                Mature landscaping
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="bg-slate-50 rounded-lg p-6 h-fit">
+                <h3 class="text-xl font-bold text-brand-navy mb-4">Interested in This Property?</h3>
+
+                <form id="property-inquiry" action="" method="POST" class="space-y-6" novalidate>
+
+                    <input type="hidden" name="_subject" value="Lead: Tyler Ranch Home">
+                    <input type="hidden" name="_next" value="/thank-you.html">
+
+<<<<<<< HEAD:src/projects/tyler-ranch-home.html
+                    <label for="contact-name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                    <input type="text" id="contact-name" name="name" required class="input-base" title="Full Name">
+
+                    <label for="contact-email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                    <input type="email" id="contact-email" name="email" required class="input-base" title="Email Address">
+
+                    <label for="contact-phone" class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                    <input type="tel" id="contact-phone" name="phone" required class="input-base" title="Phone Number">
+=======
+                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" required class="input-base">
+
+                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required class="input-base">
+
+                    <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                    <input type="tel" id="phone" name="phone" required class="input-base">
+>>>>>>> b0fdc863df6dd42a1ed88bc2bf5337fd1486c796:src/projects/tyler-ranch-home/index.html
+
+                    <div class="flex items-center">
+                        <input type="checkbox" id="veteran" name="veteran" class="mr-2" title="Military veteran status">
+                        <label for="veteran" class="text-sm text-slate-700">U.S. Military Veteran</label>
+                    </div>
+
+                    <button type="submit" class="btn-base btn-primary w-full rounded-lg py-3">
+                        Request Affordable Housing Tour
+                    </button>
+                </form>
+
+                <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" />
+                        </svg>
+                        <div>
+                            <h4 class="text-sm font-semibold text-green-800">Fair Market Guarantee</h4>
+                            <p class="text-xs text-green-700 mt-1">This property follows fair market principles
+                                transparent pricing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-slate-600">Call for immediate assistance</p>
+                    <a href="tel:+19032831770" class="text-brand-navy font-semibold hover:text-brand-tan"
+                        aria-label="Call us at 903-283-1770 for immediate property assistance">
+                        (903) 283-1770
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Neighborhood Information -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Neighborhood & Schools</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Schools -->
+            <div>
+                <h3 class="text-xl font-bold text-brand-navy mb-4">Excellent School District</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-semibold">Carmel Academy</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">Elementary</span>
+                        </div>
+                        <div class="text-sm text-slate-600 mb-2">Walking distance • Rated: 9/10</div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-green-500 rating-bar-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-semibold">Three Lakes Middle School</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">Middle School</span>
+                        </div>
+                        <div class="text-sm text-slate-600 mb-2">Direct bus route • Rated: 8/10</div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-blue-500 rating-bar-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-semibold">Robert E. Lee High School</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs">High School</span>
+                        </div>
+                        <div class="text-sm text-slate-600 mb-2">Bus accessible • Rated: 7/10</div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-purple-500 rating-bar-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-semibold">Tyler Junior College</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded text-xs">Community
+                                College</span>
+                        </div>
+                        <div class="text-sm text-slate-600 mb-2">15-minute drive • Affordable education</div>
+                        <div class="text-xs text-slate-500">Transfer agreements with major universities</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neighborhood Features -->
+            <div>
+                <h3 class="text-xl font-bold text-brand-navy mb-4">Community Amenities</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <svg class="w-6 h-6 mx-auto mb-2 text-blue-600" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        <div class="font-semibold">Tyler YMCA</div>
+                        <div class="text-sm text-slate-600">5-minute drive</div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <svg class="w-6 h-6 mx-auto mb-2 text-red-600" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                        </svg>
+                        <div class="font-semibold">CHRISTUS Trinity Mother Frances</div>
+                        <div class="text-sm text-slate-600">10-minute drive</div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <svg class="w-6 h-6 mx-auto mb-2 text-purple-600" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <div class="font-semibold">South Tyler Shopping</div>
+                        <div class="text-sm text-slate-600">8-minute drive</div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <svg class="w-6 h-6 mx-auto mb-2 text-green-600" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <div class="font-semibold">Tyler Parks</div>
+                        <div class="text-sm text-slate-600">Multiple locations</div>
+                    </div>
+                </div>
+
+                <!-- Transportation -->
+                <div class="mt-6 bg-white p-4 rounded-lg shadow">
+                    <h4 class="font-semibold text-brand-navy mb-2">Transportation</h4>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• Loop 323: 3-minute drive</li>
+                        <li>• US-69: 5-minute drive</li>
+                        <li>• Tyler Pounds Regional Airport: 25-minute drive</li>
+                        <li>• DART public transportation available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Renovation Story -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-brand-navy mb-4">Transformation Story</h2>
+            <p class="text-lg text-slate-600">How we brought this classic East Texas home back to life</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-brand-navy mb-2">Before: Classic Ranch</h3>
+                <p class="text-sm text-slate-600">Built in 1975, this home needed updates to meet modern family needs
+                    while preserving its character.</p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 3.214L13 21l-2.286-6.857L5 12l5.714-3.214L13 3z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-brand-navy mb-2">Renovation Process</h3>
+                <p class="text-sm text-slate-600">Complete kitchen remodel, updated bathrooms, fresh paint, and modern
+                    amenities added.</p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-brand-navy mb-2">After: Family Ready</h3>
+                <p class="text-sm text-slate-600">Modern comfort meets classic charm. Perfect for families seeking
+                    quality East Texas living.</p>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-lg p-8">
+            <blockquote class="text-lg text-slate-700 italic mb-4">
+                "This home has everything a family could want - great schools, plenty of space, and that wonderful East
+                Texas charm.
+                The renovations made it feel brand new while keeping the character that makes Tyler special."
+            </blockquote>
+            <cite class="text-sm text-slate-500">- Property Owner, Tyler Family</cite>
+        </div>
+    </div>
+</section>
+
+<!-- Related Properties -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-brand-navy mb-4">Similar East Texas Properties</h2>
+            <p class="text-lg text-slate-600">Explore other family-friendly homes in the Tyler area</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="h-48 bg-slate-300 flex items-center justify-center">
+                    <svg class="w-12 h-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">Longview Victorian</h3>
+                    <p class="text-slate-600 text-sm mb-3">Historic home with modern updates in downtown Longview</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-lg">$1,950/mo</span>
+                        <a href="/projects/longview-victorian/"
+                            class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="h-48 bg-slate-300 flex items-center justify-center">
+                    <svg class="w-12 h-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5" />
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">Jefferson Riverfront</h3>
+                    <p class="text-slate-600 text-sm mb-3">Charming cabin-style home on Big Cypress Bayou</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-lg">$1,650/mo</span>
+                        <a href="/projects/jefferson-riverfront/"
+                            class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-8">
+            <a href="/projects.html" class="btn-secondary">
+                View All East Texas Properties
+            </a>
+        </div>
+    </div>
+</section>

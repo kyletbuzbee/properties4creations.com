@@ -12,6 +12,7 @@
             // Extract coordinates from JSON-LD Structured Data
             const jsonLd = document.querySelector('script[type="application/ld+json"]');
             let lat = 32.7571, lng = -94.3452; // Default Jefferson coordinates
+            let propertyName = 'Property Location';
 
             if (jsonLd) {
                 try {
@@ -20,16 +21,12 @@
                         lat = parseFloat(data.geo.latitude);
                         lng = parseFloat(data.geo.longitude);
                     }
-
                     // Use property name for popup
-                    const propertyName = data.name ? data.name.replace(' - ', '\n').split(' - ')[0] : 'Property Location';
-                    L.marker([lat, lng]).addTo(map)
-                        .bindPopup(`<b>${propertyName}</b>`);
+                    if (data.name) {
+                        propertyName = data.name.replace(' - ', '\n').split(' - ')[0];
+                    }
                 } catch (e) {
                     console.warn('Could not parse property coordinates from JSON-LD');
-                    // Add marker with default coordinates
-                    L.marker([lat, lng]).addTo(map)
-                        .bindPopup('<b>Property Location</b>');
                 }
             }
 
@@ -39,6 +36,10 @@
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; OpenStreetMap contributors'
             }).addTo(map);
+
+            // Add marker after map is initialized
+            L.marker([lat, lng]).addTo(map)
+                .bindPopup(`<b>${propertyName}</b>`);
         }
     });
 </script>

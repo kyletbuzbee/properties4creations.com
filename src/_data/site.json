@@ -1,0 +1,39 @@
+{
+    "name": "Properties 4 Creations",
+    "description": "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.",
+    "url": "https://properties4creations.com",
+    "image": "/public/images/logo/brand-logo.svg",
+    "address": {
+        "streetAddress": "",
+        "addressLocality": "Tyler",
+        "addressRegion": "TX",
+        "postalCode": "75701",
+        "addressCountry": "US"
+    },
+    "contact": {
+        "phone": "+19032831770",
+        "email": "contact@properties4creations.com",
+        "hours": "Mon-Fri 9:00 AM - 6:00 PM"
+    },
+    "social": {
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "instagram": ""
+    },
+    "services": [
+        "Section 8 Housing",
+        "HUD-VASH Properties",
+        "Veteran Housing",
+        "Family Housing",
+        "Property Renovations",
+        "East Texas Real Estate"
+    ],
+    "areas": [
+        "Tyler",
+        "Longview",
+        "Jefferson",
+        "Marshall",
+        "East Texas"
+    ]
+}

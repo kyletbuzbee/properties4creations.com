@@ -1,54 +1,254 @@
 ---
 layout: base.njk
-pageTitle: "Contact Us"
+title: "Contact Us | Properties 4 Creations"
 description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact."
 banner:
-  variant: "hero"
-  bannerTitle: "We’re Here to Help"
-  bannerSubtitle: "Reach out to learn more about our homes, programs, or how we serve East Texas families and veterans."
-  image: "banners/hero-contact-banner.webp"
+  title: "We're Here to Help"
+  subtitle: "Reach out to learn more about our homes, programs, or how we serve East Texas families and veterans."
+  image: "hero-contact-banner.webp"
   eyebrow: "Local Support, Real Answers"
-  showVoucherBadge: true
   ctaText: "Start Your Journey"
   ctaHref: "/get-started/"
 ---
 
 <section class="max-w-4xl mx-auto py-12 px-4">
-    <form id="contact-form" action="" method="POST" class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-        <input type="hidden" name="_subject" value="Contact Form Inquiry">
-        <input type="hidden" name="_next" value="/thank-you.html">
+    <div class="form-container">
+        <form id="contact-form" action="" method="POST">
+            <input type="hidden" name="_subject" value="Contact Form Inquiry">
+            <input type="hidden" name="_next" value="/thank-you/">
 
-        <div class="grid md:grid-cols-2 gap-6">
-            <div>
-                <label class="block font-bold text-brand-navy mb-2">Name <span class="text-red-500">*</span></label>
-                <input type="text" name="name" required aria-required="true" class="w-full border rounded-lg p-3"
-                    placeholder="Your Name">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="form-group required" data-field="name">
+                    <label>Name <span class="required">*</span></label>
+                    <input type="text" name="name" required aria-required="true" placeholder="Your Name"
+                        autocomplete="name">
+                    <div class="error-message hidden" aria-hidden="true"></div>
+                    <div class="success-message hidden" aria-hidden="true"></div>
+                </div>
+                <div class="form-group required" data-field="email">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" name="email" required aria-required="true" placeholder="email@example.com"
+                        autocomplete="email">
+                    <div class="error-message hidden" aria-hidden="true"></div>
+                    <div class="success-message hidden" aria-hidden="true"></div>
+                </div>
             </div>
-            <div>
-                <label class="block font-bold text-brand-navy mb-2">Email <span class="text-red-500">*</span></label>
-                <input type="email" name="email" required aria-required="true" class="w-full border rounded-lg p-3"
-                    placeholder="email@example.com">
+
+            <div class="form-group" data-field="phone">
+                <label>Phone Number
+                    <span class="text-brand-walnut text-xs font-normal">(Optional)</span>
+                </label>
+                <input type="tel" name="phone" aria-label="Contact phone number" placeholder="(903) 555-0123"
+                    autocomplete="tel">
+                <div class="help-text">We'll call if we need more information</div>
+                <div class="error-message hidden" aria-hidden="true"></div>
+                <div class="success-message hidden" aria-hidden="true"></div>
             </div>
+
+            <div class="form-group required" data-field="message">
+                <label>Message <span class="required">*</span></label>
+                <textarea name="message" placeholder="Tell us how we can help you with your housing needs..." rows="4"
+                    required aria-required="true"></textarea>
+                <div class="error-message hidden" aria-hidden="true"></div>
+                <div class="success-message hidden" aria-hidden="true"></div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="veteran-contact" name="veteran" value="yes">
+                <label for="veteran-contact">
+                    <span class="text-brand-walnut font-medium">U.S. Military Veteran</span>
+                    <span class="text-sm text-slate-600 block">Check if you'd like priority for veteran housing
+                        assistance</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-primary w-full text-lg btn-lg" data-loading-text="Sending...">
+                Send Message
+            </button>
+
+            <p class="text-xs text-slate-500 text-center mt-4">
+                We respect your privacy and will never share your information.
+                Response typically within 24 hours.
+            </p>
+        </form>
+
+        <!-- Loading overlay -->
+        <div class="form-loading-overlay" id="form-loading-overlay">
+            <div class="form-spinner"></div>
+            <div class="loading-text">Sending your message...</div>
         </div>
-        <div>
-            <label class="block font-bold text-brand-navy mb-2">Phone (Optional)</label>
-            <input type="tel" name="phone" aria-label="Contact phone number" class="w-full border rounded-lg p-3"
-                placeholder="(903) 555-0123">
-        </div>
-        <div>
-            <label class="block font-bold text-brand-navy mb-2">Message <span class="text-red-500">*</span></label>
-            <textarea name="message" class="w-full border rounded-lg p-3 h-32" placeholder="How can we help?" rows="4"
-                required aria-required="true"></textarea>
-        </div>
-        <div class="flex items-center">
-            <input type="checkbox" id="veteran-contact" name="veteran" class="mr-2">
-            <label for="veteran-contact" class="text-slate-700">U.S. Military Veteran</label>
-        </div>
-        <button type="submit" class="btn-base btn-primary px-8 py-3 text-white rounded-lg font-bold w-full text-lg">Send
-            Message</button>
-    </form>
+    </div>
 </section>
 
+<!-- ContactPage Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://properties4creations.com/contact/#contactPage",
+    "mainEntity": {
+        "@type": "Organization",
+        "@id": "https://properties4creations.com/#organization",
+        "name": "Properties 4 Creations",
+        "url": "https://properties4creations.com",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-903-283-1770",
+            "email": "contact@properties4creations.com",
+            "contactType": "Customer Service",
+            "availableLanguage": "English",
+            "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tyler",
+            "addressRegion": "TX",
+            "postalCode": "75701",
+            "addressCountry": "US"
+        }
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://properties4creations.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://properties4creations.com/contact/"
+            }
+        ]
+    }
+}
+</script>
+
 {% block scripts %}
-<script src="/js/google-apps-script-submission.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const loadingOverlay = document.getElementById('form-loading-overlay');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    // Progressive form enhancement
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        // Basic validation
+        if (!data.name || !data.email || !data.message) {
+            showError('Please fill in all required fields.');
+            return;
+        }
+
+        // Show loading state
+        setLoading(true);
+
+        try {
+            // Submit to Google Apps Script
+            const response = await submitContactForm(data);
+
+            if (response.success) {
+                // Show success message
+                showSuccess('Thank you! Your message has been sent. We\'ll respond within 24 hours.');
+
+                // Reset form
+                contactForm.reset();
+
+                // Redirect after delay
+                setTimeout(() => {
+                    window.location.href = '/thank-you/';
+                }, 2000);
+            } else {
+                throw new Error(response.message || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showError(error.message || 'Failed to send message. Please try again or call us directly.');
+        } finally {
+            setLoading(false);
+        }
+    });
+
+    function setLoading(loading) {
+        if (loading) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = submitBtn.dataset.loadingText || 'Sending...';
+            loadingOverlay.style.display = 'flex';
+            showStatus('');
+        } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            loadingOverlay.style.display = 'none';
+        }
+    }
+
+    function showSuccess(message) {
+        showStatus(message, 'success');
+    }
+
+    function showError(message) {
+        showStatus(message, 'error');
+    }
+
+    function showStatus(message, type = '') {
+        // For now, using a simple alert. Could be enhanced with better UI
+        if (message) {
+            if (type === 'error') {
+                alert('Error: ' + message);
+            } else {
+                alert(message);
+            }
+        }
+    }
+
+    // Enhanced Google Apps Script submission
+    async function submitContactForm(data) {
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbx7ueoZrKMg4QoS2ZYTYRJyBvX6FcYuJCk_lOGQV/exec';
+
+        const payload = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone || '',
+            message: data.message,
+            veteran: data.veteran === 'yes' ? 'Yes' : 'No',
+            timestamp: new Date().toISOString(),
+            source: 'contact'
+        };
+
+        const response = await fetch(GAS_URL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            try {
+                const result = await response.json();
+                return { success: false, message: result.error || 'Server error' };
+            } catch {
+                return { success: false, message: 'Network error' };
+            }
+        }
+
+        const result = await response.json();
+        return { success: result.success, message: result.message };
+    }
+});
+</script>
 {% endblock %}

@@ -1,98 +1,50 @@
-[
-  {
-    "id": "tyler-ranch-home",
+{
+  "tyler-ranch-home": {
     "title": "Tyler Ranch Home",
-    "location": "Tyler, TX",
-    "price": {
-      "amount": 1800,
-      "currency": "USD",
-      "period": "month",
-      "formatted": "$1,800/mo"
-    },
-    "availability": "available",
-    "datePosted": "2025-11-15",
-    "featured": true,
-    "lastUpdated": "2025-11-23",
-    "story_description": "Charming 3BR/2BA ranch-style home on 1.5 acres in Tyler...",
-    "tags": ["Section 8 Ready", "Veteran Priority"],
-    "trust_badges": ["Certified Renovation", "ADA Compliant", "Veteran-Owned"],
+    "city": "Tyler",
+    "price": 1800,
+    "status": "Available",
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1850,
-    "images": ["public/images/properties/before-after/after_living_room.webp"],
-    "url": "projects/tyler-ranch-home.html"
-
+    "coords": [32.3512, -95.3019],
+    "img": "properties/before-after/after_living_room.webp",
+    "link": "projects/tyler-ranch-home.html"
   },
-  {
-    "id": "longview-victorian",
+  "longview-victorian": {
     "title": "Longview Victorian",
-    "location": "Longview, TX",
-    "price": {
-      "amount": 1300,
-      "currency": "USD",
-      "period": "month",
-      "formatted": "$1,300/mo"
-    },
-    "availability": "available",
-    "datePosted": "2025-11-10",
-    "featured": true,
-    "lastUpdated": "2025-11-23",
-    "story_description": "Historic Victorian home with modern updates and spacious rooms. Fully renovated kitchen and bathrooms.",
-    "tags": ["Market Rate", "Historic Home", "Pet Friendly"],
-    "trust_badges": ["Historic Preservation", "Pet-Friendly", "Modern Amenities"],
+    "city": "Longview",
+    "price": 1300,
+    "status": "Available",
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2200,
-    "images": ["public/images/properties/before-after/projects_after_kitchen.webp"],
-    "url": "projects/longview-victorian.html"
-
+    "coords": [32.5007, -94.7405],
+    "img": "properties/before-after/projects_after_kitchen.webp",
+    "link": "projects/longview-victorian.html"
   },
-  {
-    "id": "jefferson-riverfront",
+  "jefferson-riverfront": {
     "title": "Jefferson Riverfront",
-    "location": "Jefferson, TX",
-    "price": {
-      "amount": 900,
-      "currency": "USD",
-      "period": "month",
-      "formatted": "$900/mo"
-    },
-    "availability": "available",
-    "datePosted": "2025-11-20",
-    "featured": false,
-    "lastUpdated": "2025-11-23",
-    "story_description": "Peaceful apartment near the river with stunning views. ADA accessible and Section 8 approved.",
-    "tags": ["Section 8 Ready", "Waterfront", "ADA Accessible"],
-    "trust_badges": ["Section 8 Voucher", "ADA Compliant", "Waterfront Views"],
+    "city": "Jefferson",
+    "price": 900,
+    "status": "Available",
     "bedrooms": 2,
     "bathrooms": 1,
     "sqft": 950,
-    "images": ["public/images/properties/before-after/after_living_room.webp"],
-    "url": "projects/jefferson-riverfront.html"
-
+    "coords": [32.7571, -94.3452],
+    "img": "properties/before-after/after_living_room.webp",
+    "link": "projects/jefferson-riverfront.html"
   },
-  {
-    "id": "marshall-townhome",
+  "marshall-townhome": {
     "title": "Marshall Townhome",
-    "location": "Marshall, TX",
-    "price": {
-      "amount": 1050,
-      "currency": "USD",
-      "period": "month",
-      "formatted": "$1,050/mo"
-    },
-    "availability": "pending",
-    "datePosted": "2025-11-12",
-    "featured": false,
-    "lastUpdated": "2025-11-23",
-    "story_description": "Modern townhome in quiet neighborhood. Energy efficient with pool access and community amenities.",
-    "tags": ["Section 8 Ready", "Community Amenities", "Energy Efficient"],
-    "trust_badges": ["Energy Star Certified", "Community Pool", "Modern Construction"],
+    "city": "Marshall",
+    "price": 1050,
+    "status": "Coming Soon",
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 1200,
-    "images": ["public/images/properties/before-after/patio_wood.jpg"],
-    "url": "projects/marshall-townhome.html"
-
+    "coords": [32.5449, -94.3674],
+    "img": "properties/before-after/patio_wood.jpg",
+    "link": "projects/marshall-townhome.html"
   }
-]
+}

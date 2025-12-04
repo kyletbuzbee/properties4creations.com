@@ -1,15 +1,12 @@
 ---
 layout: base.njk
-pageTitle: "Browse Affordable Homes for Families & Veterans for Purpose | Properties 4 Creations"
-description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium
-renovations, and community impact."
+title: "Browse Affordable Homes for Families & Veterans for Purpose | Properties 4 Creations"
+description: "Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact."
 banner:
-  variant: "hero"
-  bannerTitle: "Turn Your Property into Purpose"
-  bannerSubtitle: "Sell your home for fair market value and create sanctuary for veterans and families. No fees, complete renovation, sustainable community impact."
-  image: "banners/hero-get-started-banner.png"
+  title: "Turn Your Property into Purpose"
+  subtitle: "Sell your home for fair market value and create sanctuary for veterans and families. No fees, complete renovation, sustainable community impact."
+  image: "hero-property-banner.webp"
   eyebrow: "Fair Cash • No Fees • Veteran Impact"
-  showVoucherBadge: true
   ctaText: "Get Cash Offer"
   ctaHref: "#impact-form"
 ---
@@ -18,13 +15,13 @@ banner:
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://properties4creations.com/get-started",
+  "@id": "https://properties4creations.com/get-started/",
   "name": "Get Started - Properties 4 Creations",
   "description": "Affordable housing for families and veterans in East Texas. Section 8 eligible, professionally renovated, and community focused.",
-  "url": "https://properties4creations.com/get-started.html",
+  "url": "https://properties4creations.com/get-started/",
   "isPartOf": {
     "@type": "WebSite",
-    "@id": "https://properties4creations.com#website",
+    "@id": "https://properties4creations.com/#website",
     "name": "Properties 4 Creations",
     "url": "https://properties4creations.com"
   },
@@ -35,8 +32,25 @@ banner:
   },
   "potentialAction": {
     "@type": "CommunicateAction",
-    "target": "https://properties4creations.com/get-started.html#contact-form",
+    "target": "https://properties4creations.com/get-started/#impact-form",
     "description": "Start selling your home for purpose"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://properties4creations.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Get Started",
+        "item": "https://properties4creations.com/get-started/"
+      }
+    ]
   }
 }
 </script>
@@ -329,7 +343,7 @@ banner:
             <!-- Seller Story -->
             <div class="bg-brand-beige p-8 rounded-xl">
                 <div class="flex items-center gap-4 mb-6">
-                    <img src="/public/images/icons/021-family.png" alt="Home seller story icon" class="w-12 h-12"
+                    <img src="/images/icons/021-family.png" alt="Home seller story icon" class="w-12 h-12"
                         loading="lazy" decoding="async" />
                     <div>
                         <h3 class="font-bold text-brand-navy">Maria Rodriguez - Texas Homeowner</h3>
@@ -347,7 +361,7 @@ banner:
             <!-- Veteran Story -->
             <div class="bg-blue-50 p-8 rounded-xl">
                 <div class="flex items-center gap-4 mb-6">
-                    <img src="/public/images/icons/035-usa.png" alt="Veteran story icon" class="w-12 h-12"
+                    <img src="/images/icons/035-usa.png" alt="Veteran story icon" class="w-12 h-12"
                         loading="lazy" decoding="async" />
                     <div>
                         <h3 class="font-bold text-brand-navy">Sergeant James Wilson - Iraq Veteran</h3>
@@ -453,26 +467,129 @@ banner:
 
 {% block scripts %}
 <script>
+document.addEventListener('DOMContentLoaded', function() {
     // Get Started Page Interactions
-    document.addEventListener('DOMContentLoaded', function () {
-        // Initialize Components
-        if (window.P4C && window.P4C.init) {
-            window.P4C.init();
+    const impactForm = document.querySelector('#impact-form form');
+
+    if (impactForm) {
+        impactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(impactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            // Basic validation
+            if (!data['first-name'] || !data['last-name'] || !data.email || !data.phone || !data['property-address'] || !data['property-city']) {
+                showError('Please fill in all required fields.');
+                return;
+            }
+
+            // Show loading state
+            setLoading(true);
+
+            try {
+                // Submit to Google Apps Script
+                const response = await submitImpactForm(data);
+
+                if (response.success) {
+                    // Show success message
+                    showSuccess('Thank you! We\'ve received your property information. Our team will contact you within 24 hours with a fair cash offer.');
+
+                    // Reset form
+                    impactForm.reset();
+
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    throw new Error(response.message || 'Failed to submit request');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showError(error.message || 'Failed to submit request. Please call us directly.');
+            } finally {
+                setLoading(false);
+            }
+        });
+    }
+
+    function setLoading(loading) {
+        const submitBtn = impactForm.querySelector('button[type="submit"]');
+        if (loading) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+        } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Get My Cash Offer →';
         }
+    }
 
-        // Ripple Effects
-        document.querySelectorAll('.impact-ripple').forEach(el => {
-            el.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-5px)';
-            });
+    function showSuccess(message) {
+        showStatus(message, 'success');
+    }
 
-            el.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0)';
-            });
+    function showError(message) {
+        showStatus(message, 'error');
+    }
+
+    function showStatus(message, type = '') {
+        if (message) {
+            if (type === 'error') {
+                alert('Error: ' + message);
+            } else {
+                alert(message);
+            }
+        }
+    }
+
+    // Enhanced Google Apps Script submission for get-started form
+    async function submitImpactForm(data) {
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbx7ueoZrKMg4QoS2ZYTYRJyBvX6FcYuJCk_lOGQV/exec';
+
+        const payload = {
+            firstName: data['first-name'],
+            lastName: data['last-name'],
+            email: data.email,
+            phone: data.phone,
+            propertyAddress: data['property-address'],
+            propertyCity: data['property-city'],
+            propertyDescription: data['property-description'] || '',
+            timestamp: new Date().toISOString(),
+            source: 'get-started'
+        };
+
+        const response = await fetch(GAS_URL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
         });
 
-        // Initialize any interactive features
+        if (!response.ok) {
+            try {
+                const result = await response.json();
+                return { success: false, message: result.error || 'Server error' };
+            } catch {
+                return { success: false, message: 'Network error' };
+            }
+        }
 
+        const result = await response.json();
+        return { success: result.success, message: result.message };
+    }
+
+    // Ripple Effects
+    document.querySelectorAll('.impact-ripple').forEach(el => {
+        el.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-5px)';
+        });
+
+        el.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+        });
     });
+});
 </script>
 {% endblock %}
