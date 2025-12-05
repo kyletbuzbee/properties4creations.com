@@ -3,6 +3,7 @@ module.exports = {
   globPatterns: ["**/*.{html,css,js,webp,png,jpg,avif}"],
   swDest: "dist/sw.js",
   maximumFileSizeToCacheInBytes: 8 * 1024 * 1024, // 8MB limit for precaching
+  // Workbox v7+ uses different runtime caching configuration
   runtimeCaching: [
     // Cache images and videos in public directories
     {
