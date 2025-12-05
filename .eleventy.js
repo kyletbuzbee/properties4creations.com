@@ -30,6 +30,12 @@ module.exports = function (eleventyConfig) {
     }));
   });
 
+  // 3. Add propertiesArray for pagination
+  eleventyConfig.addGlobalData('propertiesArray', function() {
+    const { propertiesArray } = require('./src/_data/properties.js');
+    return propertiesArray();
+  });
+
   // 2. Watch Targets: Rebuild 11ty when Tailwind finishes recompiling CSS
   eleventyConfig.addWatchTarget("./dist/css/");
 
@@ -41,7 +47,7 @@ module.exports = function (eleventyConfig) {
       manifest = require('./public/images/optimized/image-manifest.json');
     } catch (e) {
       // Fall back to original behavior if manifest doesn't exist
-      return `<img src="/public/${src}" alt="${alt}" class="${className}" loading="${loading}">`;
+      return `<img src="/${src}" alt="${alt}" class="${className}" loading="${loading}">`;
     }
 
     // Extract base path without extension
@@ -50,7 +56,7 @@ module.exports = function (eleventyConfig) {
 
     if (!variants) {
       // Fall back to WebP if available, otherwise original
-      const webpSrc = `/public/${basePath}.webp`;
+      const webpSrc = `/${basePath}.webp`;
       return `<img src="${webpSrc}" alt="${alt}" class="${className}" loading="${loading}">`;
     }
 
@@ -60,7 +66,7 @@ module.exports = function (eleventyConfig) {
       const formatVariants = variants.variants.filter(v => v.format === format);
       if (formatVariants.length > 0) {
         const srcset = formatVariants
-          .map(v => `/public/images/optimized/${v.path} ${v.path.match(/-(\d+)\./)?.[1] || ''}w`)
+          .map(v => `/images/optimized/${v.path} ${v.path.match(/-(\d+)\./)?.[1] || ''}w`)
           .join(', ');
         srcsets[format] = srcset;
       }
@@ -81,7 +87,7 @@ module.exports = function (eleventyConfig) {
       variants.variants.find(v => v.format === 'jpeg')?.path ||
       src;
 
-    pictureHtml += `<img src="/public/images/optimized/${fallbackSrc}" alt="${alt}" class="${className}" loading="${loading}">`;
+    pictureHtml += `<img src="/images/optimized/${fallbackSrc}" alt="${alt}" class="${className}" loading="${loading}">`;
     pictureHtml += '</picture>';
 
     return pictureHtml;
@@ -91,7 +97,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("icon", function (name, className = "") {
     const aria = 'aria-hidden="true"';
     return `<svg class="w-6 h-6 ${className}" ${aria} role="img">
-      <use href="/public/images/icons/icons.svg#${name}"></use>
+      <use href="/images/icons/icons.svg#${name}"></use>
     </svg>`;
   });
 

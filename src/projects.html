@@ -47,7 +47,7 @@ banner:
 
                 <div class="h-48 bg-slate-300 flex items-center justify-center relative">
                     {% if prop.img %}
-                    <img src="/public/images/{{ prop.img }}" alt="{{ prop.title }}" class="w-full h-full object-cover" loading="lazy">
+                    <img src="/{{ prop.img }}" alt="{{ prop.title }}" class="w-full h-full object-cover" loading="lazy">
                     {% else %}
                     {% endif %}
 
@@ -128,12 +128,8 @@ banner:
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const propertyCards = document.querySelectorAll('.property-card');
-    const propertiesData = [
-        { "title": "Tyler Ranch Home", "img": "properties/tyler-ranch/hero.webp", "city": "Tyler", "desc": "3 BR • 2 Bath • 1850 Sq Ft", "price": 1800, "link": "/projects/tyler-ranch-home/", "voucherType": "Section 8 Ready", "coordinates": [32.3513, -95.3011] },
-        { "title": "Longview Victorian", "img": "properties/longview-victorian/hero.webp", "city": "Longview", "desc": "4 BR • 3 Bath • 2400 Sq Ft", "price": 1300, "link": "/projects/longview-victorian/", "voucherType": "Historic Property", "coordinates": [32.5007, -94.7405] },
-        { "title": "Jefferson Riverfront", "img": "properties/jefferson-riverfront/hero.webp", "city": "Jefferson", "desc": "Waterfront", "price": 900, "link": "/projects/jefferson-riverfront/", "voucherType": "Waterfront", "coordinates": [32.7571, -94.3452] },
-        { "title": "Marshall Townhome", "img": "properties/marshall-townhome/hero.webp", "city": "Marshall", "desc": "3 BR • 2.5 Bath • 1600 Sq Ft", "price": 1200, "link": "/projects/marshall-townhome/", "voucherType": "Community Living", "coordinates": [32.5445, -94.3674] }
-    ];
+    // Get property data from the centralized data source
+    const propertiesData = JSON.parse('{{ properties | dump | safe }}');
 
     // Filter button click handlers
     filterButtons.forEach(button => {
@@ -213,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const popupContent = `
                 <div class="text-center min-w-[200px] p-3">
                     <div class="h-24 w-full mb-3 rounded overflow-hidden bg-slate-100">
-                        <img src="/images/${property.img}"
+                        <img src="/${property.img}"
                              alt="${property.title}"
                              class="w-full h-full object-cover"
                              onerror="this.src='/images/banners/hero-property-fallback.webp'">

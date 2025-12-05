@@ -54,5 +54,8 @@
     "east-texas"
   ],
   "author": "Properties 4 Creations",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "build": "^0.1.4"
+  }
 }

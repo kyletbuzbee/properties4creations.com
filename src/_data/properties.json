@@ -6,7 +6,7 @@
         "title": "Tyler Ranch Home",
         "description": "Premium renovations meet fair pricing. Section 8 eligible 3BR/2BA ranch home perfect for families.",
         "shortDesc": "3 Bed • 2 Bath",
-        "img": "properties/tyler-ranch/hero.webp",
+        "img": "images/properties/tyler-ranch/hero.webp",
         "price": 1800,
         "bedrooms": 3,
         "bathrooms": 2,
@@ -77,7 +77,7 @@
             }
         ],
         "banner": {
-            "image": "hero-property-banner.webp",
+            "image": "images/banners/hero-property-banner.webp",
             "title": "Tyler Ranch Home",
             "subtitle": "Premium renovations meet fair pricing. Section 8 ready 3BR/2BA ranch home perfect for families.",
             "eyebrow": "Fair Market • Premium Renovations"
@@ -90,7 +90,7 @@
         "title": "Longview Victorian",
         "description": "Historic charm meets modern comfort in this stunning Victorian renovation.",
         "shortDesc": "4 Bed • 3 Bath",
-        "img": "properties/longview-victorian/hero.webp",
+        "img": "images/properties/longview-victorian/hero.webp",
         "price": 1300,
         "bedrooms": 4,
         "bathrooms": 3,
@@ -106,7 +106,13 @@
             "Large Lot",
             "Charming Details",
             "Original Stained Glass"
-        ]
+        ],
+        "banner": {
+            "image": "images/banners/hero-property-banner.webp",
+            "title": "Longview Victorian",
+            "subtitle": "Historic charm meets modern comfort in this stunning Victorian renovation.",
+            "eyebrow": "Historic Preservation"
+        }
     },
     "jefferson-riverfront": {
         "id": "jefferson-riverfront",
@@ -115,7 +121,7 @@
         "title": "Jefferson Riverfront",
         "description": "Waterfront living at its finest. Private dock access and stunning bayou views.",
         "shortDesc": "2 Bed • Waterfront",
-        "img": "properties/jefferson-riverfront/hero.webp",
+        "img": "images/properties/jefferson-riverfront/hero.webp",
         "price": 900,
         "bedrooms": 2,
         "bathrooms": 1,
@@ -131,7 +137,13 @@
             "Private Dock",
             "Waterfront Recreation",
             "Covered Porch"
-        ]
+        ],
+        "banner": {
+            "image": "images/banners/hero-property-banner.webp",
+            "title": "Jefferson Riverfront",
+            "subtitle": "Waterfront living at its finest. Private dock access and stunning bayou views.",
+            "eyebrow": "Waterfront Living"
+        }
     },
     "marshall-townhome": {
         "id": "marshall-townhome",
@@ -140,7 +152,7 @@
         "title": "Marshall Townhome",
         "description": "Modern community living with all the convenience and none of the hassle.",
         "shortDesc": "3 Bed • Community",
-        "img": "properties/marshall-townhome/hero.webp",
+        "img": "images/properties/marshall-townhome/hero.webp",
         "price": 1200,
         "bedrooms": 3,
         "bathrooms": 2.5,
@@ -156,6 +168,12 @@
             "Community Amenities",
             "Low Maintenance",
             "End Unit"
-        ]
+        ],
+        "banner": {
+            "image": "images/banners/hero-property-banner.webp",
+            "title": "Marshall Townhome",
+            "subtitle": "Modern community living with all the convenience and none of the hassle.",
+            "eyebrow": "Community Living"
+        }
     }
 }

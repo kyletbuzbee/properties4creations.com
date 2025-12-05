@@ -1,0 +1,94 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+    data: propertiesArray
+    size: 1
+    alias: property
+    addAllPagesToCollections: false
+permalink: "projects/{{ property.slug }}/index.html"
+layout: base.njk
+eleventyComputed:
+    title: "{{ property.title }}"
+    description: "{{ property.description }}"
+---
+
+<div class="relative h-[60vh] min-h-[500px]">
+    {% respimg property.banner.image, property.title, "w-full h-full object-cover" %}
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
+        <div class="container">
+            <span class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-brand-navy uppercase bg-brand-wood rounded-full">
+                {{ property.status }}
+            </span>
+            <h1 class="text-4xl md:text-6xl font-heading font-bold text-white mb-2">{{ property.title }}</h1>
+            <p class="text-xl text-slate-300 flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-wood" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                {{ property.city }}, {{ property.state }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="py-16 bg-brand-beige">
+    <div class="container grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+        <div class="lg:col-span-2 space-y-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white rounded-2xl shadow-subtle border border-slate-100">
+                <div class="text-center p-4 border-r border-slate-100 last:border-0">
+                    <span class="block text-2xl font-bold text-brand-navy">{{ property.bedrooms }}</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-wide">Bed</span>
+                </div>
+                <div class="text-center p-4 border-r border-slate-100 last:border-0">
+                    <span class="block text-2xl font-bold text-brand-navy">{{ property.bathrooms }}</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-wide">Bath</span>
+                </div>
+                <div class="text-center p-4 border-r border-slate-100 last:border-0">
+                    <span class="block text-2xl font-bold text-brand-navy">{{ property.sqft }}</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-wide">Sq Ft</span>
+                </div>
+                <div class="text-center p-4">
+                    <span class="block text-2xl font-bold text-brand-navy">${{ property.price }}</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-wide">/ Mo</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-brand-navy mb-6">Property Features</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {% for feature in property.features %}
+                    <li class="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm border border-slate-100">
+                        <span class="text-green-500 bg-green-50 rounded-full p-1">✓</span>
+                        {{ feature }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% if property.renovationSpecs %}
+            <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm">
+                <h3 class="text-2xl font-bold text-brand-navy mb-6">Renovation Specs</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12 text-sm">
+                    {% for spec in property.renovationSpecs %}
+                    <div class="flex justify-between border-b border-slate-100 pb-2">
+                        <span class="text-slate-500">{{ spec.label }}</span>
+                        <span class="font-semibold text-brand-navy">{{ spec.value }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="relative">
+            <div class="sticky top-24 bg-white p-8 rounded-2xl shadow-wood border-t-4 border-brand-wood">
+                <h3 class="text-xl font-bold text-brand-navy mb-4">Interested in this home?</h3>
+                <p class="text-slate-600 mb-6 text-sm">Our properties rent quickly. Send an inquiry to schedule a viewing.</p>
+
+                {% include "contact-form-sidebar.njk" %}
+            </div>
+        </div>
+    </div>
+</section>
