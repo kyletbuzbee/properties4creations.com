@@ -24,10 +24,10 @@
             {% else %}
                 {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
                 <picture class="w-full h-full object-cover">
-                    <source media="(min-width: 1024px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-1024.webp" type="image/webp">
-                    <source media="(min-width: 768px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-768.webp" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-1024.avif" type="image/avif">
-                    <source media="(min-width: 768px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-768.avif" type="image/avif">
+                    <source media="(min-width: 1024px)" srcset="/images/optimized/banners/{{ bannerBase }}-1024.webp" type="image/webp">
+                    <source media="(min-width: 768px)" srcset="/images/optimized/banners/{{ bannerBase }}-768.webp" type="image/webp">
+                    <source media="(min-width: 1024px)" srcset="/images/optimized/banners/{{ bannerBase }}-1024.avif" type="image/avif">
+                    <source media="(min-width: 768px)" srcset=/images/optimized/banners/{{ bannerBase }}-768.avif" type="image/avif">
                     <img src="/images/optimized/banners/{{ banner.image }}"
                          alt="{{ banner.title or banner.bannerTitle }}"
                          class="w-full h-full object-cover"
