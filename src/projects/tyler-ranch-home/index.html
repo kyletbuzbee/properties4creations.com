@@ -27,16 +27,15 @@ banner:
         <div class="bg-slate-800 rounded-lg p-8 text-center">
             <div class="compare-slider relative w-full h-[500px] md:h-[600px] overflow-hidden group rounded-xl shadow-2xl my-8">
 
-                <div class="compare-after absolute inset-0 w-full h-full bg-cover bg-center"
-                    data-background="/images/projects_finished_wood_deck.jpg"></div>
+                <div class="compare-after absolute inset-0 w-full h-full bg-[url('/images/projects_finished_wood_deck.jpg')] bg-cover bg-center"></div>
 
-                <div id="compare-overlay" class="compare-before absolute inset-0 w-[50%] h-full bg-cover bg-center border-r-4 border-white z-10"
-                    data-background="/images/projects_before_wood_deck.jpg"></div>
+                <div id="compare-overlay" class="compare-before absolute inset-0 w-[50%] h-full bg-[url('/images/projects_before_wood_deck.jpg')] bg-cover bg-center border-r-4 border-white z-10"></div>
 
                 <label for="before-after-slider" class="sr-only">Adjust before and after comparison (left for before, right for after)</label>
                 <input type="range" id="before-after-slider" min="0" max="100" value="50"
                     class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
-                    oninput="document.getElementById('compare-overlay').style.width = this.value + '%'">
+                    oninput="document.getElementById('compare-overlay').style.width = this.value + '%'"
+                    aria-label="Compare before and after renovation images">
 
                 <div class="compare-center absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                     <div class="compare-center-element bg-white text-brand-navy rounded-full p-2 shadow-xl border-2 border-brand-navy transform hover:scale-110 transition-transform">
@@ -60,24 +59,7 @@ banner:
     </div>
 </section>
 
-{% block scripts %}
-<script>
-    // Initialize before/after comparison slider
-    document.addEventListener('DOMContentLoaded', function () {
-        // Set background images from data attributes
-        const afterElement = document.querySelector('.compare-after');
-        const beforeElement = document.querySelector('.compare-before');
 
-        if (afterElement && afterElement.dataset.background) {
-            afterElement.style.backgroundImage = 'url(' + afterElement.dataset.background + ')';
-        }
-
-        if (beforeElement && beforeElement.dataset.background) {
-            beforeElement.style.backgroundImage = 'url(' + beforeElement.dataset.background + ')';
-        }
-    });
-</script>
-{% endblock %}
 
 <!-- Property Overview -->
 <section class="py-16 bg-white">
@@ -247,7 +229,7 @@ banner:
                         <label for="veteran" class="text-sm text-slate-700">U.S. Military Veteran</label>
                     </div>
 
-                    <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base min-w-[200px] bg-gradient-to-br from-brand-wood to-brand-walnut text-brand-navy border-brand-walnut hover:from-brand-walnut hover:to-brand-wood hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center gap-2 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-wood focus-visible:ring-offset-2 rounded-lg font-semibold">
+                    <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base min-w-[200px] bg-gradient-to-br from-brand-wood to-brand-walnut text-brand-navy border-brand-walnut hover:from-brand-walnut hover:to-brand-wood hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-wood focus-visible:ring-offset-2 rounded-lg font-semibold">
                         Request Affordable Housing Tour
                     </button>
                 </form>

@@ -98,7 +98,12 @@ module.exports = function (eleventyConfig) {
   // 5. Critical CSS Inlining with Critters
   eleventyConfig.addTransform("critters", async (content, outputPath) => {
     if (outputPath && outputPath.endsWith(".html")) {
-      const critters = new Critters({ preload: "swap" });
+      // UPDATE THIS LINE: Add path: 'dist'
+      const critters = new Critters({
+        preload: "swap",
+        path: "dist",
+        publicPath: "/"
+      });
       return await critters.process(content);
     }
     return content;

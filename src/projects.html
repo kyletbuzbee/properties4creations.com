@@ -38,77 +38,34 @@ banner:
 
         <!-- Properties Listing -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for property in collections.properties %}
-            <article class="property-card group rounded-2xl overflow-hidden shadow-subtle hover:shadow-floating transition-all duration-500 hover:-translate-y-1 bg-white border border-slate-100">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/images/{{ property.data.img or 'banners/hero-property-fallback.webp' }}"
-                        alt="{{ property.data.title }} in {{ property.data.city }}, TX - {{ property.data.description }}"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        loading="lazy" decoding="async">
-                    <div class="absolute top-4 left-4 flex gap-2">
-                        {% if property.data.voucherType == "Section 8 Ready" %}
-                        <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Section 8 Ready</span>
-                        {% elif property.data.voucherType == "Historic Property" %}
-                        <span class="bg-brand-navy text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Historic</span>
-                        {% elif property.data.voucherType == "Community Living" %}
-                        <span class="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Community</span>
-                        {% elif property.data.voucherType == "Waterfront" %}
-                        <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Waterfront</span>
-                        {% endif %}
-                    </div>
-                    {% if property.data.status == "Coming Soon" %}
+            {% for key, prop in properties %}
+            <div class="property-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                 data-property-id="{{ key }}"
+                 data-bedrooms="{{ prop.bedrooms }}"
+                 data-status="{{ prop.status }}"
+                 data-city="{{ prop.city }}">
+
+                <div class="h-48 bg-slate-300 flex items-center justify-center relative">
+                    {% if prop.img %}
+                    <img src="/public/images/{{ prop.img }}" alt="{{ prop.title }}" class="w-full h-full object-cover" loading="lazy">
+                    {% else %}
+                    {% endif %}
+
                     <div class="absolute top-4 right-4">
-                        <span class="bg-brand-wood text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Coming Soon</span>
-                    </div>
-                    {% endif %}
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-brand-navy/95 to-transparent p-4 pt-12">
-                        <p class="text-white font-bold text-xl">${{ property.data.price }}<span class="text-sm font-normal opacity-80">/mo</span></p>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">{{ prop.status }}</span>
                     </div>
                 </div>
+
                 <div class="p-6">
-                    <div class="flex items-center gap-2 text-brand-wood text-sm font-medium mb-2">
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        {{ property.data.city }}, TX
+                    <h3 class="text-xl font-bold text-brand-navy mb-2">{{ prop.title }}</h3>
+                    <div class="text-slate-600 text-sm mb-2">{{ prop.city }}, TX</div>
+                    <div class="text-slate-600 text-sm mb-4">{{ prop.bedrooms }} Bed • {{ prop.bathrooms }} Bath • {{ prop.sqft }} sqft</div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-brand-navy">${{ prop.price }}/mo</span>
+                        <a href="/projects/{{ key }}/" class="btn-primary">View Details →</a>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-wood transition-colors">{{ property.data.title }}</h3>
-                    <p class="text-slate-600 text-sm mb-4">{{ property.data.bathrooms|round(0) }} BR • {{ property.data.bathrooms }} Bath • {{ property.data.sqft }} Sq Ft</p>
-
-                    <!-- Property Stats -->
-                    <div class="grid grid-cols-3 gap-4 mb-4">
-                        <div class="text-center">
-                            <div class="text-lg font-bold text-brand-navy">{{ property.data.bedrooms }}</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-wide">Bed</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-lg font-bold text-brand-navy">{{ property.data.bathrooms }}</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-wide">Bath</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-lg font-bold text-brand-navy">{{ property.data.sqft }}</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-wide">Sq Ft</div>
-                        </div>
-                    </div>
-
-                    {% if property.data.tags %}
-                    <!-- Features -->
-                    <div class="flex flex-wrap gap-1 mb-4">
-                        {% for tag in property.data.tags %}
-                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded">{{ tag | replace("-", " ") | title }}</span>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-
-                    <a href="{{ property.url }}" class="inline-flex items-center gap-2 text-brand-navy font-bold hover:text-brand-wood transition-colors">
-                        View Home
-                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
                 </div>
-            </article>
+            </div>
             {% endfor %}
         </div>
     </div>

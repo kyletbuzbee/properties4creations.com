@@ -447,6 +447,7 @@
  * Creates elevated, frosted glass appearance with backdrop blur
  */
 .glass-elevated {
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.8);
   border: var(--border-thin) solid rgba(255, 255, 255, 0.1);

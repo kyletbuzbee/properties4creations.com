@@ -116,7 +116,6 @@ button:disabled,
   border: 1px solid rgba(194, 142, 90, 0.3);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-secondary:hover,
@@ -317,7 +316,6 @@ button:disabled,
   border: 1px solid rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   color: var(--color-primary-navy);
 }
 
@@ -331,7 +329,6 @@ button:disabled,
   border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   color: var(--color-neutral-white);
 }
 
@@ -756,8 +753,8 @@ select {
   background: rgba(11, 17, 32, 0.65);
 
   /* The Magic Trio: Blur + Saturation + Contrast */
-  backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
 
   /* Delicate border: lighter on top, darker on bottom to simulate depth */
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1095,8 +1092,8 @@ select {
     rgba(11, 17, 32, 0.85),
     rgba(11, 17, 32, 0.65)
   );
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(194, 142, 90, 0.25);
   box-shadow: 0 8px 24px rgba(11, 17, 32, 0.4);
   position: relative;
@@ -1157,8 +1154,8 @@ select {
   opacity: 0;
   cursor: ew-resize;
   z-index: 30;
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .compare-slider .compare-label {
@@ -1166,8 +1163,8 @@ select {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   font-weight: bold;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 20;
