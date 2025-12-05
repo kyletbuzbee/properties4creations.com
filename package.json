@@ -12,7 +12,7 @@
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --minify",
     "build:seo": "node scripts/generate-sitemap.js",
     "build:sw": "echo 'Service worker generation temporarily disabled due to workbox version compatibility issues'",
-    "clean": "rd /s /q dist 2>nul && mkdir dist",
+    "clean": "rimraf dist && mkdir dist",
     "prebuild": "npm run clean",
     "test": "npm-run-all --parallel lint format --serial test:all",
     "test:basic": "playwright test tests/basic.spec.js",
