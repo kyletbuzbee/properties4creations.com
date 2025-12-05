@@ -20,14 +20,14 @@
 
 <picture class="{{ class }}">
   {# AVIF sources for modern browsers #}
-  <source media="(min-width: 1280px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-1280.avif" type="image/avif">
-  <source media="(min-width: 960px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-960.avif" type="image/avif">
-  <source media="(min-width: 640px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-640.avif" type="image/avif">
+  <source media="(min-width: 1280px)" srcset="/images/{{ imageDir }}/{{ imageBase }}-1280.avif" type="image/avif">
+  <source media="(min-width: 960px)" srcset="/images/{{ imageDir }}/{{ imageBase }}-960.avif" type="image/avif">
+  <source media="(min-width: 640px)" srcset="/images/{{ imageDir }}/{{ imageBase }}-640.avif" type="image/avif">
 
   {# WebP sources for broader support #}
-  <source media="(min-width: 1280px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-1280.webp" type="image/webp">
-  <source media="(min-width: 960px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-960.webp" type="image/webp">
-  <source media="(min-width: 640px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-640.webp" type="image/webp">
+  <source media="(min-width: 1280px)" srcset="/images/{{ imageDir }}/{{ imageBase }}-1280.webp" type="image/webp">
+  <source media="(min-width: 960px)" srcset="/images/{{ imageDir }}/{{ imageBase }}-960.webp" type="image/webp">
+  <source media="(min-width: 640px)" srcset="/images/{{ imageDir }}/{{ imageBase }}-640.webp" type="image/webp">
 
   {# JPEG fallback #}
   <img src="/images/{{ imageDir }}/{{ src }}"

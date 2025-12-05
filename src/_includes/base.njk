@@ -7,6 +7,13 @@
     <meta name="description" content="{{ description or 'Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.' }}">
     <link rel="canonical" href="https://properties4creations.com{{ page.url }}">
 
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://properties4creations.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://properties4creations.com{{ page.url }}">
     <meta property="og:title" content="{{ pageTitle or title or 'Premium Affordable Housing For Families and Veterans' }} | Properties 4 Creations">
