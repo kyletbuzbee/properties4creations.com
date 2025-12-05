@@ -1,0 +1,49 @@
+{#
+  Modern Card Component
+  Flexible card with various elevation and styling options
+
+  @param {string} variant - default|elevated|glass|bordered|minimal (default: default)
+  @param {string} hover - none|lift|glow (default: lift)
+  @param {string} class - Additional CSS classes (default: '')
+#}
+{% set variant = variant | default('default') %}
+{% set hover = hover | default('lift') %}
+{% set class = class | default('') %}
+
+{# Base card classes #}
+{% set baseClasses = 'flex flex-col p-6 border border-brand-wood/10 bg-white transition-all duration-300 focus-within:outline-none focus-within:ring-2 focus-within:ring-brand-wood focus-within:ring-offset-2' %}
+
+{# Variant styles #}
+{% if variant == 'elevated' %}
+  {% set variantClasses = 'border-none bg-white shadow-floating' %}
+{% elif variant == 'glass' %}
+  {% set variantClasses = 'bg-white/80 border-white/20 backdrop-blur-sm' %}
+{% elif variant == 'bordered' %}
+  {% set variantClasses = 'border-b-4 border-b-brand-wood' %}
+{% elif variant == 'minimal' %}
+  {% set variantClasses = 'border-transparent bg-transparent p-4' %}
+{% else %}
+  {% set variantClasses = 'border-brand-wood/10' %}
+{% endif %}
+
+{# Hover effects #}
+{% if hover == 'lift' %}
+  {% set hoverClasses = 'hover:-translate-y-1 hover:shadow-wood' %}
+{% elif hover == 'glow' %}
+  {% set hoverClasses = 'hover:shadow-floating hover:border-brand-wood/20' %}
+{% else %}
+  {% set hoverClasses = '' %}
+{% endif %}
+
+{# Combine all classes #}
+{% set allClasses = baseClasses ~ ' ' ~ variantClasses ~ ' ' ~ hoverClasses ~ ' ' ~ class %}
+
+{# Render the card wrapper #}
+{% set cardId = 'card-' ~ (0 | random) %}
+<div class="{{ allClasses }}" id="{{ cardId }}">
+  {% if content %}
+    {{ content }}
+  {% else %}
+    {% block card-content %}{% endblock %}
+  {% endif %}
+</div>

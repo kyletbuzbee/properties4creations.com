@@ -1,90 +1,161 @@
 {
     "tyler-ranch-home": {
-        "coords": [
-            32.3513,
-            -95.3011
-        ],
+        "id": "tyler-ranch-home",
+        "slug": "tyler-ranch-home",
+        "coords": [32.3513, -95.3011],
         "title": "Tyler Ranch Home",
-        "desc": "3 Bed • 2 Bath",
+        "description": "Premium renovations meet fair pricing. Section 8 eligible 3BR/2BA ranch home perfect for families.",
+        "shortDesc": "3 Bed • 2 Bath",
         "img": "properties/tyler-ranch/hero.webp",
-        "link": "/projects/tyler-ranch-home/",
         "price": 1800,
         "bedrooms": 3,
         "bathrooms": 2,
         "sqft": 1850,
         "city": "Tyler",
+        "state": "TX",
         "status": "Available",
         "voucherType": "Section 8 Ready",
+        "propertyType": "Ranch Home",
+        "tags": ["properties", "family", "section8"],
         "features": [
             "Upgraded Kitchen",
             "Private Yard",
             "Garage Parking"
-        ]
+        ],
+        "beforeAfterImages": {
+            "before": "projects/projects_before_wood_deck.jpg",
+            "after": "projects/projects_finished_wood_deck.jpg"
+        },
+        "renovationSpecs": [
+            {
+                "label": "HVAC System",
+                "value": "Brand New 16-SEER Unit (2024)"
+            },
+            {
+                "label": "Roofing",
+                "value": "30-Year Architectural Shingle"
+            },
+            {
+                "label": "Plumbing",
+                "value": "Complete PEX Re-pipe"
+            },
+            {
+                "label": "Flooring",
+                "value": "Waterproof Luxury Vinyl Plank"
+            },
+            {
+                "label": "Countertops",
+                "value": "Quartz (Stain Resistant)"
+            },
+            {
+                "label": "Safety",
+                "value": "Hardwired Smoke/CO Detectors"
+            }
+        ],
+        "amenities": [
+            {
+                "title": "Interior Features",
+                "type": "list",
+                "items": [
+                    "Newly renovated kitchen",
+                    "Hardwood floors throughout",
+                    "Updated bathrooms",
+                    "Ceiling fans in every room",
+                    "Large walk-in closets"
+                ]
+            },
+            {
+                "title": "Exterior Features",
+                "type": "list",
+                "items": [
+                    "1.5-acre lot with mature trees",
+                    "Two-car carport",
+                    "Storage building/workshop",
+                    "Chain-link fencing",
+                    "Mature landscaping"
+                ]
+            }
+        ],
+        "banner": {
+            "image": "hero-property-banner.webp",
+            "title": "Tyler Ranch Home",
+            "subtitle": "Premium renovations meet fair pricing. Section 8 ready 3BR/2BA ranch home perfect for families.",
+            "eyebrow": "Fair Market • Premium Renovations"
+        }
     },
     "longview-victorian": {
-        "coords": [
-            32.5007,
-            -94.7405
-        ],
+        "id": "longview-victorian",
+        "slug": "longview-victorian",
+        "coords": [32.5007, -94.7405],
         "title": "Longview Victorian",
-        "desc": "4 Bed • 3 Bath",
+        "description": "Historic charm meets modern comfort in this stunning Victorian renovation.",
+        "shortDesc": "4 Bed • 3 Bath",
         "img": "properties/longview-victorian/hero.webp",
-        "link": "/projects/longview-victorian/",
         "price": 1300,
         "bedrooms": 4,
         "bathrooms": 3,
         "sqft": 2400,
         "city": "Longview",
+        "state": "TX",
         "status": "Available",
         "voucherType": "Historic Property",
+        "propertyType": "Victorian Home",
+        "tags": ["properties", "historic", "family"],
         "features": [
             "Historic Architecture",
             "Large Lot",
-            "Charming Details"
+            "Charming Details",
+            "Original Stained Glass"
         ]
     },
     "jefferson-riverfront": {
-        "coords": [
-            32.7571,
-            -94.3452
-        ],
+        "id": "jefferson-riverfront",
+        "slug": "jefferson-riverfront",
+        "coords": [32.7571, -94.3452],
         "title": "Jefferson Riverfront",
-        "desc": "2 Bed • Waterfront",
+        "description": "Waterfront living at its finest. Private dock access and stunning bayou views.",
+        "shortDesc": "2 Bed • Waterfront",
         "img": "properties/jefferson-riverfront/hero.webp",
-        "link": "/projects/jefferson-riverfront/",
         "price": 900,
         "bedrooms": 2,
         "bathrooms": 1,
         "sqft": 950,
         "city": "Jefferson",
+        "state": "TX",
         "status": "Available",
         "voucherType": "Waterfront",
+        "propertyType": "Bungalow",
+        "tags": ["properties", "waterfront", "peaceful"],
         "features": [
             "Bayou Access",
             "Private Dock",
-            "Waterfront Recreation"
+            "Waterfront Recreation",
+            "Covered Porch"
         ]
     },
     "marshall-townhome": {
-        "coords": [
-            32.5445,
-            -94.3674
-        ],
+        "id": "marshall-townhome",
+        "slug": "marshall-townhome",
+        "coords": [32.5445, -94.3674],
         "title": "Marshall Townhome",
-        "desc": "3 Bed • Community",
+        "description": "Modern community living with all the convenience and none of the hassle.",
+        "shortDesc": "3 Bed • Community",
         "img": "properties/marshall-townhome/hero.webp",
-        "link": "/projects/marshall-townhome/",
         "price": 1200,
         "bedrooms": 3,
         "bathrooms": 2.5,
         "sqft": 1600,
         "city": "Marshall",
+        "state": "TX",
         "status": "Coming Soon",
         "voucherType": "Community Living",
+        "propertyType": "Townhome",
+        "tags": ["properties", "community", "modern"],
         "features": [
             "Modern Design",
             "Community Amenities",
-            "Low Maintenance"
+            "Low Maintenance",
+            "End Unit"
         ]
     }
 }

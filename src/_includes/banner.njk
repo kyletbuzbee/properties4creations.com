@@ -1,60 +1,71 @@
-<section class="page-banner relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
-  <!-- Background container -->
-  <div class="page-banner__bg-container">
-    {% if banner.video %}
-      <video class="page-banner__bg-video"
-             autoplay
-             muted
-             loop
-             playsinline
-             preload="auto">
-        <source src="/videos/hero-impact-banner-1080.mp4" type="video/mp4" media="(min-width: 960px)">
-        <source src="/videos/hero-impact-banner-720.mp4" type="video/mp4" media="(max-width: 959px)">
-        <source src="/videos/{{ banner.video }}" type="video/mp4">
-        <!-- Fallback image -->
-        <img src="/images/optimized/banners/{{ banner.image | replace('.webp','.jpg') }}"
-             alt="{{ banner.title }}"
-             class="page-banner__bg-image">
-      </video>
-    {% else %}
-      <picture class="page-banner__bg-picture">
-        <!-- AVIF -->
-        <source srcset="/images/optimized/banners/{{ banner.image | replace('.webp','-1920.avif') }}" media="(min-width: 1280px)" type="image/avif">
-        <source srcset="/images/optimized/banners/{{ banner.image | replace('.webp','-1280.avif') }}" media="(min-width: 960px)" type="image/avif">
-        <source srcset="/images/optimized/banners/{{ banner.image | replace('.webp','-640.avif') }}" media="(min-width: 640px)" type="image/avif">
+{% if banner %}
+<section id="page-banner" class="page-banner page-banner--hero relative min-h-[420px] flex items-center" role="banner" aria-label="Page banner">
+    <div class="page-banner__bg-container absolute inset-0 z-0 overflow-hidden">
+        {% if banner.video %}
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="/videos/{{ banner.video }}" type="video/mp4">
+                {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
+                <picture class="w-full h-full object-cover">
+                    <source media="(min-width: 1280px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-1280.webp" type="image/webp">
+                    <source media="(min-width: 960px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-960.webp" type="image/webp">
+                    <source media="(min-width: 1280px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-1280.avif" type="image/avif">
+                    <source media="(min-width: 960px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-960.avif" type="image/avif">
+                    <img src="/public/images/optimized/banners/{{ banner.image }}"
+                         alt="{{ banner.title or banner.bannerTitle }}"
+                         class="w-full h-full object-cover"
+                         fetchpriority="high">
+                </picture>
+                </video>
+            {% else %}
+                {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
+                <picture class="w-full h-full object-cover">
+                    <source media="(min-width: 1024px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-1024.webp" type="image/webp">
+                    <source media="(min-width: 768px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-768.webp" type="image/webp">
+                    <source media="(min-width: 1024px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-1024.avif" type="image/avif">
+                    <source media="(min-width: 768px)" srcset="/public/images/optimized/banners/{{ bannerBase }}-768.avif" type="image/avif">
+                    <img src="/public/images/optimized/banners/{{ banner.image }}"
+                         alt="{{ banner.title or banner.bannerTitle }}"
+                         class="w-full h-full object-cover"
+                         fetchpriority="high">
+                </picture>
+            {% endif %}
 
-        <!-- WebP -->
-        <source srcset="/images/optimized/banners/{{ banner.image | replace('.webp','-1920.webp') }}" media="(min-width: 1280px)" type="image/webp">
-        <source srcset="/images/optimized/banners/{{ banner.image | replace('.webp','-1280.webp') }}" media="(min-width: 960px)" type="image/webp">
-        <source srcset="/images/optimized/banners/{{ banner.image | replace('.webp','-640.webp') }}" media="(min-width: 640px)" type="image/webp">
-
-        <!-- JPG fallback -->
-        <img src="/images/optimized/banners/{{ banner.image | replace('.webp','.jpg') }}"
-             alt="{{ banner.title }}"
-             class="page-banner__bg-image w-full h-full object-cover"
-             loading="eager">
-      </picture>
-    {% endif %}
-    <div class="page-banner__overlay absolute inset-0 bg-brand-navy/30"></div>
-  </div>
-
-  <!-- Content -->
-  <div class="page-banner__container absolute inset-0 flex items-center justify-center">
-    <div class="page-banner__content text-center text-white px-4 max-w-4xl mx-auto">
-      {% if banner.eyebrow %}
-        <span class="page-banner__eyebrow inline-block bg-brand-wood text-brand-navy px-4 py-2 rounded-full text-sm font-bold mb-4">{{ banner.eyebrow }}</span>
-      {% endif %}
-      <h1 class="page-banner__title text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4">{{ banner.title }}</h1>
-      {% if banner.subtitle %}
-        <p class="page-banner__subtitle text-lg md:text-xl mb-8 max-w-2xl mx-auto">{{ banner.subtitle }}</p>
-      {% endif %}
-      {% if banner.ctaText and banner.ctaHref %}
-        <div class="page-banner__cta">
-          <a href="{{ banner.ctaHref }}" class="btn-primary bg-brand-wood hover:bg-brand-walnut text-brand-navy font-bold px-8 py-3 rounded-lg transition-colors inline-block">
-            {{ banner.ctaText }}
-          </a>
-        </div>
-      {% endif %}
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/70 to-brand-navy/40 mix-blend-multiply"></div>
     </div>
-  </div>
+
+    <div class="page-banner__container relative z-10 max-w-7xl mx-auto px-4 w-full">
+        <div class="page-banner__content max-w-3xl">
+            {% if banner.eyebrow %}
+            <span class="page-banner__eyebrow inline-block py-1 px-3 rounded-full bg-brand-wood/20 border border-brand-wood/30 text-brand-gold text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-sm">
+                {{ banner.eyebrow }}
+            </span>
+            {% endif %}
+
+            <h1 class="page-banner__title text-4xl md:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
+                {{ banner.bannerTitle or banner.title }}
+            </h1>
+
+            {% if banner.bannerSubtitle or banner.subtitle %}
+            <p class="page-banner__subtitle text-lg md:text-xl text-slate-50 mb-8 max-w-2xl drop-shadow-md font-medium">
+                {{ banner.bannerSubtitle or banner.subtitle }}
+            </p>
+            {% endif %}
+
+            <div class="flex flex-wrap gap-4">
+                {% if banner.ctaText %}
+                <a href="{{ banner.ctaHref }}" class="btn-primary page-banner__cta-btn shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+                    {{ banner.ctaText }}
+                </a>
+                {% endif %}
+
+                {% if banner.showVoucherBadge %}
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    Section 8 Vouchers Accepted
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </section>
+{% endif %}

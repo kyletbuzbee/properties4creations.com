@@ -1,0 +1,63 @@
+{#
+  Modern Button Component
+  Replaces legacy btn-primary classes with cleaner Tailwind implementation
+
+  @param {string} text - Button text
+  @param {string} href - Link href (makes it a link) or omit for button element
+  @param {string} variant - primary|secondary|tertiary (default: primary)
+  @param {string} size - sm|md|lg|full (default: md)
+  @param {string} type - submit|button (default: button) - only for button elements
+  @param {boolean} disabled - Disable button (default: false)
+  @param {string} class - Additional CSS classes (default: '')
+#}
+{% set text = text | default('Button') %}
+{% set variant = variant | default('primary') %}
+{% set size = size | default('md') %}
+{% set type = type | default('button') %}
+{% set disabled = disabled | default(false) %}
+{% set class = class | default('') %}
+
+{# Base button classes #}
+{% set baseClasses = 'inline-flex items-center justify-center gap-2 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-wood focus-visible:ring-offset-2 rounded-lg font-semibold' %}
+
+{# Size variants #}
+{% if size == 'sm' %}
+  {% set sizeClasses = 'px-3 py-2 text-sm' %}
+{% elif size == 'lg' %}
+  {% set sizeClasses = 'px-8 py-4 text-base min-w-[200px]' %}
+{% elif size == 'full' %}
+  {% set sizeClasses = 'w-full px-4 py-3 text-base' %}
+{% else %}
+  {% set sizeClasses = 'px-6 py-3 text-base' %}
+{% endif %}
+
+{# Variant styles #}
+{% if variant == 'primary' %}
+  {% set variantClasses = 'bg-gradient-to-br from-brand-wood to-brand-walnut text-brand-navy border-brand-walnut hover:from-brand-walnut hover:to-brand-wood hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0' %}
+{% elif variant == 'secondary' %}
+  {% set variantClasses = 'bg-brand-navy/90 text-white border-brand-wood/30 hover:bg-brand-navy hover:border-brand-wood/50 backdrop-blur-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0' %}
+{% elif variant == 'tertiary' %}
+  {% set variantClasses = 'bg-transparent text-brand-navy border-2 border-brand-navy hover:bg-brand-navy hover:text-white hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0' %}
+{% else %}
+  {% set variantClasses = 'bg-gradient-to-br from-brand-wood to-brand-walnut text-brand-navy border-brand-walnut hover:from-brand-walnut hover:to-brand-wood hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0' %}
+{% endif %}
+
+{# Disabled styles #}
+{% if disabled %}
+  {% set disabledClasses = 'opacity-50 cursor-not-allowed pointer-events-none hover:transform-none hover:shadow-none' %}
+{% else %}
+  {% set disabledClasses = '' %}
+{% endif %}
+
+{# Combine all classes #}
+{% set allClasses = baseClasses ~ ' ' ~ sizeClasses ~ ' ' ~ variantClasses ~ ' ' ~ disabledClasses ~ ' ' ~ class %}
+
+{% if href %}
+  <a href="{{ href }}" class="{{ allClasses }}"{% if disabled %} aria-disabled="true"{% endif %}>
+    {{ text }}
+  </a>
+{% else %}
+  <button type="{{ type }}" class="{{ allClasses }}"{% if disabled %} disabled{% endif %}>
+    {{ text }}
+  </button>
+{% endif %}

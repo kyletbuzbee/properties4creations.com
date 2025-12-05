@@ -19,45 +19,45 @@ banner:
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="form-group required" data-field="name">
-                    <label>Name <span class="required">*</span></label>
-                    <input type="text" name="name" required aria-required="true" placeholder="Your Name"
+                    <label for="contact-name">Name <span class="required">*</span></label>
+                    <input type="text" id="contact-name" name="name" required aria-required="true" placeholder="Your Name"
                         autocomplete="name">
-                    <div class="error-message hidden" aria-hidden="true"></div>
-                    <div class="success-message hidden" aria-hidden="true"></div>
+                    <div class="error-message hidden" aria-hidden="true" id="name-error"></div>
+                    <div class="success-message hidden" aria-hidden="true" id="name-success"></div>
                 </div>
                 <div class="form-group required" data-field="email">
-                    <label>Email <span class="required">*</span></label>
-                    <input type="email" name="email" required aria-required="true" placeholder="email@example.com"
+                    <label for="contact-email">Email <span class="required">*</span></label>
+                    <input type="email" id="contact-email" name="email" required aria-required="true" placeholder="email@example.com"
                         autocomplete="email">
-                    <div class="error-message hidden" aria-hidden="true"></div>
-                    <div class="success-message hidden" aria-hidden="true"></div>
+                    <div class="error-message hidden" aria-hidden="true" id="email-error"></div>
+                    <div class="success-message hidden" aria-hidden="true" id="email-success"></div>
                 </div>
             </div>
 
             <div class="form-group" data-field="phone">
-                <label>Phone Number
+                <label for="contact-phone">Phone Number
                     <span class="text-brand-walnut text-xs font-normal">(Optional)</span>
                 </label>
-                <input type="tel" name="phone" aria-label="Contact phone number" placeholder="(903) 555-0123"
+                <input type="tel" id="contact-phone" name="phone" placeholder="(903) 555-0123"
                     autocomplete="tel">
                 <div class="help-text">We'll call if we need more information</div>
-                <div class="error-message hidden" aria-hidden="true"></div>
-                <div class="success-message hidden" aria-hidden="true"></div>
+                <div class="error-message hidden" aria-hidden="true" id="phone-error"></div>
+                <div class="success-message hidden" aria-hidden="true" id="phone-success"></div>
             </div>
 
             <div class="form-group required" data-field="message">
-                <label>Message <span class="required">*</span></label>
-                <textarea name="message" placeholder="Tell us how we can help you with your housing needs..." rows="4"
+                <label for="contact-message">Message <span class="required">*</span></label>
+                <textarea id="contact-message" name="message" placeholder="Tell us how we can help you with your housing needs..." rows="4"
                     required aria-required="true"></textarea>
-                <div class="error-message hidden" aria-hidden="true"></div>
-                <div class="success-message hidden" aria-hidden="true"></div>
+                <div class="error-message hidden" aria-hidden="true" id="message-error"></div>
+                <div class="success-message hidden" aria-hidden="true" id="message-success"></div>
             </div>
 
             <div class="checkbox-group">
-                <input type="checkbox" id="veteran-contact" name="veteran" value="yes">
+                <input type="checkbox" id="veteran-contact" name="veteran" value="yes" aria-describedby="veteran-desc">
                 <label for="veteran-contact">
                     <span class="text-brand-walnut font-medium">U.S. Military Veteran</span>
-                    <span class="text-sm text-slate-600 block">Check if you'd like priority for veteran housing
+                    <span id="veteran-desc" class="text-sm text-slate-600 block">Check if you'd like priority for veteran housing
                         assistance</span>
                 </label>
             </div>

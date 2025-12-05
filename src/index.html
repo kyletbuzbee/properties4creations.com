@@ -50,3 +50,68 @@ banner:
         </div>
     </div>
 </section>
+
+<!-- Featured Properties Map -->
+<section class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Featured Properties Map</h3>
+        <div id="property-map" class="w-full h-80 rounded-xl shadow-md z-0"></div>
+    </div>
+</section>
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof L !== 'undefined' && document.getElementById('property-map')) {
+        var map = L.map('property-map').setView([32.45, -94.8], 9);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap &copy; CARTO'
+        }).addTo(map);
+
+        const createIcon = (color) => {
+            return L.divIcon({
+                className: 'custom-div-icon',
+                html: `<div style="background-color: ${color}; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>`,
+                iconSize: [12, 12],
+                iconAnchor: [6, 6]
+            });
+        };
+
+        // DYNAMIC FETCH: Reads from the same source as Projects page
+        fetch('/public/properties-data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Handle both Array and Object formats
+                const properties = Array.isArray(data) ? data : Object.values(data);
+
+                // Filter for "Featured" or just take the first 3
+                const featured = properties.slice(0, 3);
+
+                featured.forEach(p => {
+                    // Handle coordinate format differences
+                    const lat = p.geo ? p.geo.latitude : (p.coords ? p.coords[0] : 32.35);
+                    const lng = p.geo ? p.geo.longitude : (p.coords ? p.coords[1] : -95.30);
+                    const imgPath = p.image ? p.image[0] : (p.img || 'banners/hero-property-banner.webp');
+
+                    const popupContent = `
+                        <div class="text-center min-w-[200px] p-2">
+                            <div class="h-24 w-full mb-2 rounded overflow-hidden bg-slate-100">
+                                <img src="/public/images/${imgPath}" class="w-full h-full object-cover" onerror="this.src='/public/images/banners/hero-property-banner.webp'">
+                            </div>
+                            <b class="text-brand-navy block mb-1 text-sm">${p.title}</b>
+                            <span class="text-xs text-slate-500 block mb-2">${p.bedrooms || '?'} Bed • ${p.bathrooms || '?'} Bath</span>
+                            <a href="/projects/${p.id || ''}" class="bg-brand-navy text-white text-xs px-3 py-1.5 rounded hover:bg-brand-wood transition-colors block w-full text-center no-underline">View Home</a>
+                        </div>
+                    `;
+
+                    L.marker([lat, lng], { icon: createIcon('#0B1120') })
+                        .addTo(map)
+                        .bindPopup(popupContent);
+                });
+            })
+            .catch(err => console.error("Map data error:", err));
+    }
+});
+</script>
+{% endblock %}

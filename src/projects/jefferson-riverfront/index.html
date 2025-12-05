@@ -4,16 +4,12 @@ pageTitle: "Jefferson Riverfront - Bayou Living at Big Cypress"
 description: "Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson. Waterfront living with Section 8
 eligibility."
 banner:
-variant: hero
-bannerTitle: "Affordable Homes for Families & Veterans in East Texas"
-bannerSubtitle: "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust,
-and
-local pride."
-image: "banners/hero-property-fallback.webp"
-eyebrow: "HUD-VASH & Section 8 Approved"
-showVoucherBadge: true
-ctaText: "Browse Homes for Families & Veterans"
-ctaHref: "/get-started.html"
+  title: "Jefferson Riverfront"
+  subtitle: "Charming 2BR cabin-style home on Big Cypress Bayou in historic Jefferson."
+  image: "hero-property-banner.webp"
+  eyebrow: "Waterfront Property • Section 8 Ready"
+  ctaText: "Request Tour"
+  ctaHref: "/contact/"
 ---
 
 {% block head %}
@@ -123,8 +119,9 @@ ctaHref: "/get-started.html"
                     <input type="email" name="email" required class="w-full border p-2 rounded"
                         placeholder="your.email@example.com">
 
-                    <button type="submit" class="btn-primary w-full rounded-lg py-3 mt-4 text-white font-bold">Request
-                        Tour</button>
+                    <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base min-w-[200px] bg-gradient-to-br from-brand-wood to-brand-walnut text-brand-navy border-brand-walnut hover:from-brand-walnut hover:to-brand-wood hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center gap-2 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-wood focus-visible:ring-offset-2 rounded-lg font-semibold mt-4">
+                        Request Tour
+                    </button>
                 </form>
             </div>
         </div>
@@ -134,6 +131,5 @@ ctaHref: "/get-started.html"
 {% include "property-map.html" %}
 
 {% block scripts %}
-<script src="/js/leaflet.js"></script>
 <script src="/js/google-apps-script-submission.js"></script>
 {% endblock %}

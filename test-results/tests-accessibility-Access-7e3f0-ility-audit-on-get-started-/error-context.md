@@ -1,0 +1,244 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Properties 4 Creations Home" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Properties 4 Creations Logo" [ref=e7]
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Properties" [ref=e10] [cursor=pointer]:
+          - /url: /projects/
+        - link "Gallery" [ref=e11] [cursor=pointer]:
+          - /url: /projects/
+        - link "Resources" [ref=e12] [cursor=pointer]:
+          - /url: /resources/
+        - link "Impact" [ref=e13] [cursor=pointer]:
+          - /url: /impact/
+        - link "Standards" [ref=e14] [cursor=pointer]:
+          - /url: /transparency/
+        - link "Start Here" [ref=e15] [cursor=pointer]:
+          - /url: /contact/
+          - generic [ref=e16]: Start Here
+          - img [ref=e17]
+  - generic [ref=e19]:
+    - img "Turn Your Property into Purpose" [ref=e22]
+    - generic [ref=e25]:
+      - generic [ref=e26]: Fair Cash • No Fees • Veteran Impact
+      - heading "Turn Your Property into Purpose" [level=1] [ref=e27]
+      - paragraph [ref=e28]: Sell your home for fair market value and create sanctuary for veterans and families. No fees, complete renovation, sustainable community impact.
+      - link "Get Cash Offer" [ref=e30] [cursor=pointer]:
+        - /url: "#impact-form"
+  - main [ref=e31]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - text: Your Impact Flow
+        - heading "From Property Sale to Veteran Home" [level=2] [ref=e35]
+        - paragraph [ref=e36]: Every home you sell creates a ripple effect of positive change in veteran communities nationwide.
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - img [ref=e40]
+          - heading "Your Home" [level=3] [ref=e42]
+          - paragraph [ref=e43]: Any condition, fair market value, no fees deducted
+          - img [ref=e45]
+          - generic [ref=e47]: 100% to You
+        - generic [ref=e48]:
+          - img [ref=e50]
+          - heading "Premium Renovation" [level=3] [ref=e52]
+          - paragraph [ref=e53]: Complete renovation with veteran standards
+          - img [ref=e55]
+          - generic [ref=e57]: ADA Compliant
+        - generic [ref=e58]:
+          - img [ref=e60]
+          - heading "Family & Veteran Sanctuary" [level=3] [ref=e62]
+          - paragraph [ref=e63]: Section 8 ready homes for veteran families
+          - img [ref=e65]
+          - generic [ref=e67]: Safe & Comfortable
+        - generic [ref=e68]:
+          - img [ref=e70]
+          - heading "Community Impact" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Stronger neighborhoods, veterans rebuilding lives
+          - img [ref=e75]
+          - generic [ref=e78]: Lasting Change
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]: "42"
+          - generic [ref=e82]: Veterans Housed
+        - generic [ref=e83]:
+          - generic [ref=e84]: $25k
+          - generic [ref=e85]: Avg Seller Savings
+        - generic [ref=e86]:
+          - generic [ref=e87]: 85+
+          - generic [ref=e88]: Families Supported
+        - generic [ref=e89]:
+          - generic [ref=e90]: 120+
+          - generic [ref=e91]: Properties Transformed
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - text: Why Choose Us
+        - heading "More Than Just a Sale—It's Purpose" [level=2] [ref=e95]
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading "Traditional Realtors" [level=3] [ref=e98]: Traditional Realtors
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - generic [ref=e102]: ❌
+              - generic [ref=e103]: 6% commission taken from your sale
+            - listitem [ref=e104]:
+              - generic [ref=e105]: ❌
+              - generic [ref=e106]: Pressure tactics and inflated prices
+            - listitem [ref=e107]:
+              - generic [ref=e108]: ❌
+              - generic [ref=e109]: Months of uncertainty and showings
+            - listitem [ref=e110]:
+              - generic [ref=e111]: ❌
+              - generic [ref=e112]: No immediate cash offer
+        - generic [ref=e113]:
+          - heading "Properties 4 Creation" [level=3] [ref=e114]: Properties 4 Creation
+          - list [ref=e116]:
+            - listitem [ref=e117]:
+              - generic [ref=e118]: ✅
+              - generic [ref=e119]: You keep 100% of fair market value
+            - listitem [ref=e120]:
+              - generic [ref=e121]: ✅
+              - generic [ref=e122]: Direct cash offers within 24 hours
+            - listitem [ref=e123]:
+              - generic [ref=e124]: ✅
+              - generic [ref=e125]: Creates veteran housing sanctuary
+            - listitem [ref=e126]:
+              - generic [ref=e127]: ✅
+              - generic [ref=e128]: Complete transparency, no hidden fees
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - text: Real Impact
+        - heading "Stories of Meaningful Change" [level=2] [ref=e132]
+        - paragraph [ref=e133]: See how home sellers are creating real change in veteran communities across America.
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - img "Home seller story icon" [ref=e137]
+            - generic [ref=e138]:
+              - heading "Maria Rodriguez - Texas Homeowner" [level=3] [ref=e139]
+              - paragraph [ref=e140]: Sold her 3-bedroom home for purpose
+          - blockquote [ref=e141]: "\"I wasn't just selling a house—I was helping create a safe space for veterans to heal. Knowing my home would become sanctuary for someone who served our country made the sale so much more meaningful.\""
+          - generic [ref=e142]: → Created housing for 3 veteran families
+        - generic [ref=e143]:
+          - generic [ref=e144]:
+            - img "Veteran story icon" [ref=e145]
+            - generic [ref=e146]:
+              - heading "Sergeant James Wilson - Iraq Veteran" [level=3] [ref=e147]
+              - paragraph [ref=e148]: Found sanctuary through Properties 4 Creation property
+          - blockquote [ref=e149]: "\"After coming home, I struggled to find a place that felt safe. This home, renovated specifically for veterans like me, gives my family the peace we've been searching for.\""
+          - generic [ref=e150]: → Now rebuilding his life
+    - generic [ref=e152]:
+      - generic [ref=e153]:
+        - heading "Request Affordable Housing Tour" [level=2] [ref=e154]
+        - paragraph [ref=e155]: Take the first step toward turning your property sale into something that matters. Get your fair cash offer within 24 hours.
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - generic [ref=e158]:
+            - generic [ref=e159]: First Name
+            - textbox "First Name" [ref=e160]
+          - generic [ref=e161]:
+            - generic [ref=e162]: Last Name
+            - textbox "Last Name" [ref=e163]
+        - generic [ref=e164]:
+          - generic [ref=e165]: Email Address
+          - textbox "Email Address" [ref=e166]
+        - generic [ref=e167]:
+          - generic [ref=e168]: Phone Number
+          - textbox "Phone Number" [ref=e169]
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - generic [ref=e172]: Property Address
+            - textbox "Property Address" [ref=e173]:
+              - /placeholder: Street address
+          - generic [ref=e174]:
+            - generic [ref=e175]: City & State
+            - textbox "City & State" [ref=e176]:
+              - /placeholder: City, ST
+        - generic [ref=e177]:
+          - generic [ref=e178]: Tell us about your property
+          - textbox "Tell us about your property" [ref=e179]:
+            - /placeholder: Bedrooms, bathrooms, condition, special features...
+        - generic [ref=e180]:
+          - button "Get My Cash Offer →" [ref=e181] [cursor=pointer]
+          - button "Call Properties 4 Creations at (903) 283-1770" [ref=e182] [cursor=pointer]: "Call Us: (903) 283-1770"
+        - paragraph [ref=e183]: By submitting, you agree to receive communications from Properties 4 Creations. We respect your privacy and will never share your information.
+  - contentinfo [ref=e184]:
+    - navigation "Footer" [ref=e186]:
+      - generic [ref=e187]:
+        - generic [ref=e189]:
+          - generic [ref=e191]: Section 8 Vouchers Accepted
+          - generic [ref=e192]: "(Live Status: Active)"
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - generic:
+              - img "Properties 4 Creations Logo"
+            - generic [ref=e195]:
+              - heading "Properties 4 Creations" [level=3] [ref=e196]
+              - paragraph [ref=e197]: Affordable Housing for Families & Veterans
+          - paragraph [ref=e198]:
+            - strong [ref=e199]: Properties 4 Creations, Tyler, TX 75701
+            - text: Expert renovations and fair housing solutions for families and veterans. Transparent pricing, quality workmanship, East Texas regional focus.
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - img [ref=e202]
+              - link "contact@properties4creations.com" [ref=e204] [cursor=pointer]:
+                - /url: mailto:contact@properties4creations.com
+            - generic [ref=e205]:
+              - img [ref=e206]
+              - link "(903) 283-1770" [ref=e208] [cursor=pointer]:
+                - /url: tel:+19032831770
+        - generic [ref=e209]:
+          - heading "Company" [level=4] [ref=e210]
+          - list [ref=e211]:
+            - listitem [ref=e212]:
+              - link "About Us" [ref=e213] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e214]:
+              - link "Renovation Standards" [ref=e215] [cursor=pointer]:
+                - /url: /transparency/
+            - listitem [ref=e216]:
+              - link "Our Impact" [ref=e217] [cursor=pointer]:
+                - /url: /impact/
+            - listitem [ref=e218]:
+              - link "Contact" [ref=e219] [cursor=pointer]:
+                - /url: /contact/
+        - generic [ref=e220]:
+          - heading "Resources" [level=4] [ref=e221]
+          - list [ref=e222]:
+            - listitem [ref=e223]:
+              - link "Housing Support" [ref=e224] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e225]:
+              - link "Our Work" [ref=e226] [cursor=pointer]:
+                - /url: /projects/
+            - listitem [ref=e227]:
+              - link "Success Stories" [ref=e228] [cursor=pointer]:
+                - /url: /impact/
+        - generic [ref=e229]:
+          - heading "Services" [level=4] [ref=e230]
+          - list [ref=e231]:
+            - listitem [ref=e232]:
+              - link "Get Started" [ref=e233] [cursor=pointer]:
+                - /url: /get-started/
+            - listitem [ref=e234]:
+              - link "Eligibility Tools" [ref=e235] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e236]:
+              - link "Veteran Portal" [ref=e237] [cursor=pointer]:
+                - /url: /contact/
+    - generic [ref=e238]:
+      - paragraph [ref=e239]: © 2025 Properties 4 Creations. All rights reserved.
+      - generic [ref=e240]:
+        - link "Privacy" [ref=e241] [cursor=pointer]:
+          - /url: /privacy/
+        - link "Terms" [ref=e242] [cursor=pointer]:
+          - /url: /terms/
+```

@@ -684,220 +684,127 @@ select {
 }
 
 /* ============================================================================
- * FORM INTERACTIVE ELEMENTS
+ * COMPONENTS SYSTEM - LEGACY SUPPORT ONLY
+ *
+ * This file now contains ONLY classes that cannot be easily expressed
+ * as Tailwind utilities. All interactive component styling should be
+ * handled directly with Tailwind classes for better consistency.
+ *
+ * Legacy classes kept for gradual migration:
  * ============================================================================ */
 
-/* Form container with enhanced styling */
-.form-container {
-  background: var(--color-neutral-white);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-floating);
-  padding: var(--space-xl);
-  transition: all var(--transition-normal) ease-out;
-  position: relative;
-  overflow: hidden;
-}
-
-.form-container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 25px 60px rgba(11, 17, 32, 0.15);
-}
-
-.form-container.submitting {
-  pointer-events: none;
-  opacity: 0.8;
-}
-
-/* Loading spinner for form submission */
-.form-spinner {
+/* Legacy button support - DEPRECATED: Use Tailwind classes directly */
+.btn-base {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  animation: spin 1s linear infinite;
-  margin-right: var(--space-sm);
+  gap: 0.5rem;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal) ease-out;
+  box-shadow: none;
+  position: relative;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
-.form-spinner::before {
+.btn-base:focus-visible {
+  outline: 1px dotted rgba(194, 142, 90, 0.3);
+  outline-offset: 1px;
+  box-shadow: none;
+}
+
+.btn-base:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-base:active {
+  transform: translateY(0);
+}
+
+.btn-base:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Legacy card support - DEPRECATED: Use Tailwind classes directly */
+.card-elevated {
+  background: var(--color-neutral-white);
+  border: none;
+  box-shadow: var(--shadow-floating);
+}
+
+.card-elevated:hover {
+  box-shadow: 0 25px 60px rgba(11, 17, 32, 0.4);
+}
+
+/* Enhanced Glassmorphism Navigation */
+.nav-glass-navy {
+  /* Lighter base for better transparency */
+  background: rgba(11, 17, 32, 0.65);
+
+  /* The Magic Trio: Blur + Saturation + Contrast */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  /* Delicate border: lighter on top, darker on bottom to simulate depth */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+  /* Multi-layered shadow for floating effect */
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.2); /* Edge definition */
+
+  position: relative;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+/* Add a subtle noise texture if you want true realism */
+.nav-glass-navy::before {
   content: "";
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid var(--color-accent-gold);
-  border-top: 2px solid transparent;
-  border-radius: 50%;
-}
-
-/* Loading overlay for forms */
-.form-loading-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.9);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: var(--space-md);
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition-normal) ease-out;
-  z-index: 10;
-  border-radius: var(--radius-xl);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
 }
 
-.form-loading-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.form-loading-overlay .loading-text {
-  color: var(--color-primary-navy);
-  font-weight: var(--font-weight-medium);
-  font-size: 0.9rem;
-}
-
-/* Progress indicator for multi-step forms */
-.form-progress {
-  width: 100%;
-  height: 4px;
-  background: rgba(194, 142, 90, 0.1);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  margin-bottom: var(--space-lg);
-}
-
-.form-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-accent-gold), var(--color-secondary-walnut));
-  width: 0%;
-  transition: width var(--transition-slow) ease-out;
-  border-radius: var(--radius-full);
-}
-
-/* Enhanced checkboxes and radio buttons */
-.checkbox-group,
-.radio-group {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-  cursor: pointer;
-  padding: var(--space-sm);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-normal) ease-out;
+/* Active/Hover State for Links - Glowing Pill */
+.nav-link {
   position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
 }
 
-.checkbox-group:hover,
-.radio-group:hover {
-  background: rgba(194, 142, 90, 0.05);
+.nav-link:hover,
+.nav-link[aria-current="page"] {
+  background: rgba(194, 142, 90, 0.15); /* Brand wood color at low opacity */
+  color: #fff;
+  text-shadow: 0 0 10px rgba(194, 142, 90, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(194, 142, 90, 0.2);
 }
 
-.checkbox-group input,
-.radio-group input {
-  margin: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.checkbox-group label,
-.radio-group label {
-  margin: 0;
-  cursor: pointer;
-  font-weight: normal;
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.checkbox-group input:checked+label,
-.radio-group input:checked+label {
-  color: var(--color-accent-gold);
-}
-
-.checkbox-group input:checked+label::before,
-.radio-group input:checked+label::before {
-  background: linear-gradient(135deg, var(--color-accent-gold), var(--color-secondary-walnut));
-  border-color: var(--color-accent-gold);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fade-in-title {
-  opacity: 0;
-  transform: translateY(16px);
-  animation: fadeInUp 1s var(--ease-out) 0.6s forwards;
-}
-
-.fade-in-subtitle {
-  opacity: 0;
-  transform: translateY(12px);
-  animation: fadeInUp 1s var(--ease-out) 1.2s forwards;
-}
-
-/* ============================================================================
- * RESPONSIVE FORM ADJUSTMENTS
- * ============================================================================ */
-
-@media (max-width: 640px) {
-
-  .form-group .error-message,
-  .form-group .success-message,
-  .form-group .help-text {
-    font-size: 0.8rem;
-    padding: var(--space-sm);
-  }
-
-  .form-container {
-    padding: var(--space-lg);
-    margin: 0 -1rem;
-    border-radius: var(--radius-lg);
-  }
-
-  .form-group label .required {
-    font-size: 0.7rem;
-    padding: 0.1rem 0.2rem;
-  }
+/* Essential legacy support for critical components */
+.page-banner__cta-btn {
+  padding: 1rem 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
 }
 
 /* ============================================================================

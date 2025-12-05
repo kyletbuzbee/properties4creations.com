@@ -1,0 +1,119 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Properties 4 Creations Home" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Properties 4 Creations Logo" [ref=e7]
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Properties" [ref=e10] [cursor=pointer]:
+          - /url: /projects/
+        - link "Gallery" [ref=e11] [cursor=pointer]:
+          - /url: /projects/
+        - link "Resources" [ref=e12] [cursor=pointer]:
+          - /url: /resources/
+        - link "Impact" [ref=e13] [cursor=pointer]:
+          - /url: /impact/
+        - link "Standards" [ref=e14] [cursor=pointer]:
+          - /url: /transparency/
+        - link "Start Here" [ref=e15] [cursor=pointer]:
+          - /url: /contact/
+          - generic [ref=e16]: Start Here
+          - img [ref=e17]
+  - generic [ref=e19]:
+    - img "Transformation Gallery" [ref=e22]
+    - generic [ref=e25]:
+      - generic [ref=e26]: Before & After
+      - heading "Transformation Gallery" [level=1] [ref=e27]
+      - paragraph [ref=e28]: Seeing is believing. Slide to explore how we turn distressed properties into dignified family homes.
+      - link "Start Your Project" [ref=e30] [cursor=pointer]:
+        - /url: /contact/
+  - main [ref=e31]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Our Renovation Standard" [level=2] [ref=e35]
+        - paragraph [ref=e36]: We don't just cover up problems; we fix them. From foundation to roof, see the Properties 4 Creations difference.
+      - generic [ref=e38]:
+        - img "Living room after renovation with new flooring" [ref=e40]
+        - img "Patio before renovation showing worn wood flooring" [ref=e43]
+        - slider "Compare before and after images" [ref=e44]: "50"
+        - generic [ref=e45]: BEFORE
+        - generic [ref=e46]: AFTER
+  - contentinfo [ref=e47]:
+    - navigation "Footer" [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e52]:
+          - generic [ref=e54]: Section 8 Vouchers Accepted
+          - generic [ref=e55]: "(Live Status: Active)"
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic:
+              - img "Properties 4 Creations Logo"
+            - generic [ref=e58]:
+              - heading "Properties 4 Creations" [level=3] [ref=e59]
+              - paragraph [ref=e60]: Affordable Housing for Families & Veterans
+          - paragraph [ref=e61]:
+            - strong [ref=e62]: Properties 4 Creations, Tyler, TX 75701
+            - text: Expert renovations and fair housing solutions for families and veterans. Transparent pricing, quality workmanship, East Texas regional focus.
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - img [ref=e65]
+              - link "contact@properties4creations.com" [ref=e67] [cursor=pointer]:
+                - /url: mailto:contact@properties4creations.com
+            - generic [ref=e68]:
+              - img [ref=e69]
+              - link "(903) 283-1770" [ref=e71] [cursor=pointer]:
+                - /url: tel:+19032831770
+        - generic [ref=e72]:
+          - heading "Company" [level=4] [ref=e73]
+          - list [ref=e74]:
+            - listitem [ref=e75]:
+              - link "About Us" [ref=e76] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e77]:
+              - link "Renovation Standards" [ref=e78] [cursor=pointer]:
+                - /url: /transparency/
+            - listitem [ref=e79]:
+              - link "Our Impact" [ref=e80] [cursor=pointer]:
+                - /url: /impact/
+            - listitem [ref=e81]:
+              - link "Contact" [ref=e82] [cursor=pointer]:
+                - /url: /contact/
+        - generic [ref=e83]:
+          - heading "Resources" [level=4] [ref=e84]
+          - list [ref=e85]:
+            - listitem [ref=e86]:
+              - link "Housing Support" [ref=e87] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e88]:
+              - link "Our Work" [ref=e89] [cursor=pointer]:
+                - /url: /projects/
+            - listitem [ref=e90]:
+              - link "Success Stories" [ref=e91] [cursor=pointer]:
+                - /url: /impact/
+        - generic [ref=e92]:
+          - heading "Services" [level=4] [ref=e93]
+          - list [ref=e94]:
+            - listitem [ref=e95]:
+              - link "Get Started" [ref=e96] [cursor=pointer]:
+                - /url: /get-started/
+            - listitem [ref=e97]:
+              - link "Eligibility Tools" [ref=e98] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e99]:
+              - link "Veteran Portal" [ref=e100] [cursor=pointer]:
+                - /url: /contact/
+    - generic [ref=e101]:
+      - paragraph [ref=e102]: © 2025 Properties 4 Creations. All rights reserved.
+      - generic [ref=e103]:
+        - link "Privacy" [ref=e104] [cursor=pointer]:
+          - /url: /privacy/
+        - link "Terms" [ref=e105] [cursor=pointer]:
+          - /url: /terms/
+```

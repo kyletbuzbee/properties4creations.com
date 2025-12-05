@@ -37,27 +37,32 @@ banner:
         </div>
 
         <!-- Properties Listing -->
-        <div id="properties-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for propertyId, property in properties %}
-            <article class="property-card group rounded-2xl overflow-hidden shadow-subtle hover:shadow-floating transition-all duration-500 hover:-translate-y-1 bg-white border border-slate-100" data-property="{{ propertyId }}" data-status="{{ property.status }}" data-voucher="{{ property.voucherType }}">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for property in collections.properties %}
+            <article class="property-card group rounded-2xl overflow-hidden shadow-subtle hover:shadow-floating transition-all duration-500 hover:-translate-y-1 bg-white border border-slate-100">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="/images/{{ property.img }}" alt="{{ property.title }} in {{ property.city }}, TX - {{ property.desc }}"
+                    <img src="/images/{{ property.data.img or 'banners/hero-property-fallback.webp' }}"
+                        alt="{{ property.data.title }} in {{ property.data.city }}, TX - {{ property.data.description }}"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        loading="lazy" decoding="async"
-                        onerror="this.src='/images/banners/hero-property-fallback.webp'">
+                        loading="lazy" decoding="async">
                     <div class="absolute top-4 left-4 flex gap-2">
-                        {% if property.voucherType == "Section 8 Ready" %}
+                        {% if property.data.voucherType == "Section 8 Ready" %}
                         <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Section 8 Ready</span>
-                        {% elif property.voucherType == "Historic Property" %}
+                        {% elif property.data.voucherType == "Historic Property" %}
                         <span class="bg-brand-navy text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Historic</span>
-                        {% elif property.voucherType == "Community Living" %}
+                        {% elif property.data.voucherType == "Community Living" %}
                         <span class="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Community</span>
-                        {% else %}
-                        <span class="bg-brand-wood text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">{{ property.voucherType }}</span>
+                        {% elif property.data.voucherType == "Waterfront" %}
+                        <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Waterfront</span>
                         {% endif %}
                     </div>
+                    {% if property.data.status == "Coming Soon" %}
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-brand-wood text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Coming Soon</span>
+                    </div>
+                    {% endif %}
                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-brand-navy/95 to-transparent p-4 pt-12">
-                        <p class="text-white font-bold text-xl">${{ property.price }}<span class="text-sm font-normal opacity-80">/mo</span></p>
+                        <p class="text-white font-bold text-xl">${{ property.data.price }}<span class="text-sm font-normal opacity-80">/mo</span></p>
                     </div>
                 </div>
                 <div class="p-6">
@@ -66,35 +71,37 @@ banner:
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        {{ property.city }}, TX
+                        {{ property.data.city }}, TX
                     </div>
-                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-wood transition-colors">{{ property.title }}</h3>
-                    <p class="text-slate-600 text-sm mb-4">{{ property.desc }}</p>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-wood transition-colors">{{ property.data.title }}</h3>
+                    <p class="text-slate-600 text-sm mb-4">{{ property.data.bathrooms|round(0) }} BR • {{ property.data.bathrooms }} Bath • {{ property.data.sqft }} Sq Ft</p>
 
                     <!-- Property Stats -->
                     <div class="grid grid-cols-3 gap-4 mb-4">
                         <div class="text-center">
-                            <div class="text-lg font-bold text-brand-navy">{{ property.bedrooms }}</div>
+                            <div class="text-lg font-bold text-brand-navy">{{ property.data.bedrooms }}</div>
                             <div class="text-xs text-slate-500 uppercase tracking-wide">Bed</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-lg font-bold text-brand-navy">{{ property.bathrooms }}</div>
+                            <div class="text-lg font-bold text-brand-navy">{{ property.data.bathrooms }}</div>
                             <div class="text-xs text-slate-500 uppercase tracking-wide">Bath</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-lg font-bold text-brand-navy">{{ property.sqft }}</div>
+                            <div class="text-lg font-bold text-brand-navy">{{ property.data.sqft }}</div>
                             <div class="text-xs text-slate-500 uppercase tracking-wide">Sq Ft</div>
                         </div>
                     </div>
 
+                    {% if property.data.tags %}
                     <!-- Features -->
                     <div class="flex flex-wrap gap-1 mb-4">
-                        {% for feature in property.features %}
-                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded">{{ feature }}</span>
+                        {% for tag in property.data.tags %}
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded">{{ tag | replace("-", " ") | title }}</span>
                         {% endfor %}
                     </div>
+                    {% endif %}
 
-                    <a href="{{ property.link }}" class="inline-flex items-center gap-2 text-brand-navy font-bold hover:text-brand-wood transition-colors">
+                    <a href="{{ property.url }}" class="inline-flex items-center gap-2 text-brand-navy font-bold hover:text-brand-wood transition-colors">
                         View Home
                         <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -159,13 +166,17 @@ banner:
 </section>
 
 {% block scripts %}
-<script id="properties-data" type="application/json">{{ properties | dump | safe }}</script>
-<script src="/js/leaflet.js"></script>
 <script>
 // Property filtering functionality
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const propertyCards = document.querySelectorAll('.property-card');
+    const propertiesData = [
+        { "title": "Tyler Ranch Home", "img": "properties/tyler-ranch/hero.webp", "city": "Tyler", "desc": "3 BR • 2 Bath • 1850 Sq Ft", "price": 1800, "link": "/projects/tyler-ranch-home/", "voucherType": "Section 8 Ready", "coordinates": [32.3513, -95.3011] },
+        { "title": "Longview Victorian", "img": "properties/longview-victorian/hero.webp", "city": "Longview", "desc": "4 BR • 3 Bath • 2400 Sq Ft", "price": 1300, "link": "/projects/longview-victorian/", "voucherType": "Historic Property", "coordinates": [32.5007, -94.7405] },
+        { "title": "Jefferson Riverfront", "img": "properties/jefferson-riverfront/hero.webp", "city": "Jefferson", "desc": "Waterfront", "price": 900, "link": "/projects/jefferson-riverfront/", "voucherType": "Waterfront", "coordinates": [32.7571, -94.3452] },
+        { "title": "Marshall Townhome", "img": "properties/marshall-townhome/hero.webp", "city": "Marshall", "desc": "3 BR • 2.5 Bath • 1600 Sq Ft", "price": 1200, "link": "/projects/marshall-townhome/", "voucherType": "Community Living", "coordinates": [32.5445, -94.3674] }
+    ];
 
     // Filter button click handlers
     filterButtons.forEach(button => {
@@ -183,21 +194,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Filter properties
             propertyCards.forEach(card => {
-                const voucherType = card.dataset.voucher;
-                let show = false;
+                const badges = card.querySelectorAll('span');
+                let badgeType = '';
+                badges.forEach(badge => {
+                    if (badge.innerText && (badge.innerText.includes('Section 8') || badge.innerText.includes('Historic') || badge.innerText.includes('Waterfront') || badge.innerText.includes('Community'))) {
+                        badgeType = badge.innerText;
+                    }
+                });
 
+                let show = false;
                 switch(filter) {
                     case 'all':
                         show = true;
                         break;
                     case 'section8':
-                        show = voucherType === 'Section 8 Ready';
+                        show = badgeType.includes('Section 8');
                         break;
                     case 'historic':
-                        show = voucherType === 'Historic Property';
+                        show = badgeType.includes('Historic');
                         break;
                     case 'waterfront':
-                        show = voucherType === 'Waterfront';
+                        show = badgeType.includes('Waterfront') || badgeType.includes('Community');
                         break;
                 }
 
@@ -235,41 +252,35 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         };
 
-        const propertiesDataElement = document.getElementById('properties-data');
-        if (propertiesDataElement && propertiesDataElement.textContent) {
-            const properties = JSON.parse(propertiesDataElement.textContent);
-
-            Object.values(properties).forEach(property => {
-                const popupContent = `
-                    <div class="text-center min-w-[200px] p-3">
-                        <div class="h-24 w-full mb-3 rounded overflow-hidden bg-slate-100">
-                            <img src="/images/${property.img}"
-                                 alt="${property.title}"
-                                 class="w-full h-full object-cover"
-                                 onerror="this.src='/images/banners/hero-property-fallback.webp'">
-                        </div>
-                        <b class="text-brand-navy block mb-1 text-sm">${property.title}</b>
-                        <span class="text-xs text-slate-500 block mb-2">${property.city}, TX • ${property.desc}</span>
-                        <span class="text-lg font-bold text-green-600 block mb-2">$${property.price}/mo</span>
-                        <a href="${property.link}" class="bg-brand-navy text-white text-xs px-3 py-2 rounded hover:bg-brand-wood transition-colors block w-full text-center">View Details</a>
+        propertiesData.forEach(property => {
+            const popupContent = `
+                <div class="text-center min-w-[200px] p-3">
+                    <div class="h-24 w-full mb-3 rounded overflow-hidden bg-slate-100">
+                        <img src="/images/${property.img}"
+                             alt="${property.title}"
+                             class="w-full h-full object-cover"
+                             onerror="this.src='/images/banners/hero-property-fallback.webp'">
                     </div>
-                `;
+                    <b class="text-brand-navy block mb-1 text-sm">${property.title}</b>
+                    <span class="text-xs text-slate-500 block mb-2">${property.city}, TX • ${property.desc}</span>
+                    <span class="text-lg font-bold text-green-600 block mb-2">$${property.price}/mo</span>
+                    <a href="${property.link}" class="bg-brand-navy text-white text-xs px-3 py-2 rounded hover:bg-brand-wood transition-colors block w-full text-center">View Details</a>
+                </div>
+            `;
 
-                L.marker(property.coords, { icon: createIcon(property) })
-                    .addTo(map)
-                    .bindPopup(popupContent);
-            });
+            L.marker(property.coordinates, { icon: createIcon(property) })
+                .addTo(map)
+                .bindPopup(popupContent);
+        });
 
-            // Fit map bounds to show all markers
-            const markers = [];
-            Object.values(properties).forEach(property => {
-                markers.push(L.marker(property.coords));
-            });
+        // Fit map bounds to show all markers
+        const markers = propertiesData.map(property =>
+            L.marker(property.coordinates)
+        );
 
-            if (markers.length > 0) {
-                const group = new L.featureGroup(markers);
-                map.fitBounds(group.getBounds().pad(0.1));
-            }
+        if (markers.length > 0) {
+            const group = new L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.1));
         }
     }
 });

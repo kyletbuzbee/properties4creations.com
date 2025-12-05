@@ -111,7 +111,7 @@
     <!-- Performance Optimizations -->
     <link rel="preload" href="/images/logo/brand-logo-header.svg" as="image" crossorigin>
     {% if banner and banner.image %}
-    <link rel="preload" href="/images/{{ banner.image }}" as="image" crossorigin>
+    <link rel="preload" href="/images/banners/{{ banner.image }}" as="image" crossorigin>
     {% endif %}
 
     <!-- Font preloading for performance -->
@@ -120,7 +120,7 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"></noscript>
 
-    <link rel="stylesheet" href="/css/style.css?v={{ site.version or '1.0.0' }}">
+    <link rel="stylesheet" href="/css/style.css">
 
     {% block head %}{% endblock %}
 </head>
@@ -137,10 +137,10 @@
                     <source src="/videos/{{ banner.video }}" type="video/mp4">
                     {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
                 <picture class="w-full h-full object-cover">
-                    <source media="(min-width: 1280px)" srcset="/images/{{ bannerBase }}-1280.webp">
-                    <source media="(min-width: 960px)" srcset="/images/{{ bannerBase }}-960.webp">
-                    <source media="(min-width: 640px)" srcset="/images/{{ bannerBase }}-640.webp">
-                    <img src="/images/{{ banner.image }}"
+                    <source media="(min-width: 1280px)" srcset="/images/banners/{{ bannerBase }}-1280.webp">
+                    <source media="(min-width: 960px)" srcset="/images/banners/{{ bannerBase }}-960.webp">
+                    <source media="(min-width: 640px)" srcset="/images/banners/{{ bannerBase }}-640.webp">
+                    <img src="/images/banners/{{ banner.image }}"
                          alt="{{ banner.bannerTitle }}"
                          class="w-full h-full object-cover"
                          fetchpriority="high">
@@ -149,9 +149,9 @@
             {% else %}
                 {% set bannerBase = banner.image | replace(".webp", "") | replace(".jpg", "") | replace(".png", "") %}
                 <picture class="w-full h-full object-cover">
-                    <source media="(min-width: 1024px)" srcset="/images/{{ bannerBase }}-1024.webp">
-                    <source media="(min-width: 768px)" srcset="/images/{{ bannerBase }}-768.webp">
-                    <img src="/images/{{ banner.image }}"
+                    <source media="(min-width: 1024px)" srcset="/images/banners/{{ bannerBase }}-1024.webp">
+                    <source media="(min-width: 768px)" srcset="/images/banners/{{ bannerBase }}-768.webp">
+                    <img src="/images/banners/{{ banner.image }}"
                          alt="{{ banner.bannerTitle }}"
                          class="w-full h-full object-cover"
                          fetchpriority="high">

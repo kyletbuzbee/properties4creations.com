@@ -10,6 +10,26 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
 
+  // 2. Collections: Properties collection from consolidated data source
+  eleventyConfig.addCollection("properties", function(collectionApi) {
+    // Get properties from the unified data source
+    const propertiesData = require('./src/_data/properties.js')();
+
+    // Convert to collection format that templates expect
+    return Object.values(propertiesData).map(property => ({
+      url: property.url,
+      // Provide XML data it needs to generate HTML front matter data
+      data: {
+        ...property,
+        page: {
+          url: property.url,
+          title: property.title,
+          description: property.description
+        }
+      }
+    }));
+  });
+
   // 2. Watch Targets: Rebuild 11ty when Tailwind finishes recompiling CSS
   eleventyConfig.addWatchTarget("./dist/css/");
 

@@ -1,0 +1,52 @@
+<header id="main-header" class="sticky top-4 z-50 px-4 transition-all duration-300">
+    <nav role="navigation" aria-label="Main navigation"
+         class="nav-glass-navy flex items-center justify-between px-6 py-3 max-w-7xl mx-auto rounded-2xl">
+
+        <div class="flex items-center gap-4">
+            <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-wood rounded-lg" aria-label="Properties 4 Creations Home">
+                <img src="/public/images/logo/BRAND_LOGO.svg" alt="" class="h-10 w-auto group-hover:scale-105 transition-transform">
+                <span class="font-heading font-bold text-white text-lg tracking-tight hidden md:block">Properties<span class="text-brand-wood">4</span>Creations</span>
+            </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-2">
+            {% set navPages = [
+                { url: '/', title: 'Home' },
+                { url: '/projects/', title: 'Properties' },
+                { url: '/resources/', title: 'Resources' },
+                { url: '/impact/', title: 'Impact' },
+                { url: '/transparency/', title: 'Standards' }
+            ] %}
+
+            {% for item in navPages %}
+            <a href="{{ item.url }}"
+               class="nav-link text-sm font-semibold text-slate-300 hover:text-white"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>
+                {{ item.title }}
+            </a>
+            {% endfor %}
+
+            <div class="w-px h-6 bg-white/10 mx-2"></div>
+
+            <a href="/contact/" class="wood-gradient-button px-6 py-2.5 rounded-full text-sm shadow-lg hover:shadow-wood/50 transition-all transform hover:-translate-y-0.5">
+                Start Here
+            </a>
+        </div>
+
+        <button id="mobile-menu-toggle" class="lg:hidden p-2 text-slate-200 hover:text-brand-wood transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-wood" aria-expanded="false">
+            <span class="sr-only">Open menu</span>
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-4 right-4 mt-2 nav-glass-navy rounded-2xl p-4 shadow-xl border border-white/10">
+        <div class="flex flex-col space-y-2">
+            {% for item in navPages %}
+            <a href="{{ item.url }}" class="block px-4 py-3 rounded-lg text-slate-200 hover:bg-white/10 hover:text-brand-wood transition-colors">
+                {{ item.title }}
+            </a>
+            {% endfor %}
+            <a href="/contact/" class="block text-center mt-4 wood-gradient-button py-3 rounded-xl">Get Started</a>
+        </div>
+    </div>
+</header>

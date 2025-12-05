@@ -1,0 +1,40 @@
+{#
+  Responsive Image Component
+  Provides optimized image loading with AVIF/WebP/JPEG fallbacks
+
+  @param {string} src - Base image filename (e.g., 'hero-banner.webp')
+  @param {string} alt - Alt text for accessibility
+  @param {string} class - Additional CSS classes (default: '')
+  @param {string} loading - Loading strategy ('lazy' or 'eager', default: 'lazy')
+  @param {boolean} preload - Whether to preload larger sizes (default: false)
+#}
+{% set options = options | default({}) %}
+{% set src = src | default('placeholder.webp') %}
+{% set alt = alt | default('') %}
+{% set class = class | default('') %}
+{% set loading = loading | default('lazy') %}
+{% set preload = preload | default(false) %}
+
+{% set imageBase = src | replace('.webp', '') | replace('.jpg', '') | replace('.png', '') %}
+{% set imageDir = imageDir | default('optimized/banners') %}
+
+<picture class="{{ class }}">
+  {# AVIF sources for modern browsers #}
+  <source media="(min-width: 1280px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-1280.avif" type="image/avif">
+  <source media="(min-width: 960px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-960.avif" type="image/avif">
+  <source media="(min-width: 640px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-640.avif" type="image/avif">
+
+  {# WebP sources for broader support #}
+  <source media="(min-width: 1280px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-1280.webp" type="image/webp">
+  <source media="(min-width: 960px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-960.webp" type="image/webp">
+  <source media="(min-width: 640px)" srcset="/public/images/{{ imageDir }}/{{ imageBase }}-640.webp" type="image/webp">
+
+  {# JPEG fallback #}
+  <img src="/public/images/{{ imageDir }}/{{ src }}"
+       alt="{{ alt }}"
+       class="w-full h-full object-cover"
+       loading="{{ loading }}"
+       {% if preload %}
+       fetchpriority="high"
+       {% endif %}>
+</picture>

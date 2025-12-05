@@ -1,0 +1,132 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Properties 4 Creations Home" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Properties 4 Creations Logo" [ref=e7]
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Properties" [ref=e10] [cursor=pointer]:
+          - /url: /projects/
+        - link "Gallery" [ref=e11] [cursor=pointer]:
+          - /url: /projects/
+        - link "Resources" [ref=e12] [cursor=pointer]:
+          - /url: /resources/
+        - link "Impact" [ref=e13] [cursor=pointer]:
+          - /url: /impact/
+        - link "Standards" [ref=e14] [cursor=pointer]:
+          - /url: /transparency/
+        - link "Start Here" [ref=e15] [cursor=pointer]:
+          - /url: /contact/
+          - generic [ref=e16]: Start Here
+          - img [ref=e17]
+  - generic [ref=e19]:
+    - img "Transforming Properties into Homes" [ref=e22]
+    - generic [ref=e25]:
+      - generic [ref=e26]: 40+ Properties Renovated
+      - heading "Transforming Properties into Homes" [level=1] [ref=e27]
+      - paragraph [ref=e28]: Explore our East Texas property portfolio — all designed for families and veterans.
+      - link "Browse Properties" [ref=e30] [cursor=pointer]:
+        - /url: /get-started/
+  - main [ref=e31]:
+    - generic [ref=e34]:
+      - heading "Filter Properties" [level=3] [ref=e35]
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]: Bedrooms
+          - combobox "Filter properties by number of bedrooms" [ref=e39] [cursor=pointer]:
+            - option "All Bedrooms" [selected]
+            - option "2 Bedrooms"
+            - option "3 Bedrooms"
+            - option "4 Bedrooms"
+        - generic [ref=e40]:
+          - generic [ref=e41]: Status
+          - combobox "Filter properties by availability status" [ref=e42] [cursor=pointer]:
+            - option "All Status" [selected]
+            - option "Available"
+            - option "Coming Soon"
+        - generic [ref=e43]:
+          - generic [ref=e44]: City
+          - combobox "Filter properties by city location" [ref=e45] [cursor=pointer]:
+            - option "All Cities" [selected]
+            - option "Tyler"
+            - option "Longview"
+            - option "Jefferson"
+            - option "Marshall"
+  - contentinfo [ref=e47]:
+    - navigation "Footer" [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e52]:
+          - generic [ref=e54]: Section 8 Vouchers Accepted
+          - generic [ref=e55]: "(Live Status: Active)"
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - img "Properties 4 Creations Logo" [ref=e59]
+            - generic [ref=e60]:
+              - heading "Properties 4 Creations" [level=3] [ref=e61]
+              - paragraph [ref=e62]: Affordable Housing for Families & Veterans
+          - paragraph [ref=e63]:
+            - strong [ref=e64]: Properties 4 Creations, Tyler, TX 75701
+            - text: Expert renovations and fair housing solutions for families and veterans. Transparent pricing, quality workmanship, East Texas regional focus.
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - link "contact@properties4creations.com" [ref=e69] [cursor=pointer]:
+                - /url: mailto:contact@properties4creations.com
+            - generic [ref=e70]:
+              - img [ref=e71]
+              - link "(903) 283-1770" [ref=e73] [cursor=pointer]:
+                - /url: tel:+19032831770
+        - generic [ref=e74]:
+          - heading "Company" [level=4] [ref=e75]
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - link "About Us" [ref=e78] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e79]:
+              - link "Renovation Standards" [ref=e80] [cursor=pointer]:
+                - /url: /transparency/
+            - listitem [ref=e81]:
+              - link "Our Impact" [ref=e82] [cursor=pointer]:
+                - /url: /impact/
+            - listitem [ref=e83]:
+              - link "Contact" [ref=e84] [cursor=pointer]:
+                - /url: /contact/
+        - generic [ref=e85]:
+          - heading "Resources" [level=4] [ref=e86]
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - link "Housing Support" [ref=e89] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e90]:
+              - link "Our Work" [ref=e91] [cursor=pointer]:
+                - /url: /projects/
+            - listitem [ref=e92]:
+              - link "Success Stories" [ref=e93] [cursor=pointer]:
+                - /url: /impact/
+        - generic [ref=e94]:
+          - heading "Services" [level=4] [ref=e95]
+          - list [ref=e96]:
+            - listitem [ref=e97]:
+              - link "Get Started" [ref=e98] [cursor=pointer]:
+                - /url: /get-started/
+            - listitem [ref=e99]:
+              - link "Eligibility Tools" [ref=e100] [cursor=pointer]:
+                - /url: /resources/
+            - listitem [ref=e101]:
+              - link "Veteran Portal" [ref=e102] [cursor=pointer]:
+                - /url: /contact/
+    - generic [ref=e103]:
+      - paragraph [ref=e104]: © 2025 Properties 4 Creations. All rights reserved.
+      - generic [ref=e105]:
+        - link "Privacy" [ref=e106] [cursor=pointer]:
+          - /url: /privacy/
+        - link "Terms" [ref=e107] [cursor=pointer]:
+          - /url: /terms/
+```
